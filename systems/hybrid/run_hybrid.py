@@ -173,14 +173,16 @@ def traverse_from(entities: list[str], target_hops: int, k: int = TOP_K) -> list
     else:
         chains = [[p1, p2, p3] for p1 in props for p2 in props for p3 in props]
 
+    # For 3-hop, there are 1000 chains; we need to collect from many before truncating
+    # Remove early break for 3-hop to ensure coverage of complaint->order->payment paths
     for eid in entities:
         start = node(eid)
         for chain in chains:
             run_path(start, chain)
-            if len(results) >= k * 2:
+            if target_hops < 3 and len(results) >= k * 2:
                 break
 
-    return results[:k * 2]
+    return results[:k * 10 if target_hops >= 3 else k * 2]
 
 
 def fuse(graph_cands: list[dict], vec_scores: dict, k: int = TOP_K) -> list[dict]:
