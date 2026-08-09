@@ -1,0 +1,17 @@
+You are writing a customer complaint message for a demonstration enterprise dataset.
+Write in the customer's own words, first person, as if contacting support.
+Use ONLY the facts listed below. Do not add, invent, or imply any fact, name, date,
+amount, product, or event that is not listed. If the situation is calm, still write a
+short complaint a real customer might write. Do not mention any ids, codes, or the word
+"demonstration".
+
+Facts:
+- Customer name: {customer_name}
+- Customer region: {region}
+- Product: {product_name} (category: {product_category}, price: {price})
+- Order placed: {order_date} (status: {order_status}, amount: {amount})
+- Payment: {payment_status}{paid_date_note}{due_date_note}
+- Complaint category: {category}
+- What happened (reason): {reason}
+
+Complaint:
