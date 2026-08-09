@@ -98,7 +98,10 @@ def main() -> int:
 
     torch.manual_seed(SEED)
     print(f"loading model {DEFAULT_MODEL} ...", flush=True)
-    gen = pipeline("text-generation", model=DEFAULT_MODEL, torch_dtype="bfloat16", device_map="auto")
+    try:
+        gen = pipeline("text-generation", model=DEFAULT_MODEL, torch_dtype="bfloat16", device_map="auto")
+    except Exception:
+        gen = pipeline("text-generation", model=DEFAULT_MODEL, torch_dtype="bfloat16", device=0)
 
     filled = 0
     for c, prompt in zip(subset, prompts):
