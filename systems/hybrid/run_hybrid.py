@@ -121,6 +121,13 @@ def traverse_from(entities: list[str], target_hops: int, k: int = TOP_K) -> list
     results = []
     seen = set()
 
+    # ALWAYS include the anchor entities themselves with highest graph_score
+    # (for 1-hop attribute lookups where the answer is in the anchor's own record)
+    for eid in entities:
+        seen.add(eid)
+        results.append({"record_id": eid, "provenance_path": "anchor",
+                        "graph_score": 1.0})
+
     # property chains for each hop depth (forward + inverse, from ontology)
     props = [EB.placedOrder, EB.orderPlacedBy, EB.forProduct, EB.productOrderedIn,
              EB.hasPayment, EB.paymentForOrder, EB.filedComplaint, EB.complaintFiledBy,
