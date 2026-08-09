@@ -1,0 +1,47 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix eb:   <https://github.com/divaspoudel0/enterprise-brain-knowledge-graph-retrieval/ontology#> .
+
+# Smoke-test fixture for the S1 ontology.
+# Expresses the full 2-hop pattern
+#   Customer -FILED-> Complaint -ABOUT-> Order -HAS_PAYMENT-> Payment
+# and the 1-hop lines Customer -PLACED-> Order -FOR-> Product.
+# Every subject carries source_record_id for provenance (DATA_PIPELINE.md §2).
+
+eb:c_0001 a eb:Customer ;
+    eb:source_record_id "c_0001" ;
+    eb:name "Asha Gurung" ;
+    eb:region "Bagmati" ;
+    eb:signup_date "2024-03-11"^^xsd:date ;
+    eb:placedOrder eb:o_0001 ;
+    eb:filedComplaint eb:comp_0001 .
+
+eb:p_0001 a eb:Product ;
+    eb:source_record_id "p_0001" ;
+    eb:name "Wireless Keyboard" ;
+    eb:category "Accessories" ;
+    eb:price "34.99"^^xsd:decimal .
+
+eb:o_0001 a eb:Order ;
+    eb:source_record_id "o_0001" ;
+    eb:order_date "2025-01-20"^^xsd:date ;
+    eb:amount "34.99"^^xsd:decimal ;
+    eb:status "completed" ;
+    eb:orderPlacedBy eb:c_0001 ;
+    eb:forProduct eb:p_0001 ;
+    eb:hasPayment eb:pay_0001 .
+
+eb:pay_0001 a eb:Payment ;
+    eb:source_record_id "pay_0001" ;
+    eb:amount "34.99"^^xsd:decimal ;
+    eb:status "overdue" ;
+    eb:due_date "2025-02-19"^^xsd:date ;
+    eb:paymentForOrder eb:o_0001 .
+
+eb:comp_0001 a eb:Complaint ;
+    eb:source_record_id "comp_0001" ;
+    eb:filed_date "2025-02-10"^^xsd:date ;
+    eb:category "billing" ;
+    eb:free_text_description "Charged before the item was delivered." ;
+    eb:complaintFiledBy eb:c_0001 ;
+    eb:aboutOrder eb:o_0001 .
