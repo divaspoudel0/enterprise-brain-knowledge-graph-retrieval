@@ -110,8 +110,10 @@ Reversible: yes until S5 freeze.
 ## 2026-08-09 — Graph store (was: unresolved, needed before S3)
 Decision: RDF store — RDFLib in-memory graph populated in S3, serialized to a committed `.ttl`
 dump (`data/graph/enterprise_brain_graph.ttl`); queries are SPARQL with property paths for
-multi-hop traversal; edge provenance uses RDF-star (`<<s p o>> eb:source_record_id "...")` per
-DATA_PIPELINE.md §2.
+multi-hop traversal. Edge provenance uses standard RDF 1.1 reification (`_:stmt a rdf:Statement;
+rdf:subject/predicate/object ...; eb:source_record_id "..."`) per DATA_PIPELINE.md §2 — the
+initial plan was RDF-star annotations, but rdflib 7.6.0 ships no RDF-star support, so reification
+(equivalent provenance, fully serializable) is used instead.
 Rationale: the ontology is already OWL/Turtle so the store schema is identical to the schema;
 the sandbox is ephemeral so running a Neo4j server adds ops fragility for no benefit at this
 scale (~2k nodes); rdflib is headless and the TTL dump is portable to any triplestore later.
