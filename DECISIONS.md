@@ -106,3 +106,35 @@ Rationale: guarantees countable positive examples for S5 2-hop/3-hop question fa
 accidental matches; disjoint subsets keep manifest counts exact and verifiable.
 Stage: S2
 Reversible: yes until S5 freeze.
+
+## 2026-08-09 — Graph store (was: unresolved, needed before S3)
+Decision: RDF store — RDFLib in-memory graph populated in S3, serialized to a committed `.ttl`
+dump (`data/graph/enterprise_brain_graph.ttl`); queries are SPARQL with property paths for
+multi-hop traversal; edge provenance uses RDF-star (`<<s p o>> eb:source_record_id "...")` per
+DATA_PIPELINE.md §2.
+Rationale: the ontology is already OWL/Turtle so the store schema is identical to the schema;
+the sandbox is ephemeral so running a Neo4j server adds ops fragility for no benefit at this
+scale (~2k nodes); rdflib is headless and the TTL dump is portable to any triplestore later.
+Neo4j mapping is documented in ontology/README.md if a swap is ever wanted.
+Stage: S3
+Reversible: yes until S5; the TTL dump makes a later store swap a mechanical port.
+
+## 2026-08-09 — Embedding model (fixed experimental condition, AGENT.md §2)
+Decision: `BAAI/bge-small-en-v1.5` (384-dim) via sentence-transformers for all text embedding
+(S4 vector index, S6/S7 retrieval) — identical across both systems.
+Rationale: small enough to embed the corpus fast on the sandbox GPU, retrieval-competitive for
+its size, deterministic with a fixed seed. Swappable before S5 but the same model must be used
+by both systems.
+Stage: S4
+Reversible: yes until S4 output is used in S5 freeze; a swap invalidates both systems equally
+and requires re-embedding.
+
+## 2026-08-09 — Answer LLM (fixed experimental condition, AGENT.md §2)
+Decision: `Qwen/Qwen2.5-7B-Instruct` (already cached in the molab sandbox from S2) is the answer
+LLM for BOTH the vector-only baseline (S6) and the hybrid system (S7); generation role logged
+separately from the S2 complaint-generation role per DATA_PIPELINE.md §6.
+Rationale: reuses the cached weights (no extra download), open-weights so results are
+reproducible and free, and its quality on structured-fact answering is adequate for the
+benchmark. Identical config for both systems satisfies the fixed-experimental-condition rule.
+Stage: S6
+Reversible: yes until S9 eval runs; a swap must be applied to both systems and is logged.
