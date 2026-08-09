@@ -107,6 +107,25 @@ accidental matches; disjoint subsets keep manifest counts exact and verifiable.
 Stage: S2
 Reversible: yes until S5 freeze.
 
+## 2026-08-09 — Benchmark composition and hop taxonomy (S5, DATA_PIPELINE.md §5)
+Decision: `data/benchmark/benchmark_v1.jsonl` — 529 questions (360 1-hop, 95 2-hop, 74 3-hop),
+FROZEN once S9 starts. 1-hop = direct lookups (12 templates × 30); 2/3-hop = template-based
+relation-sequence walks anchored on the planted-pattern members (P1/P2/P3/P5) plus generic
+walks. Ground truth is derived from the data rows (which the S3 graph mirrors 1:1, proven by
+verify_graph.py) and is independently re-derived for EVERY question via SPARQL on the graph
+in `verify_benchmark.py` (stronger than §5's 10% sample) — ground truth never comes from an
+LLM's answer.
+Hop taxonomy: hops = number of graph edges between the question's anchor entity and the
+answer-bearing entity; planted-pattern questions use the manifest's hop count (P1/P5=3, P2/P3=2).
+Ambiguity handling: a member whose pattern matches more than once is excluded from the
+single-answer per-member templates (P2: 1, P3: 1, P5: 3 members excluded) but still appears
+in the aggregate questions, which answer with the full deduplicated set.
+Answer format: entity answers use IDs (c_0001, o_00001) rather than Devanagari customer names
+so exact-match/F1 scoring is meaningful and reproducible; attribute answers use the stored
+string values. `answer_ids` and `evidence_source_record_ids` fields support P@k/MRR/EM scoring.
+Stage: S5
+Reversible: yes until S9; after that the file is frozen and any change requires re-running both systems.
+
 ## 2026-08-09 — Graph store (was: unresolved, needed before S3)
 Decision: RDF store — RDFLib in-memory graph populated in S3, serialized to a committed `.ttl`
 dump (`data/graph/enterprise_brain_graph.ttl`); queries are SPARQL with property paths for
