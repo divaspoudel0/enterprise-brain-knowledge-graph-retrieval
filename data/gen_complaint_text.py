@@ -114,7 +114,10 @@ def main() -> int:
         c["free_text_description"] = text
         filled += 1
         if filled % 25 == 0:
-            print(f"  ... {filled}/{len(subset)} complaints filled", flush=True)
+            with (RAW / "complaints.jsonl").open("w", encoding="utf-8") as fh:
+                for cc in complaints:
+                    fh.write(json.dumps(cc, ensure_ascii=False) + "\n")
+            print(f"  ... {filled}/{len(subset)} complaints filled (checkpoint written)", flush=True)
 
     with (RAW / "complaints.jsonl").open("w", encoding="utf-8") as fh:
         for c in complaints:
