@@ -61,3 +61,48 @@ Rationale: No origin existed; CHECKPOINTING.md §2 requires a GitHub push target
 push before real work. AGENT.md §0 resolution order: reversible, non-costly → proceed and log.
 Stage: all
 Reversible: yes — repo can be renamed/transferred/deleted before S5 freezes artifacts.
+
+## 2026-08-09 — S1 ontology format
+Decision: OWL 2 DL in Turtle serialization (RDFLib toolchain), namespace
+`https://github.com/divaspoudel0/enterprise-brain-knowledge-graph-retrieval/ontology#`, committed as
+`ontology/enterprise_brain.ttl` with a RDFLib validation script as the S1 done-gate (inventory +
+inverse + cardinality + no-dangling-term assertions). No Protégé UI; the file is Protégé-openable.
+Payment/order statuses and complaint categories stay plain string data properties (values enforced
+as data-level constraints in S2's generator + `verify_data.py`), keeping the ontology minimal per
+DATA_PIPELINE.md §1.1.
+Rationale: AGENT.md §1 left "Protégé/OWL or JSON-LD" open. OWL gives `owl:inverseOf` + cardinality
+restrictions needed for verifiable multi-hop traversal (S5/S7); Turtle is git-diff-friendly; RDFLib
+runs headless in the ephemeral sandbox. JSON-LD would be a lossy serialization of the same graph.
+Stage: S1
+Reversible: yes (pre-S5; S3 graph population maps from this schema).
+
+## 2026-08-09 — S2 dataset scale
+Decision: 60 products (6 categories x 10), 400 customers, ~1,100 orders (1-6 per customer),
+one payment per order (~70% paid, ~20% overdue, ~10% failed), 250 complaints. Random seed 42.
+Exact params in `data/generation_config.json`.
+Rationale: large enough for realistic retrieval, small enough to commit to git (<1 MB) and to
+re-generate quickly; planted subsets are sized to yield >20 guaranteed positives per S5 template family.
+Stage: S2
+Reversible: yes until S5 freezes `benchmark_v1.jsonl`; safe re-generation before then is seed-logged.
+
+## 2026-08-09 — S2 free-text generation model
+Decision: `Qwen/Qwen2.5-7B-Instruct` (HuggingFace, run locally on the molab GPU) generates each
+complaint's `free_text_description` from a committed prompt template fed only structured facts
+(category, product, reason); temperature 0.3, same seed 42. Template in `data/prompts/`.
+Rationale: DATA_PIPELINE.md §1.2 requires LLM-generated (not hand-templated) free text with facts
+exactly traceable to the structured record; a local open-weight model avoids API cost, is
+reproducible, and the 102 GB sandbox GPU hosts it trivially. Generation role is logged separately
+from the S9 answer-generation LLM per DATA_PIPELINE.md §6.
+Stage: S2
+Reversible: yes (prompt template + seed committed; re-generation before S5 freeze is safe).
+
+## 2026-08-09 — S2 planted multi-hop patterns
+Decision: plant and manifest (`data/raw/planted_patterns.json`) four mutually disjoint pattern
+families: P1 3-hop Customer-FILED->Complaint-ABOUT->Order-HAS_PAYMENT->Payment(overdue, Q1 2025)
+n=30; P2 2-hop Customer-PLACED->Order-FOR->Product(Electronics, Q2 2025) n=40; P3 2-hop
+Customer-FILED->Complaint-ABOUT->Order(completed, category billing, Q3 2025) n=25; P5 3-hop
+Customer-FILED->Complaint-ABOUT->Order-FOR->Product(Home & Kitchen, Q4 2025) n=25.
+Rationale: guarantees countable positive examples for S5 2-hop/3-hop question families instead of
+accidental matches; disjoint subsets keep manifest counts exact and verifiable.
+Stage: S2
+Reversible: yes until S5 freeze.

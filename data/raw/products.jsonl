@@ -1,0 +1,60 @@
+{"product_id": "p_0001", "name": "Wireless Keyboard", "category": "Electronics", "price": 34.99}
+{"product_id": "p_0002", "name": "USB-C Hub", "category": "Electronics", "price": 29.99}
+{"product_id": "p_0003", "name": "Bluetooth Headphones", "category": "Electronics", "price": 59.99}
+{"product_id": "p_0004", "name": "Smart Speaker", "category": "Electronics", "price": 49.99}
+{"product_id": "p_0005", "name": "HD Webcam", "category": "Electronics", "price": 39.99}
+{"product_id": "p_0006", "name": "Power Bank 20000mAh", "category": "Electronics", "price": 24.99}
+{"product_id": "p_0007", "name": "Wireless Mouse", "category": "Electronics", "price": 19.99}
+{"product_id": "p_0008", "name": "HDMI Cable 2m", "category": "Electronics", "price": 9.99}
+{"product_id": "p_0009", "name": "Smart Watch", "category": "Electronics", "price": 89.99}
+{"product_id": "p_0010", "name": "LED Desk Lamp", "category": "Electronics", "price": 27.99}
+{"product_id": "p_0011", "name": "Phone Case", "category": "Accessories", "price": 14.99}
+{"product_id": "p_0012", "name": "Laptop Sleeve", "category": "Accessories", "price": 22.99}
+{"product_id": "p_0013", "name": "Screen Protector", "category": "Accessories", "price": 8.99}
+{"product_id": "p_0014", "name": "Backpack", "category": "Accessories", "price": 44.99}
+{"product_id": "p_0015", "name": "Laptop Stand", "category": "Accessories", "price": 32.99}
+{"product_id": "p_0016", "name": "Cable Organizer", "category": "Accessories", "price": 12.99}
+{"product_id": "p_0017", "name": "Desk Mat", "category": "Accessories", "price": 17.99}
+{"product_id": "p_0018", "name": "Keycap Set", "category": "Accessories", "price": 25.99}
+{"product_id": "p_0019", "name": "Camera Strap", "category": "Accessories", "price": 15.99}
+{"product_id": "p_0020", "name": "Card Holder Wallet", "category": "Accessories", "price": 11.99}
+{"product_id": "p_0021", "name": "Non-stick Frying Pan", "category": "Home & Kitchen", "price": 29.99}
+{"product_id": "p_0022", "name": "Electric Kettle", "category": "Home & Kitchen", "price": 24.99}
+{"product_id": "p_0023", "name": "Coffee Maker", "category": "Home & Kitchen", "price": 54.99}
+{"product_id": "p_0024", "name": "Air Fryer", "category": "Home & Kitchen", "price": 79.99}
+{"product_id": "p_0025", "name": "Blender", "category": "Home & Kitchen", "price": 39.99}
+{"product_id": "p_0026", "name": "Toaster", "category": "Home & Kitchen", "price": 21.99}
+{"product_id": "p_0027", "name": "Cutlery Set (24 pc)", "category": "Home & Kitchen", "price": 34.99}
+{"product_id": "p_0028", "name": "Storage Containers (8 pc)", "category": "Home & Kitchen", "price": 18.99}
+{"product_id": "p_0029", "name": "Rice Cooker", "category": "Home & Kitchen", "price": 47.99}
+{"product_id": "p_0030", "name": "Induction Cooktop", "category": "Home & Kitchen", "price": 64.99}
+{"product_id": "p_0031", "name": "A4 Printer Paper (500)", "category": "Office", "price": 7.99}
+{"product_id": "p_0032", "name": "Binder Clips (100 pc)", "category": "Office", "price": 3.99}
+{"product_id": "p_0033", "name": "Whiteboard Markers (4)", "category": "Office", "price": 4.99}
+{"product_id": "p_0034", "name": "Sticky Notes (5 pack)", "category": "Office", "price": 6.99}
+{"product_id": "p_0035", "name": "Laser Printer", "category": "Office", "price": 119.99}
+{"product_id": "p_0036", "name": "Paper Shredder", "category": "Office", "price": 49.99}
+{"product_id": "p_0037", "name": "Stapler + Staples", "category": "Office", "price": 8.99}
+{"product_id": "p_0038", "name": "Desk Organizer", "category": "Office", "price": 13.99}
+{"product_id": "p_0039", "name": "Notebook (A5, 3 pc)", "category": "Office", "price": 9.99}
+{"product_id": "p_0040", "name": "Highlighters (6 pc)", "category": "Office", "price": 5.99}
+{"product_id": "p_0041", "name": "Electric Toothbrush", "category": "Personal Care", "price": 27.99}
+{"product_id": "p_0042", "name": "Hair Dryer", "category": "Personal Care", "price": 25.99}
+{"product_id": "p_0043", "name": "Trimmer Kit", "category": "Personal Care", "price": 33.99}
+{"product_id": "p_0044", "name": "Facial Cleanser", "category": "Personal Care", "price": 12.99}
+{"product_id": "p_0045", "name": "Sunscreen SPF50", "category": "Personal Care", "price": 11.99}
+{"product_id": "p_0046", "name": "Massage Gun", "category": "Personal Care", "price": 49.99}
+{"product_id": "p_0047", "name": "Humidifier", "category": "Personal Care", "price": 31.99}
+{"product_id": "p_0048", "name": "Nail Care Kit", "category": "Personal Care", "price": 16.99}
+{"product_id": "p_0049", "name": "Shampoo (750ml)", "category": "Personal Care", "price": 9.99}
+{"product_id": "p_0050", "name": "Fitness Tracker", "category": "Personal Care", "price": 42.99}
+{"product_id": "p_0051", "name": "Yoga Mat", "category": "Sports & Outdoors", "price": 19.99}
+{"product_id": "p_0052", "name": "Dumbbell Set 10kg", "category": "Sports & Outdoors", "price": 44.99}
+{"product_id": "p_0053", "name": "Resistance Bands (5 pc)", "category": "Sports & Outdoors", "price": 13.99}
+{"product_id": "p_0054", "name": "Hiking Backpack 40L", "category": "Sports & Outdoors", "price": 59.99}
+{"product_id": "p_0055", "name": "Water Bottle 1L", "category": "Sports & Outdoors", "price": 12.99}
+{"product_id": "p_0056", "name": "Jump Rope", "category": "Sports & Outdoors", "price": 8.99}
+{"product_id": "p_0057", "name": "Camping Tent 2P", "category": "Sports & Outdoors", "price": 89.99}
+{"product_id": "p_0058", "name": "Running Shoes", "category": "Sports & Outdoors", "price": 69.99}
+{"product_id": "p_0059", "name": "Cycle Helmet", "category": "Sports & Outdoors", "price": 34.99}
+{"product_id": "p_0060", "name": "Trekking Poles", "category": "Sports & Outdoors", "price": 39.99}

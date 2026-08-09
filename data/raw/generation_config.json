@@ -1,0 +1,51 @@
+{
+  "seed": 42,
+  "faker_locale": "ne_NP",
+  "n_products": 60,
+  "n_customers": 400,
+  "n_orders": 926,
+  "n_payments": 926,
+  "n_complaints": 250,
+  "planted": {
+    "P1": 30,
+    "P2": 40,
+    "P3": 25,
+    "P5": 25
+  },
+  "status_distributions": {
+    "order": [
+      [
+        "completed",
+        0.75
+      ],
+      [
+        "pending",
+        0.15
+      ],
+      [
+        "cancelled",
+        0.06
+      ],
+      [
+        "refunded",
+        0.04
+      ]
+    ],
+    "payment": [
+      [
+        "paid",
+        0.7
+      ],
+      [
+        "overdue",
+        0.2
+      ],
+      [
+        "failed",
+        0.1
+      ]
+    ]
+  },
+  "free_text_model": "Qwen/Qwen2.5-7B-Instruct",
+  "free_text_generated_by": "data/gen_complaint_text.py (runs after this script)"
+}
