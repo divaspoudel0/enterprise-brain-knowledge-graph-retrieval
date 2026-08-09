@@ -51,7 +51,7 @@ def main() -> int:
             "chunk_to_record": {cid: rid for cid, rid in zip(chunk_ids, (r["record_id"] for r in records))}}
     OUT_META.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
 
-    print(f"shape: {emb.shape}; norm mean={float(emb.norm(dim=-1).mean()):.3f}")
+    print(f"shape: {emb.shape}; mean row norm={float(np.linalg.norm(emb, axis=1).mean()):.3f}")
     print(f"wrote {OUT_NPY} ({OUT_NPY.stat().st_size/1e6:.1f} MB) and {OUT_META}")
     return 0
 
