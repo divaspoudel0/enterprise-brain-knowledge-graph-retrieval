@@ -81,33 +81,34 @@ ORDER_COUNT_WEIGHTS = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 REASONS = {
     "billing": [
-        "was charged twice for the same order",
-        "was overcharged compared to the quoted price",
-        "noticed an unexpected charge on the statement",
-        "was billed before the order shipped",
+        "the total charged did not match the amount agreed at checkout",
+        "noticed a charge on the statement that was not expected",
+        "was billed before the order was confirmed",
+        "the invoice included an item that was not ordered",
     ],
     "delivery": [
-        "the delivery arrived several days late",
+        "the delivery arrived later than expected",
         "the package never arrived",
         "the courier delivered to the wrong address",
-        "the delivery was left without any signature",
+        "the delivery was left without any confirmation",
     ],
     "product_quality": [
         "the item arrived damaged",
-        "the product stopped working within a week",
+        "the product stopped working shortly after arrival",
         "the item did not match the description",
-        "the product looked used when it arrived",
+        "the product appeared used when it arrived",
     ],
     "service": [
         "customer support never responded",
-        "was put on hold for a long time",
-        "support was unable to resolve the issue",
+        "support did not resolve the issue",
         "received conflicting information from support",
+        "support was not available when needed",
     ],
     "refund": [
         "the refund has not been processed",
         "was told a refund was issued but never received it",
         "returned the item but the refund is still pending",
+        "the refund process is taking longer than expected",
     ],
 }
 
