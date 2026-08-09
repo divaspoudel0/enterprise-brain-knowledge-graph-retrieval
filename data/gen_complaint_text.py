@@ -44,6 +44,10 @@ MAX_NEW_TOKENS = 150
 SEED = 42
 
 _NUM = re.compile(r"\d+(?:\.\d+)?")
+# Customer names are generated in Devanagari (ne_NP); the model signs the
+# message with the name. The name is a fact, but mixed-script text degrades
+# downstream embedding, so it is stripped from the generated message.
+_DEVANAGARI = re.compile(r"[\u0900-\u097F]+")
 
 
 def load(name: str) -> list[dict]:
@@ -108,12 +112,29 @@ def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="process only the first N complaints (0 = all)")
     ap.add_argument("--dry-run", action="store_true", help="print prompts, do not call the model")
+    ap.add_argument("--cleanup-only", action="store_true",
+                    help="strip Devanagari from existing free_text without calling the model")
     return ap.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     complaints = load("complaints.jsonl")
+
+    if args.cleanup_only:
+        changed = 0
+        for c in complaints:
+            new = _DEVANAGARI.sub(" ", c["free_text_description"])
+            new = re.sub(r"\s{2,}", " ", new).strip()
+            if new != c["free_text_description"]:
+                c["free_text_description"] = new
+                changed += 1
+        with (RAW / "complaints.jsonl").open("w", encoding="utf-8") as fh:
+            for c in complaints:
+                fh.write(json.dumps(c, ensure_ascii=False) + "\n")
+        print(f"cleanup-only: rewrote {changed}/{len(complaints)} complaints (stripped Devanagari); no model call")
+        return 0
+
     orders = {o["order_id"]: o for o in load("orders.jsonl")}
     products = {p["product_id"]: p for p in load("products.jsonl")}
     customers = {c["customer_id"]: c for c in load("customers.jsonl")}
@@ -179,6 +200,8 @@ def main() -> int:
                 print(f"WARN  {c['complaint_id']}: mechanically stripped disallowed numbers {bad}", file=sys.stderr)
         if len(text.split()) < 3:
             print(f"WARN  {c['complaint_id']}: short/empty generation -> {text!r}", file=sys.stderr)
+        text = _DEVANAGARI.sub(" ", text)
+        text = re.sub(r"\s{2,}", " ", text).strip()
         c["free_text_description"] = text
         filled += 1
         if filled % 25 == 0:

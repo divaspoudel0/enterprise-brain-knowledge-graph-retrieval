@@ -104,12 +104,16 @@ def main() -> int:
         check(not overlong, f"no free-text field exceeds ~500 tokens (over: {overlong[:3]})")
         check(len(texts) == len({t.strip() for t in texts}), "free-text descriptions are distinct")
 
-        # §1.2 no-invention: no currency symbols; any number in the text must match
-        # one of the facts (price/amount) or be absent entirely.
+        # §1.2 no-invention: no currency tokens; no Devanagari residue; any
+        # number in the text must match one of the facts (price/amount/dates)
+        # or be absent entirely.
         import re
-        currency = re.compile(r"[$₹रूRsEURUSDNPR]|rupees|dollars|euros", re.IGNORECASE)
+        currency = re.compile(r"[$₹]|\bRs\.?\b|\bUSD\b|\bNPR\b|\bEUR\b|rupees|dollars|euros", re.IGNORECASE)
         bad_cur = [c["complaint_id"] for c in complaints if currency.search(c["free_text_description"])]
         check(not bad_cur, f"no currency symbols/units in free text (bad: {bad_cur[:3]})")
+        devanagari = re.compile(r"[\u0900-\u097F]")
+        bad_dev = [c["complaint_id"] for c in complaints if devanagari.search(c["free_text_description"])]
+        check(not bad_dev, f"no Devanagari residue in free text (bad: {bad_dev[:3]})")
         bad_nums = []
         for c in complaints:
             o = order_by_id[c["order_id"]]
