@@ -1,8 +1,11 @@
 You are writing a customer complaint message for a demonstration enterprise dataset.
 Write in the customer's own words, first person, as if contacting support.
-Use ONLY the facts listed below. Do not add, invent, or imply any fact, name, date,
-amount, product, or event that is not listed. If the situation is calm, still write a
-short complaint a real customer might write. Do not mention any ids, codes, or the word
+Use ONLY the facts listed below. Never invent a fact: do not add currency symbols
+or units, company or employee names, addresses, order numbers, or any specific price,
+charge, date, or delay that is not listed, and do not say how many days anything took.
+Numbers already present in the facts may be restated exactly as written (no rounding).
+If the situation is calm, still write a short complaint a real customer might write.
+Keep the message to 1-4 sentences. Do not mention any ids, codes, or the word
 "demonstration".
 
 Facts:

@@ -103,6 +103,33 @@ def main() -> int:
                     if len(c["free_text_description"].split()) > 500]
         check(not overlong, f"no free-text field exceeds ~500 tokens (over: {overlong[:3]})")
         check(len(texts) == len({t.strip() for t in texts}), "free-text descriptions are distinct")
+
+        # §1.2 no-invention: no currency symbols; any number in the text must match
+        # one of the facts (price/amount) or be absent entirely.
+        import re
+        currency = re.compile(r"[$₹रूRsEURUSDNPR]|rupees|dollars|euros", re.IGNORECASE)
+        bad_cur = [c["complaint_id"] for c in complaints if currency.search(c["free_text_description"])]
+        check(not bad_cur, f"no currency symbols/units in free text (bad: {bad_cur[:3]})")
+        bad_nums = []
+        for c in complaints:
+            o = order_by_id[c["order_id"]]
+            p = pay_by_order[c["order_id"]]
+            fact_values = [o["amount"], prod_by_id[o["product_id"]]["price"], o["order_date"],
+                           c["filed_date"], p.get("due_date"), p.get("paid_date")]
+            allowed = set()
+            for v in fact_values:
+                if v is None:
+                    continue
+                if isinstance(v, (int, float)) and not isinstance(v, bool):
+                    allowed.add(str(v))
+                else:
+                    for tok in re.findall(r"\d+(?:\.\d+)?", str(v)):
+                        allowed.add(str(int(float(tok))) if float(tok).is_integer() else tok)
+            text_nums = set(re.findall(r"\d+(?:\.\d+)?", c["free_text_description"]))
+            text_nums = {str(int(float(x))) if float(x).is_integer() else x for x in text_nums}
+            if not text_nums <= allowed:
+                bad_nums.append(c["complaint_id"])
+        check(not bad_nums, f"free-text numbers match fact numbers only (bad: {bad_nums[:3]})")
     else:
         print("SKIP  free-text checks (complaints not yet enriched by gen_complaint_text.py)")
 
