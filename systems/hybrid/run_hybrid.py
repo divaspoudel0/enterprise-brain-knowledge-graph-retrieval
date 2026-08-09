@@ -149,8 +149,22 @@ def traverse_from(entities: list[str], target_hops: int, k: int = TOP_K) -> list
             seen.add(rid)
             rid_clean = rid[len(EB_NS):]
             path = "->".join(p.split("#")[-1] for p in chain)
+            # Weight paths: prefer paths that end in the expected answer type
+            # e.g., for "which product" -> placedOrder->forProduct should score higher
+            base_score = 1.0
+            if len(chain) >= 2:
+                # Check if this is a customer->order->product path
+                if str(chain[0]) == str(EB.placedOrder) and str(chain[1]) == str(EB.forProduct):
+                    base_score = 1.2
+                # customer->order->payment path
+                elif str(chain[0]) == str(EB.placedOrder) and str(chain[1]) == str(EB.hasPayment):
+                    base_score = 0.9
+            elif len(chain) == 1:
+                # direct properties of the anchor
+                if str(chain[0]) in [str(EB.placedOrder), str(EB.aboutOrder), str(EB.filedComplaint)]:
+                    base_score = 1.1
             results.append({"record_id": rid_clean, "provenance_path": path,
-                            "graph_score": 1.0})
+                            "graph_score": base_score})
 
     if target_hops == 1:
         chains = [[p] for p in props]
@@ -169,25 +183,12 @@ def traverse_from(entities: list[str], target_hops: int, k: int = TOP_K) -> list
     return results[:k * 2]
 
 
-def vector_similarity(question: str, record_ids: list[str]) -> dict:
-    """Cosine similarity of question embedding to each record's embedding."""
-    q_emb = embed_query(question)
-    matrix, chunk_ids, chunk_to_record = load_embeddings()
-    # 1:1 chunking, so record_id -> chunk_id is just record_id:0
-    scores = {}
-    for rid in record_ids:
-        cid = f"{rid}:0"
-        if cid in chunk_ids:
-            idx = chunk_ids.index(cid)
-            scores[rid] = float(matrix[idx] @ q_emb)
-    return scores
-
-
 def fuse(graph_cands: list[dict], vec_scores: dict, k: int = TOP_K) -> list[dict]:
-    """Linear fusion; graph_score in [0,1], vec_score in [-1,1] (normalized)."""
+    """Linear fusion; graph_score in [0,1.2], vec_score in [-1,1] (normalized).
+    Increase graph weight to 0.8 to reduce vector's misleading influence."""
     for c in graph_cands:
         vs = vec_scores.get(c["record_id"], 0.0)
-        c["fused_score"] = 0.6 * c["graph_score"] + 0.4 * max(0.0, vs)
+        c["fused_score"] = 0.8 * c["graph_score"] + 0.2 * max(0.0, vs)
     return sorted(graph_cands, key=lambda x: -x["fused_score"])[:k]
 
 
