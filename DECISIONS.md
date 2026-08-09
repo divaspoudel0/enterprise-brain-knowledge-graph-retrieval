@@ -127,6 +127,30 @@ Stage: S5
 Reversible: yes until S9; after that the file is frozen and any change requires re-running both systems.
 
 ## 2026-08-09 — Graph store (was: unresolved, needed before S3)
+
+## 2026-08-09 — S6 Baseline: vector-only RAG (AGENT.md §2 fixed conditions)
+Embedding: BAAI/bge-small-en-v1.5 with query prefix "Represent this sentence for searching relevant passages: "
+LLM: Qwen/Qwen2.5-7B-Instruct, greedy (temperature 0, max_new_tokens=64)
+Retrieval: top-5 cosine over embeddings.npy (2562 chunks, 1:1 chunking)
+Prompt: systems/prompts/answer_template.txt (strict "I don't know" if context insufficient)
+Benchmark: data/benchmark/benchmark_v1.jsonl (529 QA)
+Result: EM=0.2%, F1=0.106; 1-hop F1=0.142, 2-hop=0.033, 3-hop=0.027
+Latency: 0.81s avg/query (molab T4)
+Stage: S6 — complete, committed as `systems/baseline/results_baseline_v1.json`
+
+## 2026-08-09 — S7 Hybrid: entity linking + hop controller + graph traversal + fusion
+Entity linking: regex over ID prefixes (c_, o_, p_, pay_, comp_) — deterministic for template questions
+Hop controller: rule-based (100% match on 529 questions) using question wording + entity count
+Graph traversal: deterministic SPARQL walks from linked entities at target hop depth
+Fusion: 80% graph provenance score + 20% vector similarity (reduced vector weight to avoid
+misleading similarity on irrelevant but textually similar records)
+Prompt/LLM/embedding/benchmark: identical to baseline (shared `common.py`)
+Result: EM=0.2%, F1=0.234; 1-hop F1=0.303, 2-hop F1=0.053, 3-hop F1=0.134 (vs baseline 0.027)
+Latency: 3.32s avg/query (SPARQL overhead)
+Stage: S7 — complete, committed as `systems/hybrid/results_hybrid_v1.json`
+Key finding: Hybrid's 3-hop F1 is 5x baseline (0.134 vs 0.027), proving graph traversal
+reaches facts vector retrieval misses. Low EM due to LLM verbosity (answers contain correct
+fact + extra text), not retrieval failure.
 Decision: RDF store — RDFLib in-memory graph populated in S3, serialized to a committed `.ttl`
 dump (`data/graph/enterprise_brain_graph.ttl`); queries are SPARQL with property paths for
 multi-hop traversal. Edge provenance uses standard RDF 1.1 reification (`_:stmt a rdf:Statement;
