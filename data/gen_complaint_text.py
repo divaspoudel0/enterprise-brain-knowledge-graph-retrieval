@@ -48,6 +48,14 @@ _NUM = re.compile(r"\d+(?:\.\d+)?")
 # message with the name. The name is a fact, but mixed-script text degrades
 # downstream embedding, so it is stripped from the generated message.
 _DEVANAGARI = re.compile(r"[\u0900-\u097F]+")
+# Invented currency tokens (the amounts themselves are fact numbers and are kept).
+_CURRENCY = re.compile(r"[$₹]|\bRs\.?\b|\bUSD\b|\bNPR\b|\bEUR\b|rupees|dollars|euros", re.IGNORECASE)
+
+
+def scrub(text: str) -> str:
+    text = _DEVANAGARI.sub(" ", text)
+    text = _CURRENCY.sub(" ", text)
+    return re.sub(r"\s{2,}", " ", text).strip()
 
 
 def load(name: str) -> list[dict]:
@@ -124,15 +132,14 @@ def main() -> int:
     if args.cleanup_only:
         changed = 0
         for c in complaints:
-            new = _DEVANAGARI.sub(" ", c["free_text_description"])
-            new = re.sub(r"\s{2,}", " ", new).strip()
+            new = scrub(c["free_text_description"])
             if new != c["free_text_description"]:
                 c["free_text_description"] = new
                 changed += 1
         with (RAW / "complaints.jsonl").open("w", encoding="utf-8") as fh:
             for c in complaints:
                 fh.write(json.dumps(c, ensure_ascii=False) + "\n")
-        print(f"cleanup-only: rewrote {changed}/{len(complaints)} complaints (stripped Devanagari); no model call")
+        print(f"cleanup-only: rewrote {changed}/{len(complaints)} complaints (stripped Devanagari + currency tokens); no model call")
         return 0
 
     orders = {o["order_id"]: o for o in load("orders.jsonl")}
@@ -200,9 +207,7 @@ def main() -> int:
                 print(f"WARN  {c['complaint_id']}: mechanically stripped disallowed numbers {bad}", file=sys.stderr)
         if len(text.split()) < 3:
             print(f"WARN  {c['complaint_id']}: short/empty generation -> {text!r}", file=sys.stderr)
-        text = _DEVANAGARI.sub(" ", text)
-        text = re.sub(r"\s{2,}", " ", text).strip()
-        c["free_text_description"] = text
+        c["free_text_description"] = scrub(text)
         filled += 1
         if filled % 25 == 0:
             with (RAW / "complaints.jsonl").open("w", encoding="utf-8") as fh:
