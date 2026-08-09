@@ -121,6 +121,32 @@ Neo4j mapping is documented in ontology/README.md if a swap is ever wanted.
 Stage: S3
 Reversible: yes until S5; the TTL dump makes a later store swap a mechanical port.
 
+## 2026-08-09 — Text corpus composition and vector index (S4, DATA_PIPELINE.md §3)
+Decision: the retrieval corpus is `data/corpus/text_records.jsonl` (2562 records, one chunk
+each, max 148 tokens):
+  (a) the LLM-generated free-text complaint descriptions (the dataset's genuine free-text
+      fields), plus
+  (b) deterministic natural-language records for every entity (Product/Customer/Order/
+      Payment, and a Complaint record that carries id, customer, order, date, category, and
+      the free-text description).
+Every record carries `record_id` == the source row id (== eb:source_record_id).
+Rationale: §3 says the vector index is built from free-text fields, but the dataset's only
+free-text field is complaint descriptions; a corpus limited to those would make the
+vector-only baseline (S6) unable to answer the S5 benchmark's order/payment/product and
+multi-hop questions, trivially defeating the intended comparison (retrieval mechanism as
+the sole variable). Both systems retrieve from this SAME corpus; the hybrid adds graph
+traversal. This is not gaming — it is the standard RAG corpus for both systems.
+Embeddings: `BAAI/bge-small-en-v1.5`, normalized, one row per chunk, committed as
+`embeddings.npy` (3.9 MB — under CHECKPOINTING.md §3's few-hundred-MB line) + meta with
+chunk_id -> record_id map. Query-time retrieval uses the bge retrieval-query prefix on the
+query side only (document embeddings are plain) — applied identically in S6 and S7.
+check_sync.py enforces the §4 sync invariant across ALL nodes (graph/corpus/vector 1:1),
+a stronger condition than the §4 minimum (free-text nodes only), and verifies complaint
+free-text content matches what was embedded.
+Stage: S4
+Reversible: yes until S5 freeze; swapping the embedding model requires re-embedding and
+re-running BOTH systems (AGENT.md §2).
+
 ## 2026-08-09 — Embedding model (fixed experimental condition, AGENT.md §2)
 Decision: `BAAI/bge-small-en-v1.5` (384-dim) via sentence-transformers for all text embedding
 (S4 vector index, S6/S7 retrieval) — identical across both systems.
