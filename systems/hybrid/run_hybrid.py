@@ -32,7 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import (ANSWER_TEMPLATE, TOP_K, build_context, embed_query, generate_answer,
-                    load_benchmark, load_llm, load_corpus, load_embeddings)
+                    load_benchmark, load_llm, load_corpus, load_embeddings, vector_similarity)
 
 import numpy as np
 from rdflib import Graph, Namespace, URIRef

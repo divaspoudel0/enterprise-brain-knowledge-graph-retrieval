@@ -92,6 +92,19 @@ def load_llm():
     return _llm
 
 
+def vector_similarity(question: str, record_ids: list[str]) -> dict:
+    """Cosine similarity of question embedding to each record's embedding."""
+    q_emb = embed_query(question)
+    matrix, chunk_ids, chunk_to_record = load_embeddings()
+    scores = {}
+    for rid in record_ids:
+        cid = f"{rid}:0"
+        if cid in chunk_ids:
+            idx = chunk_ids.index(cid)
+            scores[rid] = float(matrix[idx] @ q_emb)
+    return scores
+
+
 def build_context(chunks: list[dict]) -> str:
     return "\n".join(f"[{c['record_id']}] {c['text']}" for c in chunks)
 
