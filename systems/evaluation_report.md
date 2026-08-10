@@ -7,7 +7,7 @@
 | exact_match | 0.002 | 0.002 | +0.000 | 0.459 | 0.716 | +0.257 |
 | token_f1 | 0.106 | 0.234 | +0.128 | 0.497 | 0.760 | +0.263 |
 | substring | 0.437 | 0.756 | +0.319 | 0.465 | 0.743 | +0.278 |
-| semantic | 0.106 | 0.234 | +0.128 | 0.497 | 0.760 | +0.263 |
+| semantic | 0.657 | 0.722 | +0.065 | 0.782 | 0.887 | +0.105 |
 ## By Hop Count
 
 ### exact_match
@@ -41,10 +41,10 @@
 
 | System | 1-hop | 2-hop | 3-hop |
 |--------|-------|-------|-------|
-| Baseline (free-text) | 0.142 | 0.033 | 0.027 |
-| Hybrid (free-text) | 0.303 | 0.053 | 0.134 |
-| Baseline (structured) | 0.580 | 0.314 | 0.333 |
-| Hybrid (structured) | 0.891 | 0.293 | 0.721 |
+| Baseline (free-text) | 0.675 | 0.580 | 0.668 |
+| Hybrid (free-text) | 0.755 | 0.593 | 0.729 |
+| Baseline (structured) | 0.820 | 0.680 | 0.729 |
+| Hybrid (structured) | 0.958 | 0.615 | 0.890 |
 
 ## Retrieval Metrics (P@k / MRR)
 
@@ -62,11 +62,11 @@
 | Baseline | exact_match | 0.002 | 0.459 | +0.457 |
 | Baseline | token_f1 | 0.106 | 0.497 | +0.391 |
 | Baseline | substring | 0.437 | 0.465 | +0.028 |
-| Baseline | semantic | 0.106 | 0.497 | +0.391 |
+| Baseline | semantic | 0.657 | 0.782 | +0.125 |
 | Hybrid | exact_match | 0.002 | 0.716 | +0.715 |
 | Hybrid | token_f1 | 0.234 | 0.760 | +0.526 |
 | Hybrid | substring | 0.756 | 0.743 | -0.013 |
-| Hybrid | semantic | 0.234 | 0.760 | +0.526 |
+| Hybrid | semantic | 0.722 | 0.887 | +0.165 |
 
 ## Key Findings
 
