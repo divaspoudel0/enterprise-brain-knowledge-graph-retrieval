@@ -1,0 +1,316 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix eb:   <https://github.com/divaspoudel0/enterprise-brain-knowledge-graph-retrieval/ontology#> .
+@base        <https://github.com/divaspoudel0/enterprise-brain-knowledge-graph-retrieval/ontology> .
+
+<> a owl:Ontology ;
+    rdfs:label "Enterprise Brain Ontology v2" ;
+    rdfs:comment "OWL 2 DL schema for the Enterprise Brain synthetic enterprise dataset (Customer, Order, Payment, Complaint, Product). Superset of v1: adds OWL enumerations for statuses/categories, a subclass taxonomy for Product and Complaint, time-validity annotations (validFrom/validTo), and documented SWRL-style rules (eb:atRisk). v1 instance data validates against this ontology (backward compatible)." ;
+    owl:versionInfo "2.0" .
+
+############################################
+# Classes
+############################################
+
+eb:Customer a owl:Class ;
+    rdfs:label "Customer" ;
+    rdfs:comment "A person who places orders and may file complaints." .
+
+eb:Order a owl:Class ;
+    rdfs:label "Order" ;
+    rdfs:comment "A purchase order placed by a customer for a single product." ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty eb:orderPlacedBy ; owl:cardinality 1 ],
+        [ a owl:Restriction ; owl:onProperty eb:forProduct ;   owl:cardinality 1 ] .
+
+eb:Payment a owl:Class ;
+    rdfs:label "Payment" ;
+    rdfs:comment "A payment against an order. Status is a value of the eb:PaymentStatus enumerated datatype." ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty eb:paymentForOrder ; owl:cardinality 1 ] .
+
+eb:Complaint a owl:Class ;
+    rdfs:label "Complaint" ;
+    rdfs:comment "A customer complaint about an order, filed by exactly one customer." ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty eb:complaintFiledBy ; owl:cardinality 1 ],
+        [ a owl:Restriction ; owl:onProperty eb:aboutOrder ;       owl:cardinality 1 ] .
+
+eb:Product a owl:Class ;
+    rdfs:label "Product" ;
+    rdfs:comment "A product that can be ordered." .
+
+############################################
+# Subclass taxonomy (v2)
+############################################
+
+eb:ElectronicsProduct a owl:Class ;
+    rdfs:label "Electronics product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Electronics category." .
+
+eb:AccessoriesProduct a owl:Class ;
+    rdfs:label "Accessories product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Accessories category." .
+
+eb:HomeKitchenProduct a owl:Class ;
+    rdfs:label "Home & Kitchen product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Home & Kitchen category." .
+
+eb:OfficeProduct a owl:Class ;
+    rdfs:label "Office product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Office category." .
+
+eb:PersonalCareProduct a owl:Class ;
+    rdfs:label "Personal Care product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Personal Care category." .
+
+eb:SportsOutdoorsProduct a owl:Class ;
+    rdfs:label "Sports & Outdoors product" ;
+    rdfs:subClassOf eb:Product ;
+    rdfs:comment "Product in the Sports & Outdoors category." .
+
+eb:BillingComplaint a owl:Class ;
+    rdfs:label "Billing complaint" ;
+    rdfs:subClassOf eb:Complaint ;
+    rdfs:comment "Complaint in the billing category." .
+
+eb:DeliveryComplaint a owl:Class ;
+    rdfs:label "Delivery complaint" ;
+    rdfs:subClassOf eb:Complaint ;
+    rdfs:comment "Complaint in the delivery category." .
+
+eb:ProductQualityComplaint a owl:Class ;
+    rdfs:label "Product-quality complaint" ;
+    rdfs:subClassOf eb:Complaint ;
+    rdfs:comment "Complaint in the product_quality category." .
+
+eb:ServiceComplaint a owl:Class ;
+    rdfs:label "Service complaint" ;
+    rdfs:subClassOf eb:Complaint ;
+    rdfs:comment "Complaint in the service category." .
+
+eb:RefundComplaint a owl:Class ;
+    rdfs:label "Refund complaint" ;
+    rdfs:subClassOf eb:Complaint ;
+    rdfs:comment "Complaint in the refund category." .
+
+############################################
+# Enumerated datatypes (v2)
+############################################
+
+eb:OrderStatus a rdfs:Datatype ;
+    rdfs:label "Order status values" ;
+    rdfs:comment "Enumerated datatype: {completed, pending, cancelled, refunded}. Enforces the status values that v1 held as bare strings." ;
+    owl:equivalentClass
+        [ a owl:DataRange ;
+          owl:oneOf ( "completed" "pending" "cancelled" "refunded" ) ] .
+
+eb:PaymentStatus a rdfs:Datatype ;
+    rdfs:label "Payment status values" ;
+    rdfs:comment "Enumerated datatype: {paid, overdue, failed}." ;
+    owl:equivalentClass
+        [ a owl:DataRange ;
+          owl:oneOf ( "paid" "overdue" "failed" ) ] .
+
+eb:ComplaintCategory a rdfs:Datatype ;
+    rdfs:label "Complaint category values" ;
+    rdfs:comment "Enumerated datatype: {billing, delivery, product_quality, service, refund}." ;
+    owl:equivalentClass
+        [ a owl:DataRange ;
+          owl:oneOf ( "billing" "delivery" "product_quality" "service" "refund" ) ] .
+
+############################################
+# Object properties (relationships)
+############################################
+
+eb:placedOrder a owl:ObjectProperty ;
+    rdfs:label "placed order" ;
+    rdfs:comment "Customer -PLACED-> Order." ;
+    rdfs:domain eb:Customer ;
+    rdfs:range  eb:Order ;
+    owl:inverseOf eb:orderPlacedBy .
+
+eb:orderPlacedBy a owl:ObjectProperty ;
+    rdfs:label "order placed by" ;
+    rdfs:comment "Order -PLACED_BY-> Customer (inverse of placedOrder)." ;
+    rdfs:domain eb:Order ;
+    rdfs:range  eb:Customer ;
+    owl:inverseOf eb:placedOrder .
+
+eb:forProduct a owl:ObjectProperty ;
+    rdfs:label "for product" ;
+    rdfs:comment "Order -FOR-> Product." ;
+    rdfs:domain eb:Order ;
+    rdfs:range  eb:Product ;
+    owl:inverseOf eb:productOrderedIn .
+
+eb:productOrderedIn a owl:ObjectProperty ;
+    rdfs:label "product ordered in" ;
+    rdfs:comment "Product -ORDERED_IN-> Order (inverse of forProduct)." ;
+    rdfs:domain eb:Product ;
+    rdfs:range  eb:Order ;
+    owl:inverseOf eb:forProduct .
+
+eb:hasPayment a owl:ObjectProperty ;
+    rdfs:label "has payment" ;
+    rdfs:comment "Order -HAS_PAYMENT-> Payment." ;
+    rdfs:domain eb:Order ;
+    rdfs:range  eb:Payment ;
+    owl:inverseOf eb:paymentForOrder .
+
+eb:paymentForOrder a owl:ObjectProperty ;
+    rdfs:label "payment for order" ;
+    rdfs:comment "Payment -FOR_ORDER-> Order (inverse of hasPayment)." ;
+    rdfs:domain eb:Payment ;
+    rdfs:range  eb:Order ;
+    owl:inverseOf eb:hasPayment .
+
+eb:filedComplaint a owl:ObjectProperty ;
+    rdfs:label "filed complaint" ;
+    rdfs:comment "Customer -FILED-> Complaint." ;
+    rdfs:domain eb:Customer ;
+    rdfs:range  eb:Complaint ;
+    owl:inverseOf eb:complaintFiledBy .
+
+eb:complaintFiledBy a owl:ObjectProperty ;
+    rdfs:label "complaint filed by" ;
+    rdfs:comment "Complaint -FILED_BY-> Customer (inverse of filedComplaint)." ;
+    rdfs:domain eb:Complaint ;
+    rdfs:range  eb:Customer ;
+    owl:inverseOf eb:filedComplaint .
+
+eb:aboutOrder a owl:ObjectProperty ;
+    rdfs:label "about order" ;
+    rdfs:comment "Complaint -ABOUT-> Order." ;
+    rdfs:domain eb:Complaint ;
+    rdfs:range  eb:Order ;
+    owl:inverseOf eb:orderComplainedAbout .
+
+eb:orderComplainedAbout a owl:ObjectProperty ;
+    rdfs:label "order complained about" ;
+    rdfs:comment "Order -COMPLAINED_ABOUT-> Complaint (inverse of aboutOrder)." ;
+    rdfs:domain eb:Order ;
+    rdfs:range  eb:Complaint ;
+    owl:inverseOf eb:aboutOrder .
+
+############################################
+# Data properties
+############################################
+
+eb:source_record_id a owl:DatatypeProperty ;
+    rdfs:label "source record id" ;
+    rdfs:comment "Provenance (DATA_PIPELINE.md section 2): the id of the original generated row this node was derived from. Relationships carry the same pointer on the edge (Neo4j) or via the inverse property in the instance graph (RDF)." ;
+    rdfs:range xsd:string .
+
+eb:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    rdfs:comment "Entity-local row id (customer_id, order_id, ...)." ;
+    rdfs:range xsd:string .
+
+eb:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "Customer name or Product name." ;
+    rdfs:range xsd:string .
+
+eb:region a owl:DatatypeProperty ;
+    rdfs:label "region" ;
+    rdfs:comment "Customer region." ;
+    rdfs:range xsd:string .
+
+eb:signup_date a owl:DatatypeProperty ;
+    rdfs:label "signup date" ;
+    rdfs:comment "Customer signup date." ;
+    rdfs:range xsd:date .
+
+eb:order_date a owl:DatatypeProperty ;
+    rdfs:label "order date" ;
+    rdfs:comment "Date the order was placed." ;
+    rdfs:range xsd:date .
+
+eb:amount a owl:DatatypeProperty ;
+    rdfs:label "amount" ;
+    rdfs:comment "Order or payment amount." ;
+    rdfs:range xsd:decimal .
+
+eb:status a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    rdfs:comment "Order or payment status. The `status` property is shared by Order and Payment, so its RDF range stays xsd:string (v1 backward compatible); the allowed values are the enumerated datatypes eb:OrderStatus ({completed,pending,cancelled,refunded}) for Order owners and eb:PaymentStatus ({paid,overdue,failed}) for Payment owners, enforced as a data-level constraint by verify_data_v2.py." ;
+    rdfs:range xsd:string .
+
+eb:due_date a owl:DatatypeProperty ;
+    rdfs:label "due date" ;
+    rdfs:comment "Payment due date." ;
+    rdfs:range xsd:date .
+
+eb:paid_date a owl:DatatypeProperty ;
+    rdfs:label "paid date" ;
+    rdfs:comment "Payment paid date (absent until paid)." ;
+    rdfs:range xsd:date .
+
+eb:filed_date a owl:DatatypeProperty ;
+    rdfs:label "filed date" ;
+    rdfs:comment "Date the complaint was filed." ;
+    rdfs:range xsd:date .
+
+eb:category a owl:DatatypeProperty ;
+    rdfs:label "category" ;
+    rdfs:comment "Complaint category or product category. Shared by Complaint and Product, so the RDF range stays xsd:string (v1 backward compatible); complaint category values are the enumerated datatype eb:ComplaintCategory, product categories map to the eb:*Product subclasses (v2 taxonomy)." ;
+    rdfs:range xsd:string .
+
+eb:price a owl:DatatypeProperty ;
+    rdfs:label "price" ;
+    rdfs:comment "Product unit price." ;
+    rdfs:range xsd:decimal .
+
+eb:free_text_description a owl:DatatypeProperty ;
+    rdfs:label "free text description" ;
+    rdfs:comment "Free-text field (e.g. complaint description). Exactly this field is derived from the structured record it annotates (DATA_PIPELINE.md section 1.2)." ;
+    rdfs:range xsd:string .
+
+############################################
+# Time-validity annotations (v2)
+############################################
+
+eb:validFrom a owl:DatatypeProperty ;
+    rdfs:label "valid from" ;
+    rdfs:comment "Start of the validity interval of the fact this annotation is attached to (OWL-Time-inspired). Used to answer 'as of date' temporal questions. Applied to status facts on orders and payments." ;
+    rdfs:range xsd:date .
+
+eb:validTo a owl:DatatypeProperty ;
+    rdfs:label "valid to" ;
+    rdfs:comment "End of the validity interval of the fact this annotation is attached to; a status value remains current until validTo. Used to answer 'as of date' temporal questions." ;
+    rdfs:range xsd:date .
+
+eb:statusChangedOn a owl:DatatypeProperty ;
+    rdfs:label "status changed on" ;
+    rdfs:comment "Date at which an order/payment status transitioned (the previous status's validTo and the new status's validFrom). Present on entities with a recorded status change." ;
+    rdfs:range xsd:date .
+
+eb:previousStatus a owl:DatatypeProperty ;
+    rdfs:label "previous status" ;
+    rdfs:comment "The status value that held before statusChangedOn (enables before/after temporal questions)." ;
+    rdfs:range xsd:string .
+
+############################################
+# SWRL-style rules (v2, documented)
+############################################
+
+eb:atRisk a owl:DatatypeProperty ;
+    rdfs:label "at risk" ;
+    rdfs:comment "Derived flag (xsd:boolean) on a Customer. Documented SWRL rule (not axiomatized): Customer(?c) ^ filedComplaint(?c,?comp) ^ aboutOrder(?comp,?o) ^ hasPayment(?o,?p) ^ Payment(?p) ^ status(?p, \"overdue\") -> atRisk(?c, true). The v2 data generator materializes this derivation and verify_graph_v2 checks the materialization against the rule preconditions." ;
+    rdfs:domain eb:Customer ;
+    rdfs:range  xsd:boolean .
+
+eb:swrlRule a owl:AnnotationProperty ;
+    rdfs:label "SWRL rule" ;
+    rdfs:comment "Annotation carrying a documented SWRL-style rule string in the Enterprise Brain ontology." .
+
+<> eb:swrlRule """Customer(?c) ^ filedComplaint(?c,?comp) ^ aboutOrder(?comp,?o) ^ hasPayment(?o,?p) ^ Payment(?p) ^ status(?p, "overdue") -> atRisk(?c, true)""" .
