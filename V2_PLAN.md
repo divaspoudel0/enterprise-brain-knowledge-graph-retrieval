@@ -159,7 +159,7 @@ v1's rule-based hybrid stays in the repo (baseline v2 "hybrid-rule"); the new on
 
 | Component | v1 (frozen) | v2 new | Training signal |
 |---|---|---|---|
-| Entity linking | regex `ID_RE` | embedding + LLM mention→entity candidate ranking (names/products/categories → IDs) | v2 train questions (natural-language, no embedded IDs) + label = verified answer entities |
+| Entity linking | regex `ID_RE` | multilingual embedding (intfloat/multilingual-e5-small) mention→entity retrieval over a mention catalog (products, customers in Devanagari); regex fast path for ID references | bge-small-en-v1.5 cannot embed Devanagari names (measured); multilingual catalog retrieval is the learned replacement |
 | Hop controller | regex cascade | small classifier (question embedding + linked-entity features → {1,2,3}) | v2 train questions; labels = verified SPARQL hops |
 | Traversal | brute-force 10^h chains | relation-path planning: LLM proposes relation sequence → validated against ontology → targeted SPARQL walk (RoG/PoG) | prompt-only (no training); plan validated by execution |
 | Fusion | linear 0.8/0.2 | linear (sensitivity reported) + RRF comparison | n/a |
@@ -171,6 +171,24 @@ v1's rule-based hybrid stays in the repo (baseline v2 "hybrid-rule"); the new on
 - Hop-controller accuracy (learned vs rule vs oracle) on test.
 - Traversal: paths enumerated (~1 planned vs 1000 brute) and accuracy.
 - The **plan is the explanation** → feeds S10 provenance rendering.
+
+### D1 status: DONE (results committed)
+
+| Component | Metric | Result |
+|---|---|---|
+| Linker (mentions-only, 751 q, natural-language surfaces regex can't parse) | learned recall@1 / recall@5 vs regex recall@5 | **0.708 / 0.776 vs 0.264** |
+| Linker (all 1281 q) | combined (regex IDs + learned mentions) recall@1 / recall@5 vs regex-only recall@5 | **0.752 / 0.961 vs 0.568** |
+| Hop controller (test 278) | learned vs rule vs oracle accuracy | **0.986 vs 0.791 vs 1.000** |
+| Traversal (test 278) | planned paths/q vs brute-force queries/q | **1.18 vs 119.2** |
+| End-to-end (test 278) | hybrid-learned vs hybrid-rule EM / F1 | **0.496 / 0.512 vs 0.399 / 0.422** |
+| Plan validity (LLM planner, hop1 sample) | validated plans | 40/40 (100%) |
+
+Components: `systems/hybrid/entity_linker.py`, `hop_controller.py`, `relation_planner.py`,
+`run_hybrid_learned.py` (plan-then-execute), `run_hybrid_rule_v2.py` (baseline).
+T2 note: the temporal "as of"/"changed on" sub-templates embed the answer in the question
+("changed status from X to Y" → gold X) while context shows the current status; the fixed
+"answer ONLY from context" prompt biases both systems there (learned 0.154 vs rule 0.200 EM
+on T2) — a benchmark/prompt nuance, not a regression of the learned components.
 
 ---
 

@@ -1,8 +1,1 @@
-{
-  "stats": {
-    "valid": 30,
-    "invalid": 0,
-    "total": 30
-  },
-  "invalid_examples": []
-}
+{"llm": true, "stats": {"valid": 40, "invalid": 0, "total": 40, "empty": 40, "retried": 0}, "invalid_examples": []}
