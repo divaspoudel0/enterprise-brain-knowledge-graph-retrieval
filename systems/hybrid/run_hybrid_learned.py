@@ -75,8 +75,11 @@ def load_hop_model():
     global _hop_model, _hop_scaler
     if _hop_model is None:
         import joblib
-        from pathlib import Path as P
         base = LEARNED / "hop_controller_assets"
+        if not (base / "model.joblib").exists():
+            print("hop-controller assets missing — training now...")
+            from hybrid.hop_controller import train_and_save
+            train_and_save()
         _hop_model = joblib.load(base / "model.joblib")
         _hop_scaler = joblib.load(base / "scaler.joblib")
     return _hop_model, _hop_scaler

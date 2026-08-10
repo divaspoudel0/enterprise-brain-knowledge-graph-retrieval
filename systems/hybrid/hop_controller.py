@@ -98,7 +98,9 @@ def rule_hop(question: str) -> int:
     return 2
 
 
-def main() -> int:
+def train_and_save() -> dict:
+    """Train the hop controller on the benchmark_v2 train split and persist
+    model + scaler under learned/hop_controller_assets. Returns metrics."""
     questions = load_benchmark()
     texts = [q["question"] for q in questions]
     print("embedding questions...")
@@ -129,11 +131,6 @@ def main() -> int:
 
     rule_preds = np.asarray([rule_hop(t) for t in texts])
     rule_test = float((rule_preds[test] == y[test]).mean())
-    oracle_test = 1.0
-
-    print(f"hop controller learned accuracy — train {learned_train:.3f}, "
-          f"val {learned_val:.3f}, test {learned_test:.3f}")
-    print(f"rule (v1 cascade) test {rule_test:.3f}; oracle test {oracle_test:.3f}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     assets = OUT_DIR / "hop_controller_assets"
@@ -142,12 +139,22 @@ def main() -> int:
     joblib.dump(clf, assets / "model.joblib")
     joblib.dump(scaler, assets / "scaler.joblib")
 
-    out = OUT_DIR / "hop_controller.json"
-    out.write_text(json.dumps({
+    return {
         "learned_train": learned_train, "learned_val": learned_val,
-        "learned_test": learned_test, "rule_test": rule_test, "oracle_test": oracle_test,
+        "learned_test": learned_test, "rule_test": rule_test, "oracle_test": 1.0,
         "n_train": int(train.sum()), "n_val": int(val.sum()), "n_test": int(test.sum()),
-    }, indent=2) + "\n", encoding="utf-8")
+    }
+
+
+def main() -> int:
+    metrics = train_and_save()
+    print(f"hop controller learned accuracy — train {metrics['learned_train']:.3f}, "
+          f"val {metrics['learned_val']:.3f}, test {metrics['learned_test']:.3f}")
+    print(f"rule (v1 cascade) test {metrics['rule_test']:.3f}; "
+          f"oracle test {metrics['oracle_test']:.3f}")
+
+    out = OUT_DIR / "hop_controller.json"
+    out.write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {out}")
     return 0
 
