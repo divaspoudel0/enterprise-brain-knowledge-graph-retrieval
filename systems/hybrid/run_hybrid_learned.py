@@ -36,7 +36,7 @@ from rdflib import Graph, URIRef
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import (QUERY_PREFIX, TOP_K, STRUCTURED_ANSWER_TEMPLATE,
                     load_llm, embed_query)
-from hybrid.entity_linker import EntityLinker, load_v2_corpus
+from hybrid.entity_linker import EntityLinker, load_v2_corpus, CORPUS
 from hybrid.hop_controller import entity_features, rule_hop
 from hybrid.relation_planner import PathPlanner, EB_NS, RELATIONS, node
 
@@ -54,6 +54,9 @@ _g = None
 _linker = None
 _hop_model = None
 _hop_scaler = None
+_corpus_matrix = None
+_corpus_meta = None
+_corpus_map = None
 
 
 def get_graph() -> Graph:
@@ -142,16 +145,21 @@ def score_answer(pred: str, gold: str, gold_ids: list[str]) -> dict:
 
 
 def v2_retrieve(linker: EntityLinker, query_emb, k: int = TOP_K) -> list[dict]:
-    """Top-k vector retrieval over the v2 embedding index (like common.retrieve)."""
-    scores = linker.matrix @ query_emb
+    """Top-k vector retrieval over the v2 corpus embedding index."""
+    global _corpus_matrix, _corpus_meta, _corpus_map
+    if _corpus_matrix is None:
+        _corpus_matrix = np.load(CORPUS / "embeddings_v2.npy")
+        _corpus_meta = json.loads((CORPUS / "embeddings_meta_v2.json").read_text(encoding="utf-8"))
+        _corpus_map = {r["record_id"]: r for r in load_v2_corpus()}
+    scores = _corpus_matrix @ query_emb
     order = np.argsort(-scores)[:k]
     out = []
     for idx in order:
         idx = int(idx)
-        cid = linker.meta["chunk_ids"][idx]
-        rid = linker.meta["chunk_to_record"][cid]
+        cid = _corpus_meta["chunk_ids"][idx]
+        rid = _corpus_meta["chunk_to_record"][cid]
         out.append({"record_id": rid, "score": float(scores[idx]),
-                    "text": linker.corpus[rid]["text"][:120]})
+                    "text": _corpus_map[rid]["text"][:120]})
     return out
 
 
@@ -206,12 +214,12 @@ def main() -> int:
         vec = v2_retrieve(linker, embed_query(qtext), k=TOP_K)
         ctx_parts = []
         for c in cands[:TOP_K]:
-            rec = linker.corpus.get(c["record_id"])
+            rec = _corpus_map.get(c["record_id"])
             if rec is None:
                 continue
             ctx_parts.append(rec["text"])
         for v in vec[: TOP_K - len(ctx_parts)]:
-            rec = linker.corpus.get(v["record_id"])
+            rec = _corpus_map.get(v["record_id"])
             if rec is not None:
                 ctx_parts.append(rec["text"])
 
