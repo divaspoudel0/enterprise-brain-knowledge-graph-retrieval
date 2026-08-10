@@ -125,29 +125,28 @@ def generate_structured_answer(llm, prompt: str) -> dict:
     out = llm(prompt, max_new_tokens=STRUCTURED_MAX_NEW_TOKENS, do_sample=False,
               top_p=None, temperature=None)[0]["generated_text"]
     raw = out[len(prompt):].strip() if out.startswith(prompt) else out.strip()
-    lines = raw.splitlines()
     predicted = ""
     explanation = ""
-    for i, line in enumerate(lines):
-        low = line.lower().strip()
-        if low.startswith("predicted_answer:"):
-            predicted = line.split(":", 1)[1].strip()
-            # explanation may follow on later lines
-            for j in range(i + 1, len(lines)):
-                if lines[j].lower().startswith("explanation:"):
-                    explanation = lines[j].split(":", 1)[1].strip()
-                    break
-            break
-    if not predicted:
-        # Prompt ends in "predicted_answer:" so the model continues with the value;
-        # take the first non-empty line before any "explanation:" line.
+    # 1) explicit "predicted_answer:" marker anywhere in the raw text — take the
+    #    LAST non-empty one (the model sometimes repeats the full output format).
+    for m in re.finditer(r"predicted_answer\s*:\s*([^\n]*)", raw, re.IGNORECASE):
+        val = m.group(1).strip()
+        if val:
+            predicted = val
+    if predicted:
+        m = re.search(r"explanation\s*:\s*(.*)", raw, re.DOTALL | re.IGNORECASE)
+        if m:
+            explanation = m.group(1).strip()
+    else:
+        # 2) the prompt ends in "predicted_answer:" so the model continues with
+        #    the value — take the first non-empty line(s) before any "explanation:".
         body = []
-        for line in lines:
-            if line.lower().startswith("explanation:"):
-                explanation = line.split(":", 1)[1].strip()
+        for line in raw.splitlines():
+            if re.match(r"explanation\s*:", line, re.IGNORECASE):
+                explanation = re.split(r"explanation\s*:\s*", line, 1, re.IGNORECASE)[1]
                 break
-            body.append(line)
-        predicted = " ".join(l.strip() for l in body if l.strip()).strip()
+            body.append(line.strip())
+        predicted = " ".join(l for l in body if l).strip()
     return {"predicted_answer": predicted, "explanation": explanation, "raw": raw}
 
 
