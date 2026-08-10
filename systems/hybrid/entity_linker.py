@@ -154,7 +154,11 @@ class EntityLinker:
         hitsk = 0
         regex_hits1 = 0
         regex_hitsk = 0
+        m_hits1 = 0
+        m_hitsk = 0
+        m_regex_hitsk = 0
         n_gt = 0
+        n_mentions = 0
         skipped = 0
         id_re = _re.compile(r"\b(c_\d+|o_\d{5}|p_\d{4}|pay_\d{5}|comp_\d{4})\b")
         details = []
@@ -177,6 +181,15 @@ class EntityLinker:
             regex_hits1 += re1
             regex_hitsk += rek
 
+            # mentions-only breakdown: q with natural-language surface forms
+            # (product names, customer names, categories, regions) that regex
+            # cannot extract — the honest real-world linking test.
+            if q.get("mentions_only"):
+                n_mentions += 1
+                m_hits1 += r1
+                m_hitsk += rk
+                m_regex_hitsk += rek
+
             n_gt += 1
             details.append({
                 "qid": q["qid"], "gt_entities": sorted(gt),
@@ -190,7 +203,14 @@ class EntityLinker:
         return {
             "n": n, "skipped_no_gt": skipped, "recall@1": hits1 / n,
             f"recall@{k}": hitsk / n, "regex_recall@1": regex_hits1 / n,
-            f"regex_recall@{k}": regex_hitsk / n, "details": details,
+            f"regex_recall@{k}": regex_hitsk / n,
+            "mentions_only": {
+                "n": n_mentions,
+                "recall@1": m_hits1 / n_mentions if n_mentions else 0,
+                f"recall@{k}": m_hitsk / n_mentions if n_mentions else 0,
+                f"regex_recall@{k}": m_regex_hitsk / n_mentions if n_mentions else 0,
+            },
+            "details": details,
         }
 
 
@@ -211,6 +231,10 @@ def main() -> int:
           f"recall@1={result['recall@1']:.3f}, recall@{args.k}={result[f'recall@{args.k}']:.3f}")
     print(f"  regex baseline: recall@1={result['regex_recall@1']:.3f}, "
           f"recall@{args.k}={result[f'regex_recall@{args.k}']:.3f}")
+    mo = result["mentions_only"]
+    print(f"  mentions-only ({mo['n']} q, natural-language surfaces regex cannot parse): "
+          f"learned recall@1={mo['recall@1']:.3f}, learned recall@{args.k}={mo[f'recall@{args.k}']:.3f}, "
+          f"regex recall@{args.k}={mo[f'regex_recall@{args.k}']:.3f}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / f"linker_{args.benchmark}.json"
