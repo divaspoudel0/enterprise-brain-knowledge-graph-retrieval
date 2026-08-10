@@ -237,6 +237,7 @@ def main() -> int:
         prompt = STRUCTURED_ANSWER_TEMPLATE.format(context=context, question=qtext)
         out = llm(prompt, max_new_tokens=64)[0]["generated_text"]
         answer = out.rsplit("predicted_answer", 1)[-1].strip() if "predicted_answer" in out else out
+        answer = answer.split("\nexplanation:")[0].strip().strip(":").strip()
 
         # 5) score
         sc = score_answer(answer, gold, gold_ids)
