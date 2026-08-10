@@ -1,0 +1,4754 @@
+[
+  {
+    "qid": "Q0003",
+    "template_id": "1hop_order_status",
+    "group": "T1",
+    "question": "What is the status of order o_00205?",
+    "gold": "completed",
+    "predicted": "completed",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00205"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0006",
+    "template_id": "1hop_order_status",
+    "group": "T1",
+    "question": "What is the status of order o_02007?",
+    "gold": "completed",
+    "predicted": "24.99",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02007"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0017",
+    "template_id": "1hop_order_status",
+    "group": "T1",
+    "question": "What is the status of order o_03457?",
+    "gold": "completed",
+    "predicted": "completed",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03457"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0020",
+    "template_id": "1hop_order_status",
+    "group": "T1",
+    "question": "What is the status of order o_00768?",
+    "gold": "completed",
+    "predicted": "completed\n\n### explanation: The context directly mentions that the status of order o_00768 is completed.",
+    "em": false,
+    "f1": 0.13333333333333333,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00768"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0029",
+    "template_id": "1hop_order_status",
+    "group": "T1",
+    "question": "What is the status of order o_05324?",
+    "gold": "completed",
+    "predicted": "completed",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05324"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0032",
+    "template_id": "1hop_order_amount",
+    "group": "T1",
+    "question": "What is the amount of order o_03437?",
+    "gold": "22.99",
+    "predicted": "22.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03437"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0045",
+    "template_id": "1hop_order_amount",
+    "group": "T1",
+    "question": "What is the amount of order o_02788?",
+    "gold": "39.99",
+    "predicted": "39.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02788"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0052",
+    "template_id": "1hop_order_amount",
+    "group": "T1",
+    "question": "What is the amount of order o_00760?",
+    "gold": "14.99",
+    "predicted": "14.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00760"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0060",
+    "template_id": "1hop_order_amount",
+    "group": "T1",
+    "question": "What is the amount of order o_06612?",
+    "gold": "11.99",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06612"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0069",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0038 (Notebook Stand)?",
+    "gold": "19.99",
+    "predicted": "19.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0038"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0074",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0074 (Ergonomic Chair Mat)?",
+    "gold": "29.99",
+    "predicted": "29.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0074"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0076",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0091 (Electric Shaver)?",
+    "gold": "39.99",
+    "predicted": "39.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0091"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0077",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0009 (Smart Watch)?",
+    "gold": "89.99",
+    "predicted": "89.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0009"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0081",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0099 (UV Sterilizer)?",
+    "gold": "19.99",
+    "predicted": "19.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0099"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0090",
+    "template_id": "1hop_product_price",
+    "group": "T1",
+    "question": "What is the price of product p_0108 (Running Shoes)?",
+    "gold": "69.99",
+    "predicted": "69.99",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0108"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0093",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0046?",
+    "gold": "Home & Kitchen",
+    "predicted": "Home & Kitchen",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0046"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0095",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0086?",
+    "gold": "Personal Care",
+    "predicted": "Personal Care",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0086"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0101",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0078?",
+    "gold": "Office",
+    "predicted": "Category: Office",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0078"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0106",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0032?",
+    "gold": "Accessories",
+    "predicted": "Accessories",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0032"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0112",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0089?",
+    "gold": "Personal Care",
+    "predicted": "Personal Care",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0089"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0115",
+    "template_id": "1hop_product_category",
+    "group": "T1",
+    "question": "What is the category of product p_0113?",
+    "gold": "Sports & Outdoors",
+    "predicted": "Sports & Outdoors",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "p_0113"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0130",
+    "template_id": "1hop_customer_region",
+    "group": "T1",
+    "question": "Which region is customer c_1880 from?",
+    "gold": "Sudurpashchim",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1880"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0141",
+    "template_id": "1hop_customer_region",
+    "group": "T1",
+    "question": "Which region is customer c_1636 from?",
+    "gold": "Koshi",
+    "predicted": "Koshi",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1636"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0143",
+    "template_id": "1hop_customer_region",
+    "group": "T1",
+    "question": "Which region is customer c_0899 from?",
+    "gold": "Karnali",
+    "predicted": "Karnali",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0899"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0152",
+    "template_id": "1hop_customer_signup",
+    "group": "T1",
+    "question": "When did customer c_1730 sign up?",
+    "gold": "2023-08-18",
+    "predicted": "2023-08-18",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1730"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0154",
+    "template_id": "1hop_customer_signup",
+    "group": "T1",
+    "question": "When did customer c_0261 sign up?",
+    "gold": "2024-12-05",
+    "predicted": "2024-12-05",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0261"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0155",
+    "template_id": "1hop_customer_signup",
+    "group": "T1",
+    "question": "When did customer c_1577 sign up?",
+    "gold": "2024-10-24",
+    "predicted": "2024-10-24",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1577"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0162",
+    "template_id": "1hop_customer_signup",
+    "group": "T1",
+    "question": "When did customer c_0048 sign up?",
+    "gold": "2024-12-29",
+    "predicted": "2024-12-29",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0048"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0165",
+    "template_id": "1hop_customer_signup",
+    "group": "T1",
+    "question": "When did customer c_1093 sign up?",
+    "gold": "2024-06-16",
+    "predicted": "2024-06-16",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1093"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0181",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_01253?",
+    "gold": "overdue",
+    "predicted": "must be exactly \"overdue\" without any additional words or punctuation. The explanation should provide a clear and concise description of",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01253"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0185",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_04419?",
+    "gold": "overdue",
+    "predicted": "overdue",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04419"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0186",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_06379?",
+    "gold": "paid",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06379"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0191",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_04907?",
+    "gold": "paid",
+    "predicted": "paid",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04907"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0199",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_06610?",
+    "gold": "failed",
+    "predicted": "failed",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06610"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0200",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_02520?",
+    "gold": "paid",
+    "predicted": "paid",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02520"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0202",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_00475?",
+    "gold": "paid",
+    "predicted": "paid",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00475"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0203",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_01974?",
+    "gold": "overdue",
+    "predicted": "overdue",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01974"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0205",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_04648?",
+    "gold": "paid",
+    "predicted": "paid",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04648"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0206",
+    "template_id": "1hop_payment_status",
+    "group": "T1",
+    "question": "What is the payment status for order o_00646?",
+    "gold": "paid",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00646"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0219",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_04504 due?",
+    "gold": "2025-02-15",
+    "predicted": "due: 2025-02-15",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04504"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0222",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_04323 due?",
+    "gold": "2024-06-26",
+    "predicted": "due: 2024-06-26",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04323"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0233",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_02554 due?",
+    "gold": "2024-07-13",
+    "predicted": "2024-07-13",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02554"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0236",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_05324 due?",
+    "gold": "2024-10-10",
+    "predicted": "2024",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05324"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0238",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_03589 due?",
+    "gold": "2026-01-01",
+    "predicted": "due: 2026-01-01",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03589"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0239",
+    "template_id": "1hop_payment_due",
+    "group": "T1",
+    "question": "When is the payment for order o_07370 due?",
+    "gold": "2024-02-04",
+    "predicted": "due: 2024-02-04",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_07370"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0241",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0925?",
+    "gold": "refund",
+    "predicted": "category: refund",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0925"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0249",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0472?",
+    "gold": "service",
+    "predicted": "18.99",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0472"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0254",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0469?",
+    "gold": "service",
+    "predicted": "category: service",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0469"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0259",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0488?",
+    "gold": "service",
+    "predicted": "service",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0488"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0269",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0834?",
+    "gold": "billing",
+    "predicted": "billing",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0834"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0270",
+    "template_id": "1hop_complaint_category",
+    "group": "T1",
+    "question": "What is the category of complaint comp_0390?",
+    "gold": "delivery",
+    "predicted": "delivery",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0390"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0271",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0194 filed?",
+    "gold": "2025-12-17",
+    "predicted": "2025-1",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0194"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0278",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0111 filed?",
+    "gold": "2025-03-23",
+    "predicted": "2025-03-23\n\nexplanation",
+    "em": false,
+    "f1": 0.6666666666666666,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0111"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0280",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0125 filed?",
+    "gold": "2025-11-20",
+    "predicted": "2025-11",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0125"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0281",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0825 filed?",
+    "gold": "2024-09-05",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0825"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0287",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_1099 filed?",
+    "gold": "2025-10-09",
+    "predicted": "2025-10-09",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_1099"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0289",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0288 filed?",
+    "gold": "2025-11-17",
+    "predicted": "2025-11-17",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0288"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0294",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0512 filed?",
+    "gold": "2025-05-21",
+    "predicted": "2025-05-21",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0512"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0296",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0908 filed?",
+    "gold": "2025-11-14",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0908"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0297",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_1128 filed?",
+    "gold": "2025-10-04",
+    "predicted": "2025-10-04",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_1128"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0299",
+    "template_id": "1hop_complaint_filed",
+    "group": "T1",
+    "question": "When was complaint comp_0104 filed?",
+    "gold": "2025-01-10",
+    "predicted": "2025-01-10",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0104"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0305",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0833 about?",
+    "gold": "o_00795",
+    "predicted": "o_00795",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0833"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0312",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0777 about?",
+    "gold": "o_01251",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0777"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0316",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0932 about?",
+    "gold": "o_07334",
+    "predicted": "o_07334",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0932"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0317",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0585 about?",
+    "gold": "o_06179",
+    "predicted": "o_06179",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0585"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0324",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0446 about?",
+    "gold": "o_01322",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0446"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0325",
+    "template_id": "1hop_complaint_about_order",
+    "group": "T1",
+    "question": "Which order is complaint comp_0120 about?",
+    "gold": "o_00120",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0120"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0337",
+    "template_id": "1hop_order_product",
+    "group": "T1",
+    "question": "What product was ordered in order o_04351?",
+    "gold": "Cutlery Set (24 pc)",
+    "predicted": "Cutlery Set (24 pc)",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04351"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0341",
+    "template_id": "1hop_order_product",
+    "group": "T1",
+    "question": "What product was ordered in order o_00657?",
+    "gold": "Air Fryer",
+    "predicted": "Air Fryer",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00657"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0349",
+    "template_id": "1hop_order_product",
+    "group": "T1",
+    "question": "What product was ordered in order o_01927?",
+    "gold": "Camping Tent 2P",
+    "predicted": "Camping Tent 2P",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01927"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0359",
+    "template_id": "1hop_order_product",
+    "group": "T1",
+    "question": "What product was ordered in order o_00672?",
+    "gold": "Wireless Charger Pad",
+    "predicted": "Wireless Charger Pad",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00672"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0360",
+    "template_id": "1hop_order_product",
+    "group": "T1",
+    "question": "What product was ordered in order o_03435?",
+    "gold": "Smart Speaker",
+    "predicted": "Smart Speaker",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03435"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0369",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0129 order in Q2 2025?",
+    "gold": "USB-C Hub",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0129"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0385",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0145 order in Q2 2025?",
+    "gold": "Bluetooth Headphones",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0145"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0387",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0147 order in Q2 2025?",
+    "gold": "Power Bank 20000mAh",
+    "predicted": "Smart Speaker",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0147"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0390",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0150 order in Q2 2025?",
+    "gold": "USB-C Hub",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0150"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0391",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0151 order in Q2 2025?",
+    "gold": "Webcam Ring Light",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0151"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0408",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0168 order in Q2 2025?",
+    "gold": "Bluetooth Speaker Mini",
+    "predicted": "Bluetooth Speaker Mini",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0168"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0412",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0172 order in Q2 2025?",
+    "gold": "Wireless Mouse",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0172"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0417",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0177 order in Q2 2025?",
+    "gold": "HD Webcam",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0177"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0449",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0209 order in Q2 2025?",
+    "gold": "HDMI Cable 2m",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0209"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0454",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0214 order in Q2 2025?",
+    "gold": "Wireless Charger Pad",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0214"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0461",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0222 order in Q2 2025?",
+    "gold": "Webcam Ring Light",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0222"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0463",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0224 order in Q2 2025?",
+    "gold": "Smart Speaker",
+    "predicted": "Smart Speaker",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0224"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0466",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0227 order in Q2 2025?",
+    "gold": "Wireless Keyboard",
+    "predicted": "HDMI Cable 2m",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0227"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0472",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0233 order in Q2 2025?",
+    "gold": "Wireless Mouse",
+    "predicted": "Wireless Mouse",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0233"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0476",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0237 order in Q2 2025?",
+    "gold": "Portable Monitor 15in",
+    "predicted": "Portable Monitor 15in",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0237"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0479",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0240 order in Q2 2025?",
+    "gold": "Bluetooth Headphones",
+    "predicted": "Document Scanner",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0240"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0481",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0242 order in Q2 2025?",
+    "gold": "Bluetooth Headphones",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0242"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0486",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0247 order in Q2 2025?",
+    "gold": "USB-C Cable 3m",
+    "predicted": "USB-C Cable 3m",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0247"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0490",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0251 order in Q2 2025?",
+    "gold": "Smart Speaker",
+    "predicted": "Smart Speaker",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0251"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0491",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0252 order in Q2 2025?",
+    "gold": "Bluetooth Speaker Mini",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0252"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0494",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0255 order in Q2 2025?",
+    "gold": "LED Desk Lamp",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0255"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0500",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0261 order in Q2 2025?",
+    "gold": "Power Bank 20000mAh",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0261"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0501",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0262 order in Q2 2025?",
+    "gold": "HD Webcam",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0262"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0513",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0275 order in Q2 2025?",
+    "gold": "Audio Splitter",
+    "predicted": "Ind",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0275"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0514",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0276 order in Q2 2025?",
+    "gold": "Webcam Ring Light",
+    "predicted": "Webcam Ring Light",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0276"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0517",
+    "template_id": "p2_product_of_order",
+    "group": "T1",
+    "question": "Which Electronics product did customer c_0280 order in Q2 2025?",
+    "gold": "Smart Watch",
+    "predicted": "Air Purifier Mini",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0280"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0521",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0284's billing complaint is about?",
+    "gold": "2025-07-30",
+    "predicted": "2025-07-30",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0284"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0523",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0286's billing complaint is about?",
+    "gold": "2025-07-04",
+    "predicted": "2025-07-04",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0286"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0527",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0290's billing complaint is about?",
+    "gold": "2025-07-12",
+    "predicted": "2025-07-12",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0290"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0537",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0300's billing complaint is about?",
+    "gold": "2025-08-14",
+    "predicted": "2025-08-14",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0300"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0542",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0305's billing complaint is about?",
+    "gold": "2025-09-13",
+    "predicted": "2024-08-17",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0305"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0543",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0306's billing complaint is about?",
+    "gold": "2025-07-10",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0306"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0547",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0310's billing complaint is about?",
+    "gold": "2025-09-24",
+    "predicted": "2025-09-24",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0310"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0548",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0311's billing complaint is about?",
+    "gold": "2025-09-22",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0311"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0559",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0322's billing complaint is about?",
+    "gold": "2025-07-25",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0322"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0560",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0323's billing complaint is about?",
+    "gold": "2025-09-21",
+    "predicted": "2025-09-21",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0323"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0563",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0326's billing complaint is about?",
+    "gold": "2025-08-06",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0326"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0566",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0330's billing complaint is about?",
+    "gold": "2025-09-25",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0330"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0573",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0337's billing complaint is about?",
+    "gold": "2025-07-07",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0337"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0580",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0344's billing complaint is about?",
+    "gold": "2025-09-13",
+    "predicted": "2025-09-13",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0344"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0587",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0351's billing complaint is about?",
+    "gold": "2025-08-26",
+    "predicted": "2025-08-26",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0351"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0589",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0353's billing complaint is about?",
+    "gold": "2025-08-12",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0353"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0590",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0354's billing complaint is about?",
+    "gold": "2025-08-11",
+    "predicted": "2025-08-11",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0354"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0598",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0362's billing complaint is about?",
+    "gold": "2025-07-07",
+    "predicted": "2025-07-07",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0362"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0601",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0365's billing complaint is about?",
+    "gold": "2025-07-04",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0365"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0605",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0369's billing complaint is about?",
+    "gold": "2025-09-09",
+    "predicted": "I don't know\nex",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0369"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0606",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0370's billing complaint is about?",
+    "gold": "2025-07-28",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0370"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0612",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0376's billing complaint is about?",
+    "gold": "2025-09-30",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0376"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0613",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0377's billing complaint is about?",
+    "gold": "2025-09-05",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0377"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0614",
+    "template_id": "p3_order_date_of_complaint",
+    "group": "T1",
+    "question": "What is the order date of the completed order that customer c_0378's billing complaint is about?",
+    "gold": "2025-09-28",
+    "predicted": "2025-09-28",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0378"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0619",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0003 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-05",
+    "predicted": "2025-03-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0003"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0624",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0008 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-23",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0008"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0633",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0017 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-02-03",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0017"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0637",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0021 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-02",
+    "predicted": "2025-03-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0021"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0645",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0029 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-24",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0029"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0649",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0033 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-02-07",
+    "predicted": "2025-01-08",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0033"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0652",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0036 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-14",
+    "predicted": "202",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0036"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0660",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0045 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-02-01",
+    "predicted": "2025-01-02",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0045"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0663",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0048 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-27",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0048"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0665",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0050 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-17",
+    "predicted": "15-Mar-2025",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0050"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0670",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0055 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-19",
+    "predicted": "2025-03-17",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0055"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0672",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0057 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-14",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0057"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0673",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0058 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-27",
+    "predicted": "2025-03-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0058"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0680",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0065 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-02",
+    "predicted": "March 2, 2025",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0065"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0681",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0066 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-27",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0066"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0694",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0079 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-02",
+    "predicted": "2025-03-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0079"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0697",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0082 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-01",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0082"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0707",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0093 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-01-06",
+    "predicted": "2025-01-23",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0093"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0708",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0094 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-03-09",
+    "predicted": "2025-03-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0094"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0722",
+    "template_id": "p1_payment_due_of_complaint",
+    "group": "T1",
+    "question": "Customer c_0108 filed a complaint in Q1 2025 about an order with an overdue payment due in Q1 2025. What is the due date of that payment?",
+    "gold": "2025-02-14",
+    "predicted": "February 14, 2025",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0108"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 3,
+    "paths_enumerated": 1110
+  },
+  {
+    "qid": "Q0735",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0381 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Blender",
+    "predicted": "Blender",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0381"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0736",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0382 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Bamboo Cutting Board",
+    "predicted": "Bamboo Cutting Board",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0382"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0741",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0387 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Air Fryer",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0387"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0748",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0396 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Cutlery Set (24 pc)",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0396"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0750",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0399 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Bamboo Cutting Board",
+    "predicted": "Bamboo Cutting Board",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0399"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0755",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0404 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Air Fryer",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0404"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0760",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0409 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Rice Cooker",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0409"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0761",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0410 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Bread Maker",
+    "predicted": "I don",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0410"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0768",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0417 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Spice Rack",
+    "predicted": "Spice Rack",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0417"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0773",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0422 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Bread Maker",
+    "predicted": "Bread Maker",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0422"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0779",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0428 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Electric Skillet",
+    "predicted": "Electric Skillet",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0428"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0781",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0430 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Coffee Maker",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0430"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0782",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0432 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Induction Cooktop",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0432"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0784",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0434 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Air Purifier Mini",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0434"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0785",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0435 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Induction Cooktop",
+    "predicted": "I don't",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0435"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0786",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0438 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Induction Cooktop",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0438"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0788",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0440 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Storage Containers (8 pc)",
+    "predicted": "Storage Containers (8 pc)",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0440"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0791",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0444 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Dish Drying Rack",
+    "predicted": "Dish Drying Rack",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0444"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0796",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0450 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Spice Rack",
+    "predicted": "spice rack",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0450"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0809",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0466 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Blender",
+    "predicted": "I don't know\nexplanation",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0466"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0811",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0468 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Garlic Press",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0468"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0814",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0471 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Air Fryer",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0471"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0815",
+    "template_id": "p5_product_of_complaint",
+    "group": "T1",
+    "question": "Which Home & Kitchen product did customer c_0472 order in the order they filed a complaint about in Q4 2025?",
+    "gold": "Bread Maker",
+    "predicted": "I don't know\nex",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0472"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0828",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_2142 order in order o_06488?",
+    "gold": "Portable Monitor 15in",
+    "predicted": "Portable Monitor 15in",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2142",
+      "o_06488"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0836",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_0537 order in order o_01563?",
+    "gold": "Wine Opener Set",
+    "predicted": "Wine Opener Set",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0537",
+      "o_01563"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0837",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_1229 order in order o_03679?",
+    "gold": "Water Bottle 1L",
+    "predicted": "Water Bottle 1L\n\nex",
+    "em": false,
+    "f1": 0.8571428571428571,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1229",
+      "o_03679"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0840",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_0039 order in order o_00559?",
+    "gold": "Electric Skillet",
+    "predicted": "Electric Skillet",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0039",
+      "o_00559"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0842",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_2307 order in order o_07001?",
+    "gold": "Non-stick Frying Pan",
+    "predicted": "Non-stick Frying Pan",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2307",
+      "o_07001"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0844",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_0301 order in order o_01062?",
+    "gold": "Massage Gun",
+    "predicted": "Massage Gun",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0301",
+      "o_01062"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0847",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_2073 order in order o_06274?",
+    "gold": "Cycle Helmet",
+    "predicted": "Cycle Helmet",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2073",
+      "o_06274"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0850",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_1430 order in order o_04312?",
+    "gold": "Laptop Sleeve",
+    "predicted": "p_0022 (Laptop Sleeve)",
+    "em": false,
+    "f1": 0.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "c_1430",
+      "o_04312"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0851",
+    "template_id": "generic_product_of_customer_order",
+    "group": "T1",
+    "question": "What product did customer c_0282 order in order o_00282?",
+    "gold": "Electric Foot Massager",
+    "predicted": "Electric Foot Massager",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0282",
+      "o_00282"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0859",
+    "template_id": "generic_complaint_author_and_payment",
+    "group": "T1",
+    "question": "Which customer filed complaint comp_1130 and what is the payment status for the order it concerns?",
+    "gold": "c_0255; paid",
+    "predicted": "c_0255",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_1130"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0869",
+    "template_id": "generic_complaint_author_and_payment",
+    "group": "T1",
+    "question": "Which customer filed complaint comp_1193 and what is the payment status for the order it concerns?",
+    "gold": "c_0621; paid",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_1193"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0883",
+    "template_id": "generic_complaint_author_and_payment",
+    "group": "T1",
+    "question": "Which customer filed complaint comp_1147 and what is the payment status for the order it concerns?",
+    "gold": "c_1084; paid",
+    "predicted": "c_",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_1147"
+    ],
+    "hops_oracle": 3,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q0889",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_04069 changed status from refunded to completed on 2025-05-31. What was the status of order o_04069 on 2025-05-12?",
+    "gold": "refunded",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04069"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0898",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_02662 changed status from cancelled to completed on 2024-06-20. What was the status of order o_02662 on 2024-05-18?",
+    "gold": "cancelled",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02662"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0902",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_03828 changed status from refunded to completed on 2024-09-15. What was the status of order o_03828 on 2024-08-06?",
+    "gold": "refunded",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03828"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0903",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_00469 changed status from pending to completed on 2025-08-18. What was the status of order o_00469 on 2025-08-09?",
+    "gold": "pending",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00469"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0905",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_02247 changed status from pending to cancelled on 2024-08-12. What was the status of order o_02247 on 2024-07-03?",
+    "gold": "pending",
+    "predicted": "cancelled",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02247"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0906",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_02051 changed status from refunded to completed on 2025-01-31. What was the status of order o_02051 on 2025-01-16?",
+    "gold": "refunded",
+    "predicted": "completed",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02051"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0909",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_03066 changed status from cancelled to completed on 2025-11-03. What was the status of order o_03066 on 2025-10-15?",
+    "gold": "cancelled",
+    "predicted": "completed",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03066"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0915",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_03958 changed status from pending to completed on 2025-05-18. What was the status of order o_03958 on 2025-05-02?",
+    "gold": "pending",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03958"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0930",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_01856 changed status from cancelled to completed on 2025-02-24. What was the status of order o_01856 on 2025-01-31?",
+    "gold": "cancelled",
+    "predicted": "completed",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01856"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0932",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_02647 changed status from pending to completed on 2024-12-05. What was the status of order o_02647 on 2024-11-23?",
+    "gold": "pending",
+    "predicted": "completed",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02647"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0933",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_00459 changed status from cancelled to completed on 2025-06-23. What was the status of order o_00459 on 2025-05-25?",
+    "gold": "cancelled",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00459"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0936",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_04284 changed status from pending to refunded on 2024-06-11. What was the status of order o_04284 on 2024-05-07?",
+    "gold": "pending",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04284"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0942",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_04996 changed status from refunded to pending on 2025-10-09. What was the status of order o_04996 on 2025-09-02?",
+    "gold": "refunded",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04996"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0945",
+    "template_id": "t2_order_status_asof",
+    "group": "T2",
+    "question": "Order o_01958 changed status from refunded to completed on 2025-11-23. What was the status of order o_01958 on 2025-10-28?",
+    "gold": "refunded",
+    "predicted": "completed",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01958"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0946",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_01923 changed status from overdue to paid on 2025-08-28. What was the payment status for order o_01923 on 2025-08-07?",
+    "gold": "overdue",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01923"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0947",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_00302 changed status from failed to paid on 2025-09-24. What was the payment status for order o_00302 on 2025-09-01?",
+    "gold": "failed",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00302"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0951",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_04206 changed status from failed to paid on 2024-09-18. What was the payment status for order o_04206 on 2024-09-02?",
+    "gold": "failed",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04206"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0953",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_06262 changed status from failed to paid on 2025-07-26. What was the payment status for order o_06262 on 2025-06-29?",
+    "gold": "failed",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06262"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0960",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_05249 changed status from failed to paid on 2025-12-01. What was the payment status for order o_05249 on 2025-11-01?",
+    "gold": "failed",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05249"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0962",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_02766 changed status from overdue to paid on 2024-07-05. What was the payment status for order o_02766 on 2024-06-09?",
+    "gold": "overdue",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02766"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0966",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_05225 changed status from failed to paid on 2024-02-23. What was the payment status for order o_05225 on 2024-02-01?",
+    "gold": "failed",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05225"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0968",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_02525 changed status from overdue to paid on 2025-10-07. What was the payment status for order o_02525 on 2025-09-19?",
+    "gold": "overdue",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02525"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0969",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_04930 changed status from paid to overdue on 2024-05-12. What was the payment status for order o_04930 on 2024-04-16?",
+    "gold": "paid",
+    "predicted": "overdue",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04930"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0987",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_01419 changed status from overdue to paid on 2025-03-22. What was the payment status for order o_01419 on 2025-02-26?",
+    "gold": "overdue",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01419"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0989",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_02881 changed status from failed to paid on 2024-04-26. What was the payment status for order o_02881 on 2024-04-06?",
+    "gold": "failed",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02881"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0990",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_05270 changed status from failed to overdue on 2024-02-23. What was the payment status for order o_05270 on 2024-02-04?",
+    "gold": "failed",
+    "predicted": "overdue",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05270"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0992",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_07000 changed status from overdue to paid on 2024-07-28. What was the payment status for order o_07000 on 2024-06-28?",
+    "gold": "overdue",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_07000"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q0993",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_01306 changed status from failed to overdue on 2025-11-26. What was the payment status for order o_01306 on 2025-11-06?",
+    "gold": "failed",
+    "predicted": "overdue",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01306"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1000",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_00003 changed status from paid to overdue on 2025-01-18. What was the payment status for order o_00003 on 2024-12-27?",
+    "gold": "paid",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00003"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1003",
+    "template_id": "t2_payment_status_asof",
+    "group": "T2",
+    "question": "The payment for order o_01508 changed status from failed to paid on 2025-04-04. What was the payment status for order o_01508 on 2025-03-05?",
+    "gold": "failed",
+    "predicted": "paid",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01508"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1009",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_03215 was previously pending. On what date did it change to completed?",
+    "gold": "2025-07-08",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_03215"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1015",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_04994 was previously refunded. On what date did it change to pending?",
+    "gold": "2024-04-05",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04994"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1018",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_01746 was previously pending. On what date did it change to completed?",
+    "gold": "2025-12-31",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_01746"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1020",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_00931 was previously cancelled. On what date did it change to pending?",
+    "gold": "2025-05-28",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00931"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1021",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_02846 was previously refunded. On what date did it change to completed?",
+    "gold": "2024-05-27",
+    "predicted": "I don't know",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02846"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1028",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_07465 was previously refunded. On what date did it change to pending?",
+    "gold": "2025-12-31",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_07465"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1029",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_02361 was previously pending. On what date did it change to completed?",
+    "gold": "2025-10-10",
+    "predicted": "I",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_02361"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1040",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_00820 was previously cancelled. On what date did it change to pending?",
+    "gold": "2024-08-17",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00820"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1041",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_04474 was previously pending. On what date did it change to completed?",
+    "gold": "2024-11-29",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_04474"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1043",
+    "template_id": "t2_order_status_changed_on",
+    "group": "T2",
+    "question": "Order o_06214 was previously pending. On what date did it change to completed?",
+    "gold": "2025-10-18",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06214"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1054",
+    "template_id": "t2_payment_status_changed_on",
+    "group": "T2",
+    "question": "The payment for order o_05342 was previously paid. On what date did it change to overdue?",
+    "gold": "2025-08-31",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_05342"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1062",
+    "template_id": "t2_payment_status_changed_on",
+    "group": "T2",
+    "question": "The payment for order o_06006 was previously failed. On what date did it change to paid?",
+    "gold": "2025-09-09",
+    "predicted": "2025-08-31\n\nex",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_06006"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1078",
+    "template_id": "t2_payment_status_changed_on",
+    "group": "T2",
+    "question": "The payment for order o_00939 was previously paid. On what date did it change to overdue?",
+    "gold": "2024-09-30",
+    "predicted": "20",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_00939"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1088",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0833 or comp_0874?",
+    "gold": "comp_0833",
+    "predicted": "comp_0833",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0833",
+      "comp_0874"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1093",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0056 or comp_0922?",
+    "gold": "comp_0056",
+    "predicted": "comp_0056",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0056",
+      "comp_0922"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1099",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0490 or comp_0278?",
+    "gold": "comp_0490",
+    "predicted": "comp_0278",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0278",
+      "comp_0490"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1101",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0375 or comp_0901?",
+    "gold": "comp_0375",
+    "predicted": "comp_0375",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0375",
+      "comp_0901"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1104",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0481 or comp_0781?",
+    "gold": "comp_0481",
+    "predicted": "comp_0481",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0481",
+      "comp_0781"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1105",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0557 or comp_0672?",
+    "gold": "comp_0557",
+    "predicted": "comp_0557",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0557",
+      "comp_0672"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1107",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0655 or comp_0936?",
+    "gold": "comp_0655",
+    "predicted": "comp_0655",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0655",
+      "comp_0936"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1109",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0695 or comp_0166?",
+    "gold": "comp_0695",
+    "predicted": "comp_0166",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0166",
+      "comp_0695"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1112",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0871 or comp_0474?",
+    "gold": "comp_0871",
+    "predicted": "comp_0474",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0474",
+      "comp_0871"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1113",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0518 or comp_0785?",
+    "gold": "comp_0518",
+    "predicted": "comp_0518",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0518",
+      "comp_0785"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1120",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0462 or comp_1112?",
+    "gold": "comp_0462",
+    "predicted": "comp_0462",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0462",
+      "comp_1112"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1125",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0412 or comp_0861?",
+    "gold": "comp_0412",
+    "predicted": "comp_0412",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0412",
+      "comp_0861"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1129",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0262 or comp_1180?",
+    "gold": "comp_0262",
+    "predicted": "comp_0262",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0262",
+      "comp_1180"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1131",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0977 or comp_0235?",
+    "gold": "comp_0977",
+    "predicted": "comp_0977",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0235",
+      "comp_0977"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1132",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_0013 or comp_1160?",
+    "gold": "comp_0013",
+    "predicted": "comp_0013",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "comp_0013",
+      "comp_1160"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1142",
+    "template_id": "t2_complaint_earlier",
+    "group": "T2",
+    "question": "Which complaint was filed earlier: comp_1198 or comp_0559?",
+    "gold": "comp_1198",
+    "predicted": "comp_0559",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "comp_0559",
+      "comp_1198"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1160",
+    "template_id": "t2_earliest_order",
+    "group": "T2",
+    "question": "What is the earliest order placed by customer c_0260?",
+    "gold": "o_00970",
+    "predicted": "2024-11-08",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0260"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1167",
+    "template_id": "t2_latest_order",
+    "group": "T2",
+    "question": "What is the latest order placed by customer c_2022?",
+    "gold": "o_06132",
+    "predicted": "2025-",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2022"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1172",
+    "template_id": "t2_latest_order",
+    "group": "T2",
+    "question": "What is the latest order placed by customer c_1971?",
+    "gold": "o_05971",
+    "predicted": "o_05971",
+    "em": true,
+    "f1": 1.0,
+    "p5": 1.0,
+    "linked_entities": [
+      "c_1971"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1174",
+    "template_id": "t2_latest_order",
+    "group": "T2",
+    "question": "What is the latest order placed by customer c_0886?",
+    "gold": "o_02654",
+    "predicted": "2025-07-09",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0886"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1175",
+    "template_id": "t2_latest_order",
+    "group": "T2",
+    "question": "What is the latest order placed by customer c_1343?",
+    "gold": "o_04039",
+    "predicted": "2025-05-31",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1343"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1178",
+    "template_id": "t2_latest_order",
+    "group": "T2",
+    "question": "What is the latest order placed by customer c_0948?",
+    "gold": "o_02845",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0948"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 2,
+    "paths_enumerated": 110
+  },
+  {
+    "qid": "Q1188",
+    "template_id": "t3_entity_absent_order",
+    "group": "T3",
+    "question": "What is the status of order o_66822?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_66822"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1195",
+    "template_id": "t3_entity_absent_order",
+    "group": "T3",
+    "question": "What is the status of order o_78386?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_78386"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1197",
+    "template_id": "t3_entity_absent_order",
+    "group": "T3",
+    "question": "What is the status of order o_45400?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_45400"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1203",
+    "template_id": "t3_entity_absent_order",
+    "group": "T3",
+    "question": "What is the status of order o_87656?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_87656"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1204",
+    "template_id": "t3_entity_absent_order",
+    "group": "T3",
+    "question": "What is the status of order o_45179?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_45179"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1208",
+    "template_id": "t3_entity_absent_product",
+    "group": "T3",
+    "question": "What is the price of product p_485?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 0
+  },
+  {
+    "qid": "Q1209",
+    "template_id": "t3_entity_absent_product",
+    "group": "T3",
+    "question": "What is the price of product p_661?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 0
+  },
+  {
+    "qid": "Q1228",
+    "template_id": "t3_entity_absent_customer",
+    "group": "T3",
+    "question": "Which region is customer c_9883 from?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_9883"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1236",
+    "template_id": "t3_entity_absent_customer",
+    "group": "T3",
+    "question": "Which region is customer c_8329 from?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_8329"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1238",
+    "template_id": "t3_entity_absent_customer",
+    "group": "T3",
+    "question": "Which region is customer c_9548 from?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_9548"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1247",
+    "template_id": "t3_entity_absent_complaint",
+    "group": "T3",
+    "question": "What is the category of complaint comp_63005?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 0
+  },
+  {
+    "qid": "Q1258",
+    "template_id": "t3_entity_absent_complaint",
+    "group": "T3",
+    "question": "What is the category of complaint comp_82140?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 0
+  },
+  {
+    "qid": "Q1269",
+    "template_id": "t3_entity_absent_payment",
+    "group": "T3",
+    "question": "What is the payment status for order o_25670?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_25670"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1273",
+    "template_id": "t3_entity_absent_payment",
+    "group": "T3",
+    "question": "What is the payment status for order o_38361?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_38361"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1276",
+    "template_id": "t3_entity_absent_payment",
+    "group": "T3",
+    "question": "What is the payment status for order o_87278?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_87278"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1277",
+    "template_id": "t3_entity_absent_payment",
+    "group": "T3",
+    "question": "What is the payment status for order o_78765?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_78765"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1281",
+    "template_id": "t3_entity_absent_payment",
+    "group": "T3",
+    "question": "What is the payment status for order o_35443?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "o_35443"
+    ],
+    "hops_oracle": 1,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1290",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_1197 order in order o_04534?",
+    "gold": "I don't know",
+    "predicted": "Stapler + Staples",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1197",
+      "o_04534"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1291",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_0518 order in order o_05714?",
+    "gold": "I don't know",
+    "predicted": "Hair Dryer",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0518",
+      "o_05714"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1295",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_1961 order in order o_03846?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1961",
+      "o_03846"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1297",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_0211 order in order o_01511?",
+    "gold": "I don't know",
+    "predicted": "Garlic Press",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0211",
+      "o_01511"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1311",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_1846 order in order o_03117?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1846",
+      "o_03117"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1320",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_0983 order in order o_01287?",
+    "gold": "I don't know",
+    "predicted": "French Press 1L",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0983",
+      "o_01287"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1327",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_1159 order in order o_02361?",
+    "gold": "I don't know",
+    "predicted": "Smart Speaker",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1159",
+      "o_02361"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1330",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_1084 order in order o_07569?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1084",
+      "o_07569"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1334",
+    "template_id": "t3_relation_absent_customer_order",
+    "group": "T3",
+    "question": "What product did customer c_0921 order in order o_04462?",
+    "gold": "I don't know",
+    "predicted": "Laser Printer",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0921",
+      "o_04462"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1346",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_1473 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1473"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1347",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_1905 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1905"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1348",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_1333 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1333"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1349",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_2326 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2326"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1355",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_2032 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "I don't know",
+    "em": true,
+    "f1": 1.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2032"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1359",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_0547 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0547"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1366",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_2406 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2406"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1367",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_2076 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_2076"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1380",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_1586 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "Mechanical Keyboard",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_1586"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  },
+  {
+    "qid": "Q1385",
+    "template_id": "t3_pattern_absent_electronics_q2",
+    "group": "T3",
+    "question": "Which Electronics product did customer c_0318 order in Q2 2025?",
+    "gold": "I don't know",
+    "predicted": "Monitor Stand",
+    "em": false,
+    "f1": 0.0,
+    "p5": 0.0,
+    "linked_entities": [
+      "c_0318"
+    ],
+    "hops_oracle": 2,
+    "hops_pred": 1,
+    "paths_enumerated": 10
+  }
+]
