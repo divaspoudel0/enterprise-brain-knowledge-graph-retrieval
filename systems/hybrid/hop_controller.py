@@ -29,7 +29,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import EMBED_MODEL, QUERY_PREFIX
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
+ROOT = HERE.parent.parent
+DATA = ROOT / "data"
 BENCH = DATA / "benchmark" / "benchmark_v2.jsonl"
 OUT_DIR = HERE / "learned"
 
