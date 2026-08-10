@@ -34,7 +34,7 @@ from pathlib import Path
 from rdflib import Graph, Namespace, URIRef
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import LLM_MODEL
+from common import LLM_MODEL, load_llm
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
