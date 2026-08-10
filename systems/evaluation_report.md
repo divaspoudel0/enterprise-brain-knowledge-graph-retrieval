@@ -70,8 +70,18 @@
 
 ## Key Findings
 
-1. **Exact Match remains low** due to LLM verbosity (correct fact + extra text).
-2. **Token F1 is 2.2x higher for hybrid** (0.234 vs 0.106), showing better fact retrieval.
-3. **Substring match is primary for attribute answers** — ground truth values are contained in predictions.
-4. **Semantic similarity confirms hybrid retrieves correct facts** even when verbose.
-5. **Retrieval P@5 is higher for hybrid** — graph traversal reaches correct entities.
+1. **Structured answer format (predicted_answer/explanation) is transformative for exact-match evaluation.**
+   Hybrid EM rises 0.2% → 71.6% and token F1 0.234 → 0.760 with no retrieval change —
+   verbosity was masking correct answers. (Baseline EM 0.2% → 45.9%, F1 0.106 → 0.497.)
+2. **The hybrid still dominates both formats on every metric** — retrieval quality (graph traversal)
+   is the real differentiator: 3-hop EM structured is 54.1% (hybrid) vs 14.9% (baseline).
+3. **Token F1 and semantic cosine now track each other** (bge-small cosine on canonical answers);
+   EM becomes usable once answers are canonical.
+4. **Retrieval metrics (P@k/MRR) are format-independent** — they confirm graph traversal
+   reaches the correct entities (P@5 0.843 hybrid vs 0.329 baseline).
+5. **~3–4% format failures remain** (model emits only an explanation, no predicted_answer);
+   few-shot exemplars in the prompt should reduce these further.
+
+The structured prompt changes ONLY the answer formatting, holding retrieval constant.
+It converts unusable EM (0.2%) into a discriminating metric (hybrid 71.6% vs baseline 45.9%),
+matching best practice for RAG evaluation where exact-match needs canonicalized outputs.
