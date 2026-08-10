@@ -36,13 +36,18 @@ from rdflib import Graph, URIRef
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import (QUERY_PREFIX, TOP_K, STRUCTURED_ANSWER_TEMPLATE,
                     load_llm, embed_query)
-from hybrid.entity_linker import EntityLinker, load_v2_corpus, CORPUS
+from hybrid.entity_linker import EntityLinker
 from hybrid.hop_controller import entity_features, rule_hop
 from hybrid.relation_planner import PathPlanner, EB_NS, RELATIONS, node
+
+
+def load_v2_corpus() -> list[dict]:
+    return [json.loads(line) for line in (CORPUS / "text_records_v2.jsonl").open(encoding="utf-8")]
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 DATA = ROOT / "data"
+CORPUS = DATA / "corpus"
 GRAPH = DATA / "graph_v2" / "enterprise_brain_graph.ttl"
 LEARNED = HERE / "learned"
 OUT = HERE / "results_hybrid_learned_v2.json"
