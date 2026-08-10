@@ -148,7 +148,7 @@ def score_answer(pred: str, gold: str, gold_ids: list[str]) -> dict:
     return {
         "em": exact_match(pred, gold),
         "f1": token_f1(pred, gold),
-        "p@5": float(any(g.lower() in pred.lower() for g in (gold_ids or []))),
+        "p5": float(any(g.lower() in pred.lower() for g in (gold_ids or []))),
     }
 
 
@@ -250,7 +250,7 @@ def main() -> int:
         results.append({
             "qid": q["qid"], "template_id": q["template_id"], "group": group,
             "question": qtext, "gold": gold, "predicted": answer,
-            "em": sc["em"], "f1": sc["f1"], "p@5": sc["p5"],
+            "em": sc["em"], "f1": sc["f1"], "p5": sc["p5"],
             "linked_entities": linked, "hops_oracle": q["hops"], "hops_pred": hops,
             "paths_enumerated": paths,
         })
