@@ -22,12 +22,14 @@ CORPUS = DATA / "corpus"
 GRAPH = DATA / "graph"
 BENCHMARK = DATA / "benchmark" / "benchmark_v1.jsonl"
 ANSWER_TEMPLATE = (HERE / "prompts" / "answer_template.txt").read_text(encoding="utf-8")
+STRUCTURED_ANSWER_TEMPLATE = (HERE / "prompts" / "answer_template_structured.txt").read_text(encoding="utf-8")
 
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 LLM_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 TOP_K = 5
 MAX_NEW_TOKENS = 64
+STRUCTURED_MAX_NEW_TOKENS = 256
 
 _emb_model = None
 _emb_matrix = None
@@ -113,6 +115,40 @@ def generate_answer(llm, prompt: str) -> str:
     out = llm(prompt, max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
               top_p=None, temperature=None)[0]["generated_text"]
     return out.split("Answer:")[-1].strip()
+
+
+def generate_structured_answer(llm, prompt: str) -> dict:
+    """Generate with the structured prompt and split predicted_answer / explanation.
+
+    Returns {"predicted_answer": str, "explanation": str, "raw": str}.
+    """
+    out = llm(prompt, max_new_tokens=STRUCTURED_MAX_NEW_TOKENS, do_sample=False,
+              top_p=None, temperature=None)[0]["generated_text"]
+    raw = out[len(prompt):].strip() if out.startswith(prompt) else out.strip()
+    lines = raw.splitlines()
+    predicted = ""
+    explanation = ""
+    for i, line in enumerate(lines):
+        low = line.lower().strip()
+        if low.startswith("predicted_answer:"):
+            predicted = line.split(":", 1)[1].strip()
+            # explanation may follow on later lines
+            for j in range(i + 1, len(lines)):
+                if lines[j].lower().startswith("explanation:"):
+                    explanation = lines[j].split(":", 1)[1].strip()
+                    break
+            break
+    if not predicted:
+        # Prompt ends in "predicted_answer:" so the model continues with the value;
+        # take the first non-empty line before any "explanation:" line.
+        body = []
+        for line in lines:
+            if line.lower().startswith("explanation:"):
+                explanation = line.split(":", 1)[1].strip()
+                break
+            body.append(line)
+        predicted = " ".join(l.strip() for l in body if l.strip()).strip()
+    return {"predicted_answer": predicted, "explanation": explanation, "raw": raw}
 
 
 def load_benchmark() -> list[dict]:

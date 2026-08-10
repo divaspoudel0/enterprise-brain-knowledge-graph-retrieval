@@ -27,6 +27,8 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 BASELINE = HERE.parent / "systems" / "baseline" / "results_baseline_v1.json"
 HYBRID = HERE.parent / "systems" / "hybrid" / "results_hybrid_v1.json"
+BASELINE_STRUCTURED = HERE.parent / "systems" / "baseline" / "results_baseline_structured.json"
+HYBRID_STRUCTURED = HERE.parent / "systems" / "hybrid" / "results_hybrid_structured.json"
 BENCHMARK = HERE.parent / "data" / "benchmark" / "benchmark_v1.jsonl"
 OUT_MD = HERE / "evaluation_report.md"
 OUT_JSON = HERE / "eval_metrics.json"
@@ -187,8 +189,6 @@ def compute_retrieval_metrics(results: List[Dict], benchmark: List[Dict]) -> Dic
 
 def main() -> int:
     print("Loading results...")
-    base = load_results(BASELINE)
-    hyb = load_results(HYBRID)
     bench = load_benchmark()
 
     # Try to load sentence transformer for semantic similarity
@@ -200,46 +200,79 @@ def main() -> int:
     except Exception:
         print("No sentence transformer; using token F1 for semantic metric")
 
-    print("Computing metrics for baseline...")
-    base_metrics = compute_metrics(base, bench, embedder)
-    base_retrieval = compute_retrieval_metrics(base, bench)
-
-    print("Computing metrics for hybrid...")
-    hyb_metrics = compute_metrics(hyb, bench, embedder)
-    hyb_retrieval = compute_retrieval_metrics(hyb, bench)
+    files = {
+        "baseline_v1": (BASELINE, "Baseline (free-text)"),
+        "hybrid_v1": (HYBRID, "Hybrid (free-text)"),
+        "baseline_structured": (BASELINE_STRUCTURED, "Baseline (structured)"),
+        "hybrid_structured": (HYBRID_STRUCTURED, "Hybrid (structured)"),
+    }
+    results_by_key = {}
+    for key, (path, label) in files.items():
+        if not path.exists():
+            print(f"skipping {path.name} (not found)")
+            continue
+        print(f"Computing metrics for {label}...")
+        res = load_results(path)
+        results_by_key[key] = {
+            "label": label,
+            "metrics": compute_metrics(res, bench, embedder),
+            "retrieval": compute_retrieval_metrics(res, bench),
+        }
 
     # Build report
     md = []
     md.append("# Evaluation Report: Baseline vs Hybrid\n")
+
     md.append("## Overall Metrics\n")
-    md.append("| Metric | Baseline | Hybrid | Δ |")
-    md.append("|--------|----------|--------|---|")
-
+    md.append("| Metric | Baseline (free) | Hybrid (free) | Δ | Baseline (struct) | Hybrid (struct) | Δ |")
+    md.append("|--------|-----------------|---------------|----|-------------------|-----------------|----|")
     for name in ["exact_match", "token_f1", "substring", "semantic"]:
-        b = base_metrics[name].overall
-        h = hyb_metrics[name].overall
-        delta = h - b
-        md.append(f"| {name} | {b:.3f} | {h:.3f} | {delta:+.3f} |")
+        b1 = results_by_key["baseline_v1"]["metrics"][name].overall
+        h1 = results_by_key["hybrid_v1"]["metrics"][name].overall
+        if "baseline_structured" in results_by_key and "hybrid_structured" in results_by_key:
+            b2 = results_by_key["baseline_structured"]["metrics"][name].overall
+            h2 = results_by_key["hybrid_structured"]["metrics"][name].overall
+            md.append(f"| {name} | {b1:.3f} | {h1:.3f} | {h1-b1:+.3f} | {b2:.3f} | {h2:.3f} | {h2-b2:+.3f} |")
+        else:
+            md.append(f"| {name} | {b1:.3f} | {h1:.3f} | {h1-b1:+.3f} | - | - | - |")
 
-    md.append("\n## By Hop Count\n")
+    md.append("## By Hop Count\n")
     for name in ["exact_match", "token_f1", "substring", "semantic"]:
         md.append(f"### {name}\n")
         md.append("| System | 1-hop | 2-hop | 3-hop |")
         md.append("|--------|-------|-------|-------|")
-        b = base_metrics[name]
-        h = hyb_metrics[name]
-        md.append(f"| Baseline | {b.by_hop[1]:.3f} | {b.by_hop[2]:.3f} | {b.by_hop[3]:.3f} |")
-        md.append(f"| Hybrid   | {h.by_hop[1]:.3f} | {h.by_hop[2]:.3f} | {h.by_hop[3]:.3f} |")
+        for key in ["baseline_v1", "hybrid_v1", "baseline_structured", "hybrid_structured"]:
+            if key not in results_by_key:
+                continue
+            m = results_by_key[key]["metrics"][name]
+            md.append(f"| {results_by_key[key]['label']} | {m.by_hop[1]:.3f} | {m.by_hop[2]:.3f} | {m.by_hop[3]:.3f} |")
         md.append("")
 
     md.append("## Retrieval Metrics (P@k / MRR)\n")
-    md.append("| Metric | Baseline | Hybrid | Δ |")
-    md.append("|--------|----------|--------|---|")
+    md.append("| Metric | Baseline (free) | Hybrid (free) | Δ | Baseline (struct) | Hybrid (struct) | Δ |")
+    md.append("|--------|-----------------|---------------|----|-------------------|-----------------|----|")
     for k in ["P@1", "P@3", "P@5", "MRR"]:
-        b = base_retrieval[k]
-        h = hyb_retrieval[k]
-        delta = h - b
-        md.append(f"| {k} | {b:.3f} | {h:.3f} | {delta:+.3f} |")
+        b1 = results_by_key["baseline_v1"]["retrieval"][k]
+        h1 = results_by_key["hybrid_v1"]["retrieval"][k]
+        if "baseline_structured" in results_by_key and "hybrid_structured" in results_by_key:
+            b2 = results_by_key["baseline_structured"]["retrieval"][k]
+            h2 = results_by_key["hybrid_structured"]["retrieval"][k]
+            md.append(f"| {k} | {b1:.3f} | {h1:.3f} | {h1-b1:+.3f} | {b2:.3f} | {h2:.3f} | {h2-b2:+.3f} |")
+        else:
+            md.append(f"| {k} | {b1:.3f} | {h1:.3f} | {h1-b1:+.3f} | - | - | - |")
+
+    if "baseline_structured" in results_by_key and "hybrid_structured" in results_by_key:
+        md.append("\n## Structured vs Free-text (same retrieval, answer format only)\n")
+        md.append("| System | Metric | Free-text | Structured | Δ |")
+        md.append("|--------|--------|-----------|------------|----|")
+        for key_free, key_struct, sysname in [
+            ("baseline_v1", "baseline_structured", "Baseline"),
+            ("hybrid_v1", "hybrid_structured", "Hybrid"),
+        ]:
+            for name in ["exact_match", "token_f1", "substring", "semantic"]:
+                f = results_by_key[key_free]["metrics"][name].overall
+                s = results_by_key[key_struct]["metrics"][name].overall
+                md.append(f"| {sysname} | {name} | {f:.3f} | {s:.3f} | {s-f:+.3f} |")
 
     md.append("\n## Key Findings\n")
     md.append("1. **Exact Match remains low** due to LLM verbosity (correct fact + extra text).")
@@ -254,9 +287,11 @@ def main() -> int:
 
     # JSON output
     json_out = {
-        "baseline": {k: asdict(v) for k, v in base_metrics.items()},
-        "hybrid": {k: asdict(v) for k, v in hyb_metrics.items()},
-        "retrieval": {"baseline": base_retrieval, "hybrid": hyb_retrieval},
+        key: {
+            "metrics": {k: asdict(v) for k, v in results_by_key[key]["metrics"].items()},
+            "retrieval": results_by_key[key]["retrieval"],
+        }
+        for key in results_by_key
     }
     OUT_JSON.write_text(json.dumps(json_out, indent=2), encoding="utf-8")
     print(f"Wrote {OUT_JSON}")

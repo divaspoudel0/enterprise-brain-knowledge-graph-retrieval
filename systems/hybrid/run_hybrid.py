@@ -17,13 +17,18 @@ Pipeline for every benchmark question:
   5. Answer generation: identical prompt template + Qwen2.5-7B-Instruct (greedy)
      as the baseline — only the context construction differs.
 
+With --structured, uses the structured answer prompt (predicted_answer / explanation).
+
 All fixed experimental conditions (embedding model, LLM, prompt, benchmark) are
 imported from common.py so they cannot drift between S6 and S7.
 
 Output: systems/hybrid/results_hybrid_v1.json (committed, per-question trace).
+Usage:  uv run --with sentence-transformers --with torch --with transformers \
+               --with rdflib python systems/hybrid/run_hybrid.py [--structured]
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -31,7 +36,8 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import (ANSWER_TEMPLATE, TOP_K, build_context, embed_query, generate_answer,
+from common import (ANSWER_TEMPLATE, STRUCTURED_ANSWER_TEMPLATE, TOP_K, build_context,
+                    embed_query, generate_answer, generate_structured_answer,
                     load_benchmark, load_llm, load_corpus, load_embeddings, vector_similarity)
 
 import numpy as np
@@ -39,6 +45,7 @@ from rdflib import Graph, Namespace, URIRef
 from rdflib.namespace import RDF
 
 OUT = Path(__file__).resolve().parent / "results_hybrid_v1.json"
+OUT_STRUCTURED = Path(__file__).resolve().parent / "results_hybrid_structured.json"
 
 EB_NS = "https://github.com/divaspoudel0/enterprise-brain-knowledge-graph-retrieval/ontology#"
 EB = Namespace(EB_NS)
@@ -211,11 +218,16 @@ def fuse(graph_cands: list[dict], vec_scores: dict, k: int = TOP_K) -> list[dict
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--structured", action="store_true",
+                        help="use the structured predicted_answer/explanation prompt")
+    args = parser.parse_args()
+
     questions = load_benchmark()
     llm = load_llm()
     corpus = {r["record_id"]: r for r in load_corpus()}
 
-    print(f"answering {len(questions)} questions (hybrid, k={TOP_K}) ...", flush=True)
+    print(f"answering {len(questions)} questions (hybrid, k={TOP_K}, structured={args.structured}) ...", flush=True)
     results = []
     for i, q in enumerate(questions, 1):
         t0 = time.perf_counter()
@@ -230,10 +242,16 @@ def main() -> int:
         t3 = time.perf_counter()
         context = build_context([{"record_id": c["record_id"], "text": corpus[c["record_id"]]["text"]}
                                   for c in fused if c["record_id"] in corpus])
-        prompt = ANSWER_TEMPLATE.format(context=context, question=q["question"])
-        answer = generate_answer(llm, prompt)
+        template = STRUCTURED_ANSWER_TEMPLATE if args.structured else ANSWER_TEMPLATE
+        prompt = template.format(context=context, question=q["question"])
+        if args.structured:
+            gen = generate_structured_answer(llm, prompt)
+            answer = gen["predicted_answer"]
+        else:
+            gen = None
+            answer = generate_answer(llm, prompt)
         t4 = time.perf_counter()
-        results.append({
+        row = {
             "qid": q["qid"], "question": q["question"], "hops": q["hops"],
             "template_id": q["template_id"], "pattern": q["pattern"],
             "ground_truth": q["answer"], "answer_type": q["answer_type"],
@@ -246,16 +264,21 @@ def main() -> int:
             "retrieval_ms": round((t3 - t1) * 1000, 1),
             "generation_ms": round((t4 - t3) * 1000, 1),
             "embed_ms": round((t1 - t0) * 1000, 1),
-        })
+        }
+        if gen is not None:
+            row["explanation"] = gen["explanation"]
+            row["raw_generation"] = gen["raw"]
+        results.append(row)
         if i % 50 == 0 or i == len(questions):
             print(f"  {i}/{len(questions)} done", flush=True)
 
-    OUT.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
+    out_path = OUT_STRUCTURED if args.structured else OUT
+    out_path.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     ok = sum(1 for r in results if r["predicted_answer"].strip() == r["ground_truth"].strip())
     total_ms = sum(r["generation_ms"] + r["retrieval_ms"] for r in results)
     print(f"exact-match {ok}/{len(results)} ({ok/len(results):.1%}); "
           f"avg per-q latency {total_ms/len(results)/1000:.2f}s")
-    print(f"wrote {OUT}")
+    print(f"wrote {out_path}")
     return 0
 
 
