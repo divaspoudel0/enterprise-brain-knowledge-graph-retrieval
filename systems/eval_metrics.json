@@ -282,5 +282,289 @@
       "P@5": 0.8426275992438557,
       "MRR": 0.7209199747952104
     }
+  },
+  "baseline_structured": {
+    "metrics": {
+      "exact_match": {
+        "name": "exact_match",
+        "overall": 0.28733459357277885,
+        "by_hop": {
+          "1": 0.375,
+          "2": 0.15789473684210525,
+          "3": 0.02702702702702703
+        },
+        "by_template": {
+          "1hop_order_status": 0.06666666666666667,
+          "1hop_order_amount": 0.1,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.43333333333333335,
+          "1hop_customer_region": 0.43333333333333335,
+          "1hop_customer_signup": 0.36666666666666664,
+          "1hop_payment_status": 0.23333333333333334,
+          "1hop_payment_due": 0.43333333333333335,
+          "1hop_complaint_category": 0.5333333333333333,
+          "1hop_complaint_filed": 0.4666666666666667,
+          "1hop_complaint_about_order": 0.4,
+          "1hop_order_product": 0.03333333333333333,
+          "p2_product_of_order": 0.1794871794871795,
+          "p3_order_date_of_complaint": 0.16666666666666666,
+          "p1_payment_due_of_complaint": 0.03333333333333333,
+          "p5_product_of_complaint": 0.045454545454545456,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.13333333333333333,
+          "generic_complaint_author_and_payment": 0.0
+        }
+      },
+      "token_f1": {
+        "name": "token_f1",
+        "overall": 0.36176628104794456,
+        "by_hop": {
+          "1": 0.4094312169312169,
+          "2": 0.20843522948786106,
+          "3": 0.3267267267267267
+        },
+        "by_template": {
+          "1hop_order_status": 0.06666666666666667,
+          "1hop_order_amount": 0.11666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.43333333333333335,
+          "1hop_customer_region": 0.43333333333333335,
+          "1hop_customer_signup": 0.36666666666666664,
+          "1hop_payment_status": 0.23333333333333334,
+          "1hop_payment_due": 0.7742857142857142,
+          "1hop_complaint_category": 0.5555555555555556,
+          "1hop_complaint_filed": 0.5,
+          "1hop_complaint_about_order": 0.4,
+          "1hop_order_product": 0.03333333333333333,
+          "p2_product_of_order": 0.1794871794871795,
+          "p3_order_date_of_complaint": 0.3611111111111111,
+          "p1_payment_due_of_complaint": 0.5926984126984127,
+          "p5_product_of_complaint": 0.10606060606060606,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.07407407407407407,
+          "P3_aggregate": 0.06060606060606061,
+          "P5_aggregate": 0.1111111111111111,
+          "generic_product_of_customer_order": 0.13333333333333333,
+          "generic_complaint_author_and_payment": 0.1976190476190476
+        }
+      },
+      "substring": {
+        "name": "substring",
+        "overall": 0.332703213610586,
+        "by_hop": {
+          "1": 0.4111111111111111,
+          "2": 0.15789473684210525,
+          "3": 0.17567567567567569
+        },
+        "by_template": {
+          "1hop_order_status": 0.06666666666666667,
+          "1hop_order_amount": 0.1,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.43333333333333335,
+          "1hop_customer_region": 0.43333333333333335,
+          "1hop_customer_signup": 0.36666666666666664,
+          "1hop_payment_status": 0.23333333333333334,
+          "1hop_payment_due": 0.8333333333333334,
+          "1hop_complaint_category": 0.5666666666666667,
+          "1hop_complaint_filed": 0.4666666666666667,
+          "1hop_complaint_about_order": 0.4,
+          "1hop_order_product": 0.03333333333333333,
+          "p2_product_of_order": 0.1794871794871795,
+          "p3_order_date_of_complaint": 0.16666666666666666,
+          "p1_payment_due_of_complaint": 0.4,
+          "p5_product_of_complaint": 0.045454545454545456,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.13333333333333333,
+          "generic_complaint_author_and_payment": 0.0
+        }
+      },
+      "semantic": {
+        "name": "semantic",
+        "overall": 0.36176628104794456,
+        "by_hop": {
+          "1": 0.4094312169312169,
+          "2": 0.20843522948786106,
+          "3": 0.3267267267267267
+        },
+        "by_template": {
+          "1hop_order_status": 0.06666666666666667,
+          "1hop_order_amount": 0.11666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.43333333333333335,
+          "1hop_customer_region": 0.43333333333333335,
+          "1hop_customer_signup": 0.36666666666666664,
+          "1hop_payment_status": 0.23333333333333334,
+          "1hop_payment_due": 0.7742857142857142,
+          "1hop_complaint_category": 0.5555555555555556,
+          "1hop_complaint_filed": 0.5,
+          "1hop_complaint_about_order": 0.4,
+          "1hop_order_product": 0.03333333333333333,
+          "p2_product_of_order": 0.1794871794871795,
+          "p3_order_date_of_complaint": 0.3611111111111111,
+          "p1_payment_due_of_complaint": 0.5926984126984127,
+          "p5_product_of_complaint": 0.10606060606060606,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.07407407407407407,
+          "P3_aggregate": 0.06060606060606061,
+          "P5_aggregate": 0.1111111111111111,
+          "generic_product_of_customer_order": 0.13333333333333333,
+          "generic_complaint_author_and_payment": 0.1976190476190476
+        }
+      }
+    },
+    "retrieval": {
+      "P@1": 0.28544423440453687,
+      "P@3": 0.2967863894139894,
+      "P@5": 0.32904851921865197,
+      "MRR": 0.3553875236294897
+    }
+  },
+  "hybrid_structured": {
+    "metrics": {
+      "exact_match": {
+        "name": "exact_match",
+        "overall": 0.6162570888468809,
+        "by_hop": {
+          "1": 0.7416666666666667,
+          "2": 0.22105263157894736,
+          "3": 0.5135135135135135
+        },
+        "by_template": {
+          "1hop_order_status": 1.0,
+          "1hop_order_amount": 0.5666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.36666666666666664,
+          "1hop_customer_region": 0.5333333333333333,
+          "1hop_customer_signup": 0.7333333333333333,
+          "1hop_payment_status": 0.9,
+          "1hop_payment_due": 0.8666666666666667,
+          "1hop_complaint_category": 0.2,
+          "1hop_complaint_filed": 0.9,
+          "1hop_complaint_about_order": 0.9666666666666667,
+          "1hop_order_product": 0.8666666666666667,
+          "p2_product_of_order": 0.1282051282051282,
+          "p3_order_date_of_complaint": 0.4583333333333333,
+          "p1_payment_due_of_complaint": 0.7333333333333333,
+          "p5_product_of_complaint": 0.7272727272727273,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.16666666666666666,
+          "generic_complaint_author_and_payment": 0.0
+        }
+      },
+      "token_f1": {
+        "name": "token_f1",
+        "overall": 0.6713235514747802,
+        "by_hop": {
+          "1": 0.7802910052910053,
+          "2": 0.23007518796992482,
+          "3": 0.7076791076791077
+        },
+        "by_template": {
+          "1hop_order_status": 1.0,
+          "1hop_order_amount": 0.5666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.36666666666666664,
+          "1hop_customer_region": 0.5333333333333333,
+          "1hop_customer_signup": 0.7333333333333333,
+          "1hop_payment_status": 0.9,
+          "1hop_payment_due": 0.9523809523809523,
+          "1hop_complaint_category": 0.5777777777777777,
+          "1hop_complaint_filed": 0.9,
+          "1hop_complaint_about_order": 0.9666666666666667,
+          "1hop_order_product": 0.8666666666666667,
+          "p2_product_of_order": 0.1282051282051282,
+          "p3_order_date_of_complaint": 0.4583333333333333,
+          "p1_payment_due_of_complaint": 0.8022222222222222,
+          "p5_product_of_complaint": 0.7965367965367965,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.19523809523809524,
+          "generic_complaint_author_and_payment": 0.5388888888888889
+        }
+      },
+      "substring": {
+        "name": "substring",
+        "overall": 0.6578449905482041,
+        "by_hop": {
+          "1": 0.7972222222222223,
+          "2": 0.23157894736842105,
+          "3": 0.527027027027027
+        },
+        "by_template": {
+          "1hop_order_status": 1.0,
+          "1hop_order_amount": 0.5666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.36666666666666664,
+          "1hop_customer_region": 0.5333333333333333,
+          "1hop_customer_signup": 0.7333333333333333,
+          "1hop_payment_status": 0.9,
+          "1hop_payment_due": 0.9666666666666667,
+          "1hop_complaint_category": 0.7666666666666667,
+          "1hop_complaint_filed": 0.9,
+          "1hop_complaint_about_order": 0.9666666666666667,
+          "1hop_order_product": 0.8666666666666667,
+          "p2_product_of_order": 0.1282051282051282,
+          "p3_order_date_of_complaint": 0.4583333333333333,
+          "p1_payment_due_of_complaint": 0.7333333333333333,
+          "p5_product_of_complaint": 0.7272727272727273,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.2,
+          "generic_complaint_author_and_payment": 0.05
+        }
+      },
+      "semantic": {
+        "name": "semantic",
+        "overall": 0.6713235514747802,
+        "by_hop": {
+          "1": 0.7802910052910053,
+          "2": 0.23007518796992482,
+          "3": 0.7076791076791077
+        },
+        "by_template": {
+          "1hop_order_status": 1.0,
+          "1hop_order_amount": 0.5666666666666667,
+          "1hop_product_price": 1.0,
+          "1hop_product_category": 0.36666666666666664,
+          "1hop_customer_region": 0.5333333333333333,
+          "1hop_customer_signup": 0.7333333333333333,
+          "1hop_payment_status": 0.9,
+          "1hop_payment_due": 0.9523809523809523,
+          "1hop_complaint_category": 0.5777777777777777,
+          "1hop_complaint_filed": 0.9,
+          "1hop_complaint_about_order": 0.9666666666666667,
+          "1hop_order_product": 0.8666666666666667,
+          "p2_product_of_order": 0.1282051282051282,
+          "p3_order_date_of_complaint": 0.4583333333333333,
+          "p1_payment_due_of_complaint": 0.8022222222222222,
+          "p5_product_of_complaint": 0.7965367965367965,
+          "P1_aggregate": 0.0,
+          "P2_aggregate": 0.0,
+          "P3_aggregate": 0.0,
+          "P5_aggregate": 0.0,
+          "generic_product_of_customer_order": 0.19523809523809524,
+          "generic_complaint_author_and_payment": 0.5388888888888889
+        }
+      }
+    },
+    "retrieval": {
+      "P@1": 0.5293005671077504,
+      "P@3": 0.7495274102079384,
+      "P@5": 0.8426275992438557,
+      "MRR": 0.7209199747952104
+    }
   }
 }
