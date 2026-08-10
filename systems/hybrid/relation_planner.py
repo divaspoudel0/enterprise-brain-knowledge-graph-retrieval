@@ -198,33 +198,47 @@ class PathPlanner:
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--limit", type=int, default=30, help="test questions to plan over")
+    ap.add_argument("--use-llm", action="store_true", help="use the Qwen planner (else heuristic)")
+    args = ap.parse_args()
+
     g = Graph()
     g.parse(GRAPH, format="turtle")
 
     questions = [json.loads(line) for line in BENCH.open(encoding="utf-8")]
     test = [q for q in questions if q["split"] == "test" and q["is_answerable"]]
+    if args.limit:
+        test = test[: args.limit]
 
-    planner = PathPlanner(llm_pipeline=None)  # heuristic fallback for this diagnostic
-    stats = {"valid": 0, "invalid": 0, "total": 0}
+    planner = PathPlanner(llm_pipeline=load_llm() if args.use_llm else None)
+    stats = {"valid": 0, "invalid": 0, "total": 0, "empty": 0, "retried": 0}
     invalid_by_q = []
-    for q in test[:30]:
-        chain = planner.propose(q["question"], q["hops"])
-        ok, reason = planner.validate(chain)
+    import time
+    for q in test:
+        chain, ok = planner.propose_with_retry(q["question"], q["hops"])
         stats["total"] += 1
         if ok:
             stats["valid"] += 1
+            if not chain:
+                stats["empty"] += 1
         else:
             stats["invalid"] += 1
-            invalid_by_q.append((q["qid"], q["template_id"], chain, reason))
+            invalid_by_q.append((q["qid"], q["template_id"], chain, q["hops"]))
+        if args.use_llm:
+            time.sleep(0.02)
 
     print(f"plan diagnostic over {stats['total']} test questions "
-          f"(heuristic fallback): valid={stats['valid']}, invalid={stats['invalid']}")
-    for qid, tpl, chain, reason in invalid_by_q[:5]:
-        print(f"  invalid {qid} {tpl}: {chain} -> {reason}")
+          f"(llm={args.use_llm}): valid={stats['valid']} ({stats['valid']/stats['total']:.2%}), "
+          f"empty={stats['empty']}, invalid={stats['invalid']}")
+    for qid, tpl, chain, hops in invalid_by_q[:8]:
+        print(f"  invalid {qid} {tpl} hops={hops}: {chain}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / "relation_planner.json"
-    out.write_text(json.dumps({"stats": stats, "invalid_examples": invalid_by_q[:10]}, indent=2) + "\n",
+    out.write_text(json.dumps({"llm": args.use_llm, "stats": stats,
+                               "invalid_examples": invalid_by_q[:10]}, indent=2) + "\n",
                    encoding="utf-8")
     print(f"wrote {out}")
     return 0
