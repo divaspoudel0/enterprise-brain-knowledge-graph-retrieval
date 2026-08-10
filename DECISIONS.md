@@ -209,3 +209,19 @@ reproducible and free, and its quality on structured-fact answering is adequate 
 benchmark. Identical config for both systems satisfies the fixed-experimental-condition rule.
 Stage: S6
 Reversible: yes until S9 eval runs; a swap must be applied to both systems and is logged.
+
+## 2026-08-10 — S9.5 Structured answer prompt (predicted_answer / explanation)
+Decision: Re-run both systems (baseline S6, hybrid S7) with a structured answer prompt
+(systems/prompts/answer_template_structured.txt) that forces a canonical `predicted_answer`
+field plus a separate `explanation`. Parsing is robust (regex over repeated/mid-line markers,
+first-line fallback). Retrieval, LLM, and all other fixed conditions unchanged.
+Rationale: Free-text EM of 0.2% conflated generation verbosity with retrieval quality; the
+structured format isolates content and makes EM/token-F1 meaningful again. Paper-grounded
+(RGB/ARES/RAGAs best practice). Format-failure rate ~3-4% (model emits only explanation).
+Results: EM baseline 0.2%→45.9%, hybrid 0.2%→71.6%; token F1 baseline 0.106→0.497, hybrid
+0.234→0.760. Semantic metric also fixed (float() on 2D dot product was silently falling back
+to token F1). Retrieval metrics unchanged (format-independent), hybrid still wins (P@5 0.843
+vs 0.329).
+Stage: S9.5
+Reversible: yes — the free-text v1 results remain committed for comparison; adding exemplars
+would require re-running generation only.
