@@ -1,0 +1,29 @@
+PASS  node count products: 120 == 120
+PASS  node count customers: 2500 == 2500
+PASS  node count orders: 7589 == 7589
+PASS  node count payments: 7589 == 7589
+PASS  node count complaints: 1200 == 1200
+PASS  edge count placedOrder: 7589 == 7589
+PASS  edge count orderPlacedBy: 7589 == 7589
+PASS  edge count forProduct: 7589 == 7589
+PASS  edge count productOrderedIn: 7589 == 7589
+PASS  edge count hasPayment: 7589 == 7589
+PASS  edge count paymentForOrder: 7589 == 7589
+PASS  edge count filedComplaint: 1200 == 1200
+PASS  edge count complaintFiledBy: 1200 == 1200
+PASS  edge count aboutOrder: 1200 == 1200
+PASS  edge count orderComplainedAbout: 1200 == 1200
+PASS  every node has eb:source_record_id (bad: 0 missing)
+PASS  every edge reified (missing: 0)
+PASS  no orphan reification (extra: 0)
+PASS  every reified edge has source (bad: 0)
+PASS  sync products: id sets (120 records)
+PASS  sync products: values match (bad: [])
+PASS  sync customers: id sets (2500 records)
+PASS  sync customers: values match (bad: [])
+PASS  sync orders: id sets (7589 records)
+PASS  sync orders: values match (bad: [])
+PASS  sync payments: id sets (7589 records)
+PASS  sync payments: values match (bad: [])
+PASS  sync complaints: id sets (1200 records)
+PASS  sync complaints: values match (bad: [])
