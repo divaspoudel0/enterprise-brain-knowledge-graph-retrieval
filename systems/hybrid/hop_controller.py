@@ -46,7 +46,9 @@ def entity_features(question: str) -> list[float]:
     ids = set(ID_RE.findall(question))
     counts = {t: 0 for t in TYPE_OF.values()}
     for e in ids:
-        counts[TYPE_OF[e[:2]]] += 1
+        kind = "complaint" if e.startswith("comp_") else (
+            "payment" if e.startswith("pay_") else TYPE_OF[e[:2]])
+        counts[kind] += 1
     q = question.lower()
     return [
         counts["customer"], counts["order"], counts["product"],
