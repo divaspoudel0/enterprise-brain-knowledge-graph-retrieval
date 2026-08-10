@@ -225,3 +225,50 @@ vs 0.329).
 Stage: S9.5
 Reversible: yes — the free-text v1 results remain committed for comparison; adding exemplars
 would require re-running generation only.
+
+## 2026-08-10 — v2 enhancement plan approved (all 5 directions)
+Decision: Proceed with Enterprise Brain v2 per V2_PLAN.md — D5 schema & data v2, D3 temporal
+testbed, D4 answerability testbed, D1 learnable pipeline (entity linking, hop controller,
+relation-path planning), D2 S8 groundedness scorer + S10 query interface + human evidence-path
+study. Goal: thesis defense + post-defense publication.
+Rationale: v1 is complete but re-study found five gaps (regex-only linking, regex hop cascade,
+brute-force traversal, S8/S10 decided-but-unbuilt, wrong FINAL_REPORT numbers). v2 turns these
+into a learnable, temporal, verifiable, explainable system with a publishable benchmark.
+Stage: v2 (all)
+Reversible: yes until v2 benchmark freezes (Phase F); v1 stays frozen as committed history.
+
+## 2026-08-10 — v2 dataset scale (2,500+ customers)
+Decision: v2 dataset scales to 2,500+ customers, ~5,500–6,000 orders/payments, ~1,200 complaints,
+120 products; generated into data/raw_v2/ with a new seed/config; v1 raw untouched. Planted
+patterns P1/P2/P3/P5 kept and sized up, plus temporal sub-patterns (P6 as-of status change,
+P7 overdue-payment window).
+Rationale: strengthens publication scale claims while molab GPU makes regeneration/embedding cheap.
+Stage: v2-B
+Reversible: yes until v2 benchmark freeze.
+
+## 2026-08-10 — v2 answer format: structured only
+Decision: All v2 runs use ONLY the structured answer prompt (predicted_answer/explanation).
+The free-text answer arm is eliminated.
+Rationale: free-text made exact-match evaluation meaningless (v1 EM 0.2% free-text vs 71.6%
+structured, identical retrieval); structured is the evaluation standard for v2.
+Stage: v2-F
+Reversible: yes (free-text arm could be re-added, but v2 will not use it).
+
+## 2026-08-10 — v1 frozen alongside v2
+Decision: v1 artifacts (data/raw, data/benchmark/benchmark_v1.jsonl, systems/results_*_v1*,
+ontology/enterprise_brain.ttl, FINAL_REPORT v1) remain frozen as committed history. All v2 work
+lives in new/versioned paths (raw_v2/, benchmark_v2, ontology_v2, *_v2.* outputs).
+Rationale: auditability for the defense; committed history is the contamination evidence; v2
+cannot silently alter what v1 measured.
+Stage: v2 (all)
+Reversible: no — v1 stays as-is.
+
+## 2026-08-10 — Public pre-defense release
+Decision: A new PUBLIC GitHub repo `SchemaGround-KGQA` hosts the v2 artifacts (ontology v2,
+generators, verifiers, benchmark_v2.jsonl, systems code, README, reproduction pins) with a
+Zenodo DOI and CC-BY-4.0 for data, published BEFORE the thesis defense. The existing private repo
+remains the v1 audit trail.
+Rationale: user approved public pre-defense release; benchmark release strengthens the defense and
+is a publication prerequisite.
+Stage: v2-G
+Reversible: yes until Zenodo DOI minting.
