@@ -128,6 +128,7 @@ class EntityLinker:
     def evaluate(self, questions: list[dict], k: int = LINKER_K) -> dict:
         hits1 = hitsk = 0
         regex_h1 = regex_hk = 0
+        combo_h1 = combo_hk = 0
         m_h1 = m_hk = m_reghk = 0
         n_gt = n_mentions = skipped = 0
         details = []
@@ -149,6 +150,15 @@ class EntityLinker:
             regex_h1 += re1
             regex_hk += rek
 
+            # combined linker = regex fast path for ID references, learned
+            # candidates otherwise (the exact strategy the run pipeline uses).
+            if re_ids:
+                combo_ids = re_ids
+            else:
+                combo_ids = cand_ids
+            combo_h1 += bool(gt & {sorted(combo_ids)[0] if combo_ids else ""})
+            combo_hk += bool(gt & combo_ids)
+
             if q.get("mentions_only"):
                 n_mentions += 1
                 m_h1 += r1
@@ -167,6 +177,7 @@ class EntityLinker:
             "n": n, "skipped_no_gt": skipped,
             "recall@1": hits1 / n, f"recall@{k}": hitsk / n,
             "regex_recall@1": regex_h1 / n, f"regex_recall@{k}": regex_hk / n,
+            "combined_recall@1": combo_h1 / n, f"combined_recall@{k}": combo_hk / n,
             "mentions_only": {
                 "n": n_mentions,
                 "recall@1": m_h1 / n_mentions if n_mentions else 0,
@@ -192,6 +203,8 @@ def main() -> int:
           f"recall@1={result['recall@1']:.3f}, recall@{args.k}={result[f'recall@{args.k}']:.3f}")
     print(f"  regex baseline: recall@1={result['regex_recall@1']:.3f}, "
           f"recall@{args.k}={result[f'regex_recall@{args.k}']:.3f}")
+    print(f"  combined (regex IDs + learned mentions): recall@1={result['combined_recall@1']:.3f}, "
+          f"recall@{args.k}={result[f'combined_recall@{args.k}']:.3f}")
     mo = result["mentions_only"]
     print(f"  mentions-only ({mo['n']} q): learned recall@1={mo['recall@1']:.3f}, "
           f"learned recall@{args.k}={mo[f'recall@{args.k}']:.3f}, "
