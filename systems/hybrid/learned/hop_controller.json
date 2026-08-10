@@ -1,0 +1,1 @@
+{"learned_train": 0.9948400412796697, "learned_val": 1.0, "learned_test": 0.9856115107913669, "rule_test": 0.7913669064748201, "oracle_test": 1.0, "n_train": 969, "n_val": 138, "n_test": 278}
