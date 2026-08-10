@@ -107,6 +107,8 @@ def traverse_from(entities: list[str], target_hops: int, g: Graph, k: int = TOP_
         results.append({"record_id": eid, "provenance_path": "anchor", "graph_score": 1.0})
 
     queries = 0
+    if not entities:
+        return results, queries
     for depth in range(1, target_hops + 1):
         for chain in __import__("itertools").product(PROPS, repeat=depth):
             queries += 1
