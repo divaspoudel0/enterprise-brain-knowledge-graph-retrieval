@@ -28,18 +28,22 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import EMBED_MODEL, QUERY_PREFIX, load_corpus
+from common import EMBED_MODEL, QUERY_PREFIX
 
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
+ROOT = HERE.parent.parent
+DATA = ROOT / "data"
 CORPUS = DATA / "corpus"
 OUT_DIR = HERE / "learned"
 
-EMBED_MODEL = EMBED_MODEL
 CANDIDATE_K = 50       # large candidate pool before type filtering
 LINKER_K = 5           # final top-k to return to the pipeline
+
+
+def load_v2_corpus() -> list[dict]:
+    return [json.loads(line) for line in (CORPUS / "text_records_v2.jsonl").open(encoding="utf-8")]
 
 
 def load_embeddings():
@@ -73,7 +77,7 @@ class EntityLinker:
                     device="cuda" if __import__("torch").cuda.is_available() else "cpu")
         self.matrix = load_embeddings()
         self.meta = load_meta()
-        self.corpus = {r["record_id"]: r for r in load_corpus()}
+        self.corpus = {r["record_id"]: r for r in load_v2_corpus()}
         chunk_to_record = self.meta["chunk_to_record"]
         for i, cid in enumerate(self.meta["chunk_ids"]):
             rid = chunk_to_record[cid]

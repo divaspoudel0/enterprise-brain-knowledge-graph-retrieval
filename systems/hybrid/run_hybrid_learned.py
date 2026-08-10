@@ -29,12 +29,14 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import numpy as np
+
 from rdflib import Graph, URIRef
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import (BENCHMARK, CORPUS, QUERY_PREFIX, TOP_K, STRUCTURED_ANSWER_TEMPLATE,
-                    load_corpus, load_embeddings, load_llm, embed_query, retrieve)
-from hybrid.entity_linker import EntityLinker
+from common import (QUERY_PREFIX, TOP_K, STRUCTURED_ANSWER_TEMPLATE,
+                    load_llm, embed_query)
+from hybrid.entity_linker import EntityLinker, load_v2_corpus
 from hybrid.hop_controller import entity_features, rule_hop
 from hybrid.relation_planner import PathPlanner, EB_NS, RELATIONS, node
 
@@ -139,14 +141,27 @@ def score_answer(pred: str, gold: str, gold_ids: list[str]) -> dict:
     }
 
 
+def v2_retrieve(linker: EntityLinker, query_emb, k: int = TOP_K) -> list[dict]:
+    """Top-k vector retrieval over the v2 embedding index (like common.retrieve)."""
+    scores = linker.matrix @ query_emb
+    order = np.argsort(-scores)[:k]
+    out = []
+    for idx in order:
+        idx = int(idx)
+        cid = linker.meta["chunk_ids"][idx]
+        rid = linker.meta["chunk_to_record"][cid]
+        out.append({"record_id": rid, "score": float(scores[idx]),
+                    "text": linker.corpus[rid]["text"][:120]})
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="0 = full test split")
     args = ap.parse_args()
 
     g = get_graph()
-    questions = [json.loads(line) for line in BENCHMARK.open(encoding="utf-8")]
-    # benchmark_v2 lives under data/benchmark; BENCHMARK points at v1 in common — override.
+    # benchmark_v2 lives under data/benchmark
     questions = [json.loads(line) for line in (DATA / "benchmark" / "benchmark_v2.jsonl").open(encoding="utf-8")]
     test = [q for q in questions if q["split"] == "test"]
     if args.limit:
@@ -156,10 +171,6 @@ def main() -> int:
     linker = EntityLinker()
     linker.load_index()
     planner = PathPlanner(llm_pipeline=llm)
-
-    # Build entity index text for candidate reranking in the linker output
-    matrix, chunk_ids, chunk_to_record = load_embeddings()
-    corpus = {r["record_id"]: r for r in load_corpus()}
 
     results = []
     agg = defaultdict(lambda: {"n": 0, "em": 0, "f1": 0, "p5": 0, "paths": 0})
@@ -192,15 +203,15 @@ def main() -> int:
         total_queries += len(linked) + paths
 
         # fusion with vector retrieval (same as v1: graph 0.6 / vector 0.4)
-        vec = retrieve(embed_query(qtext), k=TOP_K)
+        vec = v2_retrieve(linker, embed_query(qtext), k=TOP_K)
         ctx_parts = []
         for c in cands[:TOP_K]:
-            rec = corpus.get(c["record_id"])
+            rec = linker.corpus.get(c["record_id"])
             if rec is None:
                 continue
             ctx_parts.append(rec["text"])
         for v in vec[: TOP_K - len(ctx_parts)]:
-            rec = corpus.get(v["record_id"])
+            rec = linker.corpus.get(v["record_id"])
             if rec is not None:
                 ctx_parts.append(rec["text"])
 
