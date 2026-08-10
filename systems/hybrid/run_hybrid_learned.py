@@ -110,12 +110,14 @@ def traverse_learned(anchor_ids: list[str], hops: int, question: str,
 
     paths_enumerated = 0
     for anchor in anchor_ids:
-        chain = planner.propose(question, hops, hint="")
-        ok, _ = planner.validate(chain)
+        chain, ok = planner.propose_with_retry(question, hops)
+        paths_enumerated += 1
         if not ok or hops < 1:
             continue
+        if not chain:
+            # answer lives on the anchor itself — nothing to walk
+            continue
         # targeted walk: 1 SPARQL query (vs v1's ~sum(10^l) brute force)
-        paths_enumerated += 1
         walked = planner.walk(node(anchor), chain, g, k=TOP_K)
         for r in walked:
             if r["record_id"] in seen:

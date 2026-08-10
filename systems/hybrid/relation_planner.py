@@ -97,15 +97,17 @@ class PathPlanner:
         return found
 
     def propose(self, question: str, hops: int, hint: str = "") -> list[str]:
-        """Ask the LLM for the relation chain (strict JSON)."""
+        """Ask the LLM for the relation chain (strict JSON). Returns [] for
+        direct attribute lookups (answer lives on the anchor)."""
         if self.llm is None:
             return self._heuristic_chain(question, hops)
         relations = ", ".join(sorted(RELATIONS))
         sys_prompt = (
             "You are a KG query planner. Given a question about an enterprise knowledge graph "
             "and its relation vocabulary, output ONLY a JSON array of relation names that traverse "
-            "from an anchor entity to the answer. The relations are: "
-            f"{relations}. Output like [\"placedOrder\", \"forProduct\"]."
+            "from an anchor entity to the answer. If the answer is a direct attribute of the anchor "
+            f"entity itself (e.g. its status, date, amount, price, region, category), output []. "
+            f"The relations are: {relations}. Output like [\"placedOrder\", \"forProduct\"]."
         )
         user = f"Question: {question}\nExpected number of hops: {hops}\n" + (f"Hint: {hint}\n" if hint else "")
         try:
@@ -113,7 +115,25 @@ class PathPlanner:
                            max_new_tokens=40)[0]["generated_text"]
         except Exception:
             return self._heuristic_chain(question, hops)
-        return self._parse_chain(out)
+        chain = self._parse_chain(out)
+        if not chain and hops >= 2:
+            return self._heuristic_chain(question, hops)
+        return chain
+
+    def propose_with_retry(self, question: str, hops: int) -> tuple[list[str], bool]:
+        """LLM proposal validated, with one schema-hint retry and a heuristic
+        fallback. Returns (chain, validated)."""
+        chain = self.propose(question, hops)
+        ok, _ = self.validate(chain)
+        if ok:
+            return chain, True
+        hint = "Traverse along object properties only; ensure consecutive domain/range chain."
+        chain = self.propose(question, hops, hint=hint)
+        ok, _ = self.validate(chain)
+        if ok:
+            return chain, True
+        chain = self._heuristic_chain(question, hops)
+        return chain, self.validate(chain)[0]
 
     def _heuristic_chain(self, question: str, hops: int) -> list[str]:
         """Fallback heuristic (used when no LLM available) — mirrors v1 chains.
