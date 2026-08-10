@@ -50,15 +50,15 @@ def main() -> int:
         mentions_only: list[str] = []        # mentions an ID regex cannot find
 
         # replace product mentions with names
-        for pid in sorted(re.findall(r"p_\d{4}", text), key=len, reverse=True):
+        for pid in sorted(re.findall(r"\bp_\d{4}\b", text), key=len, reverse=True):
             if pid in products:
                 name = products[pid]["name"]
-                text = text.replace(pid, name)
+                text = re.sub(rf"\b{re.escape(pid)}\b", name, text)
                 linked[name] = pid
                 mentions_only.append(name)
 
         # replace customer IDs with names (real Nepali names, non-ASCII on purpose)
-        for cid in sorted(re.findall(r"c_\d+", text), key=len, reverse=True):
+        for cid in sorted(re.findall(r"\bc_\d+\b", text), key=len, reverse=True):
             if cid in customers:
                 name = customers[cid]["name"]
                 # only swap when the customer is asked *about*, not when the id is the answer
