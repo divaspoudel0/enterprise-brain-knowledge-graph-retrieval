@@ -70,7 +70,7 @@ def semantic_similarity(pred: str, gt: str, embedder=None) -> float:
     try:
         pred_emb = embedder.encode([pred], normalize_embeddings=True)
         gt_emb = embedder.encode([gt], normalize_embeddings=True)
-        return float(pred_emb @ gt_emb.T)
+        return float((pred_emb @ gt_emb.T)[0, 0])
     except Exception:
         return token_f1(pred, gt)
 
