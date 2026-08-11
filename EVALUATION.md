@@ -11,11 +11,11 @@
 | Precision@k / Recall@k | Retrieved evidence set vs. ground-truth evidence set (S5) | ✅ done | carried over |
 | MRR | Rank position of first correct evidence item | ✅ done | carried over |
 | Exact Match / F1 | Generated answer string vs. ground-truth answer | ✅ done (structured) | carried over |
-| Groundedness rate | Groundedness scorer (S8) output, entailed-claim fraction | ⚠️ **not built** | ✅ v2 deliverable (`groundedness.py`) |
+| Groundedness rate | Groundedness scorer (S8) output, entailed-claim fraction | ⚠️ **not built** | ✅ built (`groundedness.py`, NLI claim-decomposition); eval pending molab |
 | Multi-hop success rate | Accuracy by 1-hop / 2-hop / 3-hop subsets | ✅ done | carried over |
-| Hallucination / unsupported-claim rate | 1 − groundedness rate | ⚠️ **not built** | ✅ v2 deliverable |
+| Hallucination / unsupported-claim rate | 1 − groundedness rate | ⚠️ **not built** | ✅ built (same scorer); eval pending molab |
 | Query latency | Wall-clock per query, same hardware/session | ✅ done | carried over |
-| Evidence-path interpretability | Human rating — see §3 | ⚠️ **not done** | ✅ v2 deliverable (S10 + human study) |
+| Evidence-path interpretability | Human rating — see §3 | ⚠️ **not done** | ✅ v2 deliverable (S10 + human study); rating sheet prepared, AWAITS annotators |
 
 ## 2. Run protocol
 

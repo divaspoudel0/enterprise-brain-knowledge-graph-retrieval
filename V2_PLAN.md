@@ -194,24 +194,34 @@ on T2) — a benchmark/prompt nuance, not a regression of the learned components
 
 ## 7. Explainability deliverable (D2)
 
+> Status 2026-08-11: S8 + S10 built and committed (`systems/hybrid/groundedness.py`,
+> `run_d2_groundedness.py`, `query_interface.py`, `prepare_human_rating_sheet.py`).
+> Eval + interface verification pending a reachable molab sandbox; human sheet prepared.
+
 ### 7.1 S8 — `groundedness.py` (was decided, never built)
 
 - NLI claim-decomposition: split predicted answer into claims; score each against retrieved
   evidence with an MNLI/ANLI cross-encoder (entailed/neutral/contradicted).
 - Groundedness rate = entailed fraction; hallucination/unsupported-claim rate = 1 − that.
-- Model checkpoint logged in `DECISIONS.md`. Completes `EVALUATION.md` §1's metric list.
+- Model checkpoint logged in `DECISIONS.md` (`cross-encoder/nli-deberta-v3-base`). Completes
+  `EVALUATION.md` §1's metric list.
+- `run_d2_groundedness.py` replays the D1 retrieval deterministically (greedy, seeded planner)
+  to recover the exact evidence each frozen answer saw, then scores it.
 
 ### 7.2 S10 — `query_interface.py`
 
 - Local interface (CLI + optional Gradio) returning: **answer + retrieved evidence chunks +
   graph provenance path** (rendered as Customer→Complaint→Order→Payment with relation labels).
-- For hybrid-learned: the generated relation plan is shown as the explanation.
+- For hybrid-learned: the generated relation plan is shown as the explanation
+  (`planner.walk_full` returns the full node chain per hit for rendering).
 
 ### 7.3 Human evidence-path study (`EVALUATION.md` §3)
 
 - 2 annotators (user + one peer) rate 50–100 sampled answers per system on:
   (a) answer correctness given context; (b) path/evidence interpretability.
 - Report Cohen's κ; results feed both the thesis appendix and the paper's human-eval section.
+- Sheet PREPARED (20 items, blind/shuffled) at
+  artifacts `human_evidence_path_rating_sheet.md`/`.csv`/`.json`; awaits the annotators.
 
 ---
 
