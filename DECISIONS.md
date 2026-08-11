@@ -35,6 +35,15 @@ Stage: S8
 Reversible: yes, but changing it after S9 has run invalidates prior comparisons — must
 re-run S9 for both systems if changed.
 
+## 2026-08-10 — S8 NLI checkpoint choice
+Decision: `cross-encoder/nli-deberta-v3-base` (supervised MNLI + SNLI + FEVER + ANLI).
+Rationale: Cross-encoder MNLI is the standard, reproducible groundedness scorer; the
+deberta-v3-base checkpoint balances quality and size and runs on molab CPU/GPU. The exact
+checkpoint is pinned in code so the metric is regeneratable (EVALUATION.md §1).
+Stage: S8
+Reversible: yes, but changing it after S9 has run invalidates prior comparisons — re-run
+both systems if changed.
+
 ## 2026-08-09 — Hop controller default
 Decision: Start with rule-based heuristic (question-word / entity-count based); only build
 a learned classifier if time remains after S9 produces valid results.

@@ -176,24 +176,43 @@ class PathPlanner:
         """Targeted SPARQL walk from anchor along the validated relation chain.
         Returns [{record_id, path, graph_score}]. Uses 1 SPARQL query (vs v1's
         brute-force enumeration which issues one query per chain of every length)."""
+        return self._walk(anchor, chain, g, k, full=False)
+
+    def walk_full(self, anchor: URIRef, chain: list[str], g: Graph, k: int = 5) -> list[dict]:
+        """Like walk() but returns the full provenance node chain per hit:
+        [{record_id, path, chain_nodes, relations, graph_score}] where
+        chain_nodes = [anchor_rid, ...intermediate..., target_rid] and relations
+        = the relation labels between consecutive nodes. Feeds S10 rendering."""
+        return self._walk(anchor, chain, g, k, full=True)
+
+    def _walk(self, anchor: URIRef, chain: list[str], g: Graph, k: int = 5,
+              full: bool = False) -> list[dict]:
         chain_uris = [RELATIONS[n] for n in chain]
         vars_ = " ".join(f"?v{i}" for i in range(1, len(chain) + 1))
         where_parts = [f"{anchor.n3()} {chain_uris[0].n3()} ?v1"]
         for i in range(1, len(chain)):
             where_parts.append(f"?v{i} {chain_uris[i].n3()} ?v{i+1}")
         where = " . ".join(where_parts)
-        sparql = f"SELECT ?v{len(chain)} WHERE {{ {where} }} LIMIT {k * 2}"
+        sparql = f"SELECT {vars_} WHERE {{ {where} }} LIMIT {k * 2}"
         results = []
         for row in g.query(sparql):
-            v = row[f"v{len(chain)}"]
-            rid = str(v)
-            if not rid.startswith(EB_NS):
+            target = row[f"v{len(chain)}"]
+            tid = str(target)
+            if not tid.startswith(EB_NS):
                 continue
-            results.append({
-                "record_id": rid[len(EB_NS):],
+            item = {
+                "record_id": tid[len(EB_NS):],
                 "path": "->".join(p.split("#")[-1] for p in chain_uris),
                 "graph_score": 1.0,
-            })
+            }
+            if full:
+                nodes = [str(anchor)[len(EB_NS):]]
+                for i in range(1, len(chain) + 1):
+                    v = str(row[f"v{i}"])
+                    nodes.append(v[len(EB_NS):] if v.startswith(EB_NS) else v)
+                item["chain_nodes"] = nodes
+                item["relations"] = list(chain)
+            results.append(item)
         return results[:k]
 
 
