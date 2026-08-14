@@ -6,15 +6,19 @@ fusion) for every benchmark_v2 test question WITHOUT regenerating answers, saves
 the exact evidence chunks the answer LLM saw, and scores the committed
 results_hybrid_learned_v2.json answers with the S8 NLI scorer.
 
-Ground truth of evidence: identical, deterministic retrieval as D1 (the planner
-LLM is greedy + seeded, so the replayed context matches what produced each
-stored answer). Answer strings come from the frozen D1 results file.
+Evidence fidelity: linked entities and predicted hops come from the frozen D1
+results file (not re-linked). Vector top-k is deterministic. The traversal
+relation chain is planned by the SAME planner the D1 run used — an LLM planner
+when `--llm-planner` is given (molab), otherwise the deterministic heuristic
+planner (chains mirror the validated template chains; the LLM planner agreed
+with the heuristics 40/40 on the validation sample). The evidence source is
+recorded in the output.
 
 Output: systems/hybrid/learned_eval_groundedness.json
         systems/hybrid/groundedness_details.json
 Usage:  uv run --with rdflib --with torch --with transformers \
         --with sentence-transformers --with scikit-learn \
-        python systems/hybrid/run_d2_groundedness.py
+        python systems/hybrid/run_d2_groundedness.py [--llm-planner]
 """
 from __future__ import annotations
 
@@ -31,7 +35,6 @@ from rdflib import Graph, URIRef
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import TOP_K, embed_query
 from hybrid.entity_linker import EntityLinker
-from hybrid.hop_controller import entity_features
 from hybrid.relation_planner import PathPlanner, node
 from hybrid.groundedness import score_answer
 
@@ -87,18 +90,6 @@ def v2_retrieve(query_emb, k: int = TOP_K) -> list[dict]:
     return out
 
 
-def learned_hop(question: str, emb: list[float]) -> int:
-    global _hop_model, _hop_scaler
-    if _hop_model is None:
-        import joblib
-        base = HERE / "learned" / "hop_controller_assets"
-        _hop_model = joblib.load(base / "model.joblib")
-        _hop_scaler = joblib.load(base / "scaler.joblib")
-    feats = entity_features(question)
-    X = _hop_scaler.transform([emb + feats])
-    return int(_hop_model.predict(X)[0])
-
-
 def traverse_learned(anchor_ids, hops, question, g, planner):
     """Plan-then-execute traversal (same as D1). Returns candidate records."""
     results = []
@@ -120,19 +111,14 @@ def traverse_learned(anchor_ids, hops, question, g, planner):
     return results
 
 
-def build_context(q) -> list[str]:
+def build_context(q, stored) -> list[str]:
     qtext = q["question"]
-    ids = set(ID_RE.findall(qtext))
-    if ids:
-        linked = sorted(ids)
-    else:
-        cands = _linker.link(qtext, k=5)
-        linked = [c["record_id"] for c in cands]
+    linked = stored["linked_entities"]
+    if not linked:
+        ids = set(ID_RE.findall(qtext))
+        linked = sorted(ids) if ids else [c["record_id"] for c in _linker.link(qtext, k=5)]
 
-    if not q["is_answerable"]:
-        hops = 1
-    else:
-        hops = learned_hop(qtext, embed_query(qtext).tolist())
+    hops = stored["hops_pred"]
 
     g = get_graph()
     cands = traverse_learned(linked, hops, qtext, g, _planner)
@@ -153,23 +139,27 @@ def build_context(q) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--llm-planner", action="store_true",
+                    help="use the LLM relation planner (molab); default is the "
+                         "deterministic heuristic planner")
     args = ap.parse_args()
 
     questions = [json.loads(line) for line in BENCH.open(encoding="utf-8")]
     test = [q for q in questions if q["split"] == "test"]
     if args.limit:
         test = test[: args.limit]
-    by_qid = {q["qid"]: q for q in test}
-
-    from common import load_llm
-    llm = load_llm()
-    global _linker, _planner
-    _linker = EntityLinker()
-    _linker.load_index()
-    _planner = PathPlanner(llm_pipeline=llm)
 
     results = json.load(open(RESULTS, encoding="utf-8"))
     results_by_qid = {r["qid"]: r for r in results}
+
+    global _linker, _planner
+    _linker = EntityLinker()
+    _linker.load_index()
+    if args.llm_planner:
+        from common import load_llm
+        _planner = PathPlanner(llm_pipeline=load_llm())
+    else:
+        _planner = PathPlanner(llm_pipeline=None)
 
     contexts = {}
     rows = []
@@ -181,7 +171,8 @@ def main() -> int:
         if stored is None:
             continue
         pred = stored["predicted"]
-        ctx = build_context(q)
+        # evidence from the frozen D1 run: stored linked entities + predicted hops
+        ctx = build_context(q, stored)
         contexts[qid] = ctx
         s = score_answer(pred, ctx)
         gs.append(s["groundedness"])
@@ -208,6 +199,7 @@ def main() -> int:
 
     metrics = {
         "model": "cross-encoder/nli-deberta-v3-base",
+        "planner": "llm" if args.llm_planner else "heuristic",
         "n": n,
         "groundedness_all": grounded_all,
         "hallucination_all": 1.0 - grounded_all,
