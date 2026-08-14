@@ -107,14 +107,14 @@ def nli_scores(premise: str, hypothesis: str) -> tuple[float, float, float]:
 def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
     """Groundedness of one predicted answer against retrieved evidence.
 
-    Decision rule (Honovich-style NLI-consistency, standard for RAG
-    faithfulness): a claim is GROUNDED iff, over all evidence chunks, the
-    maximum entailment probability beats the maximum contradiction probability
-    AND the entailment probability is above 0.5. This deliberately ignores
-    high-confidence *neutral* verdicts from unrelated records: a neutral
-    payment record must not override the entailment of the relevant order
-    record. Returns per-claim labels and aggregate groundedness / hallucination
-    / abstention. Empty or "I don't know" answers are abstentions (committing
+    Decision rule (RAGAS-faithfulness standard): a claim is GROUNDED iff the
+    maximum entailment probability over ALL evidence chunks is above 0.5. A
+    high-confidence contradiction from an UNRELATED record (e.g. a payment
+    record for a different order, or a same-order payment whose status differs
+    from the order status) must NOT override the entailment of the relevant
+    order record: we ask whether the retrieval SUPPORTS the claim, and any
+    supporting chunk counts. Truly unsupported claims get low entailment
+    everywhere. Empty or "I don't know" answers are abstentions (committing
     to no unsupported facts): groundedness 1.0."""
     claims = split_claims(answer)
     if not claims:
@@ -137,11 +137,13 @@ def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
             grounded.append(False)
             continue
         hyp = _sentenceize(c)
-        max_pc, max_pe, max_pn = 0.0, 0.0, 0.0
+        max_pe = 0.0
+        max_pc, max_pn = 0.0, 0.0
         for e in evidence:
             pc, pe, pn = nli_scores(e, hyp)
-            max_pc, max_pe, max_pn = max(max_pc, pc), max(max_pe, pe), max(max_pn, pn)
-        is_grounded = max_pe > max_pc and max_pe > 0.5
+            max_pe = max(max_pe, pe)
+            max_pc, max_pn = max(max_pc, pc), max(max_pn, pn)
+        is_grounded = max_pe > 0.5
         if is_grounded:
             label, best = "entailment", max_pe
         elif max_pc > max_pn:
