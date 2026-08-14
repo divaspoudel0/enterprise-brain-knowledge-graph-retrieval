@@ -163,7 +163,6 @@ def main() -> int:
 
     contexts = {}
     rows = []
-    gs, abst = [], 0
     total = 0
     for q in test:
         qid = q["qid"]
@@ -175,8 +174,6 @@ def main() -> int:
         ctx = build_context(q, stored)
         contexts[qid] = ctx
         s = score_answer(pred, ctx)
-        gs.append(s["groundedness"])
-        abst += s["abstention"]
         rows.append({
             "qid": qid, "predicted": pred, "gold": q["answer"],
             "is_answerable": q["is_answerable"],
@@ -189,13 +186,17 @@ def main() -> int:
             print(f"  [{total}/{len(test)}] scored", flush=True)
 
     n = total
-    grounded_all = float(np.mean(gs))
-    ans_rows = [r for r in rows if not r["abstention"]]
-    grounded_ans = float(np.mean([r["groundedness"] for r in ans_rows])) if ans_rows else 0.0
-    t3 = [r for r in rows if not r["is_answerable"]]
+    rows_all = rows
+    grounded_all = float(np.mean([r["groundedness"] for r in rows_all]))
+    ans_rows = [r for r in rows_all if r["is_answerable"]]
+    ans_claim = [r for r in ans_rows if not r["abstention"]]
+    grounded_ans = float(np.mean([r["groundedness"] for r in ans_claim])) if ans_claim else 0.0
+    ans_abstain = sum(1 for r in ans_rows if r["abstention"])
+    t3 = [r for r in rows_all if not r["is_answerable"]]
     t3_grounded = float(np.mean([r["groundedness"] for r in t3])) if t3 else 0.0
     t3_abstain = sum(1 for r in t3 if r["abstention"])
     t3_correct_abstain = sum(1 for r in t3 if r["abstention"] and r["predicted"].strip().lower() == "i don't know")
+    t3_wrong_abstain = t3_abstain - t3_correct_abstain
 
     metrics = {
         "model": "cross-encoder/nli-deberta-v3-base",
@@ -205,14 +206,19 @@ def main() -> int:
         "hallucination_all": 1.0 - grounded_all,
         "groundedness_answerable": grounded_ans,
         "hallucination_answerable": 1.0 - grounded_ans,
+        "answerable": {"n": len(ans_rows), "n_with_claims": len(ans_claim),
+                       "abstention_rate": ans_abstain / len(ans_rows) if ans_rows else 0.0},
         "t3": {"n": len(t3), "groundedness": t3_grounded,
                "abstention_rate": t3_abstain / len(t3) if t3 else 0.0,
-               "correct_abstention_rate": t3_correct_abstain / len(t3) if t3 else 0.0},
+               "correct_abstention_rate": t3_correct_abstain / len(t3) if t3 else 0.0,
+               "wrong_abstention_rate": t3_wrong_abstain / len(t3) if t3 else 0.0},
     }
     print("\n=== S8 groundedness (hybrid-learned, benchmark_v2 test) ===")
     print(f"groundedness (all): {grounded_all:.3f}  hallucination: {1.0-grounded_all:.3f}")
-    print(f"groundedness (answerable only): {grounded_ans:.3f}  "
+    print(f"groundedness (answerable, claims-only n={len(ans_claim)}): {grounded_ans:.3f}  "
           f"hallucination: {1.0-grounded_ans:.3f}")
+    print(f"answerable abstentions: {ans_abstain}/{len(ans_rows)} "
+          f"({metrics['answerable']['abstention_rate']:.3f})")
     print(f"T3 (n={len(t3)}): groundedness {t3_grounded:.3f}, abstention {metrics['t3']['abstention_rate']:.3f}, "
           f"correct \"I don't know\" {metrics['t3']['correct_abstention_rate']:.3f}")
 

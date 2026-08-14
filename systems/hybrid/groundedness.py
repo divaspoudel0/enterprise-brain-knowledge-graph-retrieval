@@ -96,22 +96,26 @@ def claim_is_abstention(claim: str) -> bool:
     return claim.lower().strip() in ABSTAIN
 
 
-def nli_label(premise: str, hypothesis: str) -> tuple[str, float]:
-    """Return (label, winning-label probability) for one pair."""
+def nli_scores(premise: str, hypothesis: str) -> tuple[float, float, float]:
+    """Return (p_contradiction, p_entailment, p_neutral) for one pair."""
     scorer = _load_scorer()
-    # softmax over [contradiction, entailment, neutral]
     logits = scorer.predict([(premise, hypothesis)])[0]
     scores = np.exp(logits - np.max(logits))
-    scores = scores / scores.sum()
-    label = ID_LABELS[int(np.argmax(logits))]
-    return label, float(scores[int(np.argmax(logits))])
+    return tuple(float(s) for s in scores / scores.sum())
 
 
 def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
     """Groundedness of one predicted answer against retrieved evidence.
 
-    Returns per-claim labels and aggregate groundedness / hallucination /
-    abstention."""
+    Decision rule (Honovich-style NLI-consistency, standard for RAG
+    faithfulness): a claim is GROUNDED iff, over all evidence chunks, the
+    maximum entailment probability beats the maximum contradiction probability
+    AND the entailment probability is above 0.5. This deliberately ignores
+    high-confidence *neutral* verdicts from unrelated records: a neutral
+    payment record must not override the entailment of the relevant order
+    record. Returns per-claim labels and aggregate groundedness / hallucination
+    / abstention. Empty or "I don't know" answers are abstentions (committing
+    to no unsupported facts): groundedness 1.0."""
     claims = split_claims(answer)
     if not claims:
         return {"claims": [], "grounded": [], "groundedness": 1.0,
@@ -133,13 +137,21 @@ def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
             grounded.append(False)
             continue
         hyp = _sentenceize(c)
-        best_label, best_score = None, -1.0
+        max_pc, max_pe, max_pn = 0.0, 0.0, 0.0
         for e in evidence:
-            label, score = nli_label(e, hyp)
-            if score > best_score:
-                best_label, best_score = label, score
-        grounded.append(best_label == "entailment")
-        per_claim.append({"claim": c, "label": best_label, "best": best_score})
+            pc, pe, pn = nli_scores(e, hyp)
+            max_pc, max_pe, max_pn = max(max_pc, pc), max(max_pe, pe), max(max_pn, pn)
+        is_grounded = max_pe > max_pc and max_pe > 0.5
+        if is_grounded:
+            label, best = "entailment", max_pe
+        elif max_pc > max_pn:
+            label, best = "contradiction", max_pc
+        else:
+            label, best = "neutral", max_pn
+        grounded.append(is_grounded)
+        per_claim.append({"claim": c, "label": label, "best": best,
+                          "p_contradiction": max_pc, "p_entailment": max_pe,
+                          "p_neutral": max_pn})
 
     n = len(claims)
     groundedness = sum(grounded) / n
