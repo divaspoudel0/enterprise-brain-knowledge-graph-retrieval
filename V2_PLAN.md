@@ -180,7 +180,7 @@ v1's rule-based hybrid stays in the repo (baseline v2 "hybrid-rule"); the new on
 | Linker (all 1281 q) | combined (regex IDs + learned mentions) recall@1 / recall@5 vs regex-only recall@5 | **0.752 / 0.961 vs 0.568** |
 | Hop controller (test 278) | learned vs rule vs oracle accuracy | **0.986 vs 0.791 vs 1.000** |
 | Traversal (test 278) | planned paths/q vs brute-force queries/q | **1.18 vs 119.2** |
-| End-to-end (test 278) | hybrid-learned vs hybrid-rule EM / F1 | **0.496 / 0.512 vs 0.399 / 0.422** |
+| End-to-end (test 278) | hybrid-learned vs hybrid-rule EM / F1 | **0.504 / 0.518 vs 0.403 / 0.425** |
 | Plan validity (LLM planner, hop1 sample) | validated plans | 40/40 (100%) |
 
 Components: `systems/hybrid/entity_linker.py`, `hop_controller.py`, `relation_planner.py`,

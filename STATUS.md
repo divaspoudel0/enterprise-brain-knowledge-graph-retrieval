@@ -5,10 +5,10 @@
 > session after sandbox loss) should be able to read only this file and know exactly
 > what to do next, without digging through commit history or logs.
 
-Last updated: 2026-08-14 (Phase D D1 DONE + Phase E D2 DONE — S8 groundedness, S10 interface, rating sheet prepared)
+Last updated: 2026-08-14 (Phase D D1 DONE + Phase E D2 DONE — S8 groundedness, S10 interface, rating sheet prepared; results JSON regenerated with clean predicted/explanation split)
 Current stage: v2 Phase E (D2 S8/S10/human study) DONE; next Phase F — evaluation v2 (molab), then G public release
-Last commit: 77837f5
-Last verified: S8 groundedness final on benchmark_v2 test (LLM-planner evidence, RAGAS max-entailment): all 0.777, answerable claims 0.657, T3 correct "I don't know" 0.556; S10 interface verified on molab (provenance paths render)
+Last commit: 298d548
+Last verified: S8 groundedness final on benchmark_v2 test (LLM-planner evidence, RAGAS max-entailment): all 0.777, answerable claims 0.657, T3 correct "I don't know" 0.556; S10 interface verified on molab (provenance paths render). D1 results regenerated with separate explanation field (learned EM 0.504 / rule 0.403)
 Next planned action: Phase F — evaluation v2 matrix (baseline vs hybrid-rule vs hybrid-learned), ablations, temporal + answerability testbed metrics; then public release
 Blockers / open questions: human rating sheet AWAITS the two human annotators (user + peer) — human-in-the-loop blocker per EVALUATION.md §3. S8 NLI residual misses exact-value entailment in structured records (honest caveat).
 
@@ -38,8 +38,11 @@ Phase D (D1) state (2026-08-11) — learnable pipeline DONE:
     recall@5 0.961 vs regex-only 0.568; hop_controller.py MLP 0.986 vs rule 0.791 vs oracle 1.0
   - relation_planner.py (LLM chain proposal + ontology validation + retry + heuristic fallback;
     walk_full for provenance); run_hybrid_learned.py (plan-then-execute) and run_hybrid_rule_v2.py
-  - End-to-end test 278: learned EM 0.496 / F1 0.512 vs rule 0.399 / 0.422; planned paths 1.18/q
+  - End-to-end test 278: learned EM 0.504 / F1 0.518 vs rule 0.403 / 0.425; planned paths 1.18/q
     vs 119.2/q. Full tables in V2_PLAN §6 and d1-learnable-pipeline-report.md.
+  - Result JSON regenerated (298d548) with clean `predicted` (canonical answer only) and a
+    separate `explanation` field — fixes the Q0003/Q1188/Q0020 leak where the answer LLM's
+    "### explanation:" line was concatenated into `predicted` (parse bug; +3 EM total).
   - Caveat: T2 "as of"/"changed on" sub-templates embed the answer in the question (gold = prior
     status) while context shows current — biases both systems (learned 0.154 vs rule 0.200).
 
