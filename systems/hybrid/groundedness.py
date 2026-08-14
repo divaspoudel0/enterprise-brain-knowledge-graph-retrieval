@@ -41,7 +41,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 
 NLI_MODEL = "cross-encoder/nli-deberta-v3-base"
-ID_LABELS = {0: "entailment", 1: "neutral", 2: "contradiction"}
+# cross-encoder/nli-* models output logits in [contradiction, entailment, neutral]
+ID_LABELS = {0: "contradiction", 1: "entailment", 2: "neutral"}
 ABSTAIN = ("i don't know",)
 
 _scorer = None
@@ -76,19 +77,34 @@ def split_claims(answer: str) -> list[str]:
     return sentences
 
 
+def _sentenceize(claim: str) -> str:
+    """Turn a bare-value claim into a well-formed hypothesis for NLI.
+
+    A canonical answer ("19.99", "pending") is not a sentence; NLI scores such
+    fragments as neutral regardless of the evidence. Wrapping the value in
+    "The answer is X." gives the cross-encoder a grammatical hypothesis whose
+    entailment the evidence can actually support (standard for factoid
+    groundedness). Well-formed claims (end in .!?) are left untouched."""
+    if not claim:
+        return claim
+    if claim[-1] in ".!?":
+        return claim
+    return f"The answer is {claim}."
+
+
 def claim_is_abstention(claim: str) -> bool:
     return claim.lower().strip() in ABSTAIN
 
 
 def nli_label(premise: str, hypothesis: str) -> tuple[str, float]:
-    """Return (label, entailment-logit-ish score) for one pair."""
+    """Return (label, winning-label probability) for one pair."""
     scorer = _load_scorer()
-    # softmax over [entailment, neutral, contradiction]
+    # softmax over [contradiction, entailment, neutral]
     logits = scorer.predict([(premise, hypothesis)])[0]
     scores = np.exp(logits - np.max(logits))
     scores = scores / scores.sum()
     label = ID_LABELS[int(np.argmax(logits))]
-    return label, float(scores[0])
+    return label, float(scores[int(np.argmax(logits))])
 
 
 def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
@@ -116,9 +132,10 @@ def score_answer(answer: str, evidence: list[str], question: str = "") -> dict:
             per_claim.append({"claim": c, "label": "unsupported", "best": -1.0})
             grounded.append(False)
             continue
+        hyp = _sentenceize(c)
         best_label, best_score = None, -1.0
         for e in evidence:
-            label, score = nli_label(e, c)
+            label, score = nli_label(e, hyp)
             if score > best_score:
                 best_label, best_score = label, score
         grounded.append(best_label == "entailment")
