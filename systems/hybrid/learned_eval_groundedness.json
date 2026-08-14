@@ -1,0 +1,15 @@
+{
+  "model": "cross-encoder/nli-deberta-v3-base",
+  "planner": "llm",
+  "n": 278,
+  "groundedness_all": 0.9424460431654677,
+  "hallucination_all": 0.05755395683453235,
+  "groundedness_answerable": 0.912568306010929,
+  "hallucination_answerable": 0.08743169398907102,
+  "t3": {
+    "n": 36,
+    "groundedness": 1.0,
+    "abstention_rate": 0.8611111111111112,
+    "correct_abstention_rate": 0.5555555555555556
+  }
+}

@@ -1,0 +1,4878 @@
+[
+  {
+    "qid": "Q0003",
+    "predicted": "completed\n\n### explanation: The order record for o_00205 shows its status is completed.",
+    "gold": "completed",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "completed\n\n### explanation: The order record for o_00205 shows its status is completed."
+    ],
+    "per_claim": [
+      {
+        "claim": "completed\n\n### explanation: The order record for o_00205 shows its status is completed.",
+        "label": "neutral",
+        "best": 0.1065099760890007
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0006",
+    "predicted": "completed",
+    "gold": "completed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9470212459564209
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0017",
+    "predicted": "completed",
+    "gold": "completed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.992218017578125
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0020",
+    "predicted": "completed",
+    "gold": "completed",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "contradiction",
+        "best": 0.017776042222976685
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0029",
+    "predicted": "34.99",
+    "gold": "completed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "34.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "34.99",
+        "label": "entailment",
+        "best": 0.9991061091423035
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0032",
+    "predicted": "22.99",
+    "gold": "22.99",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "22.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "22.99",
+        "label": "entailment",
+        "best": 0.9993616938591003
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0045",
+    "predicted": "39.99",
+    "gold": "39.99",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "39.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "39.99",
+        "label": "entailment",
+        "best": 0.9989606142044067
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0052",
+    "predicted": "14.99",
+    "gold": "14.99",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "14.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "14.99",
+        "label": "entailment",
+        "best": 0.9993773102760315
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0060",
+    "predicted": "11.99",
+    "gold": "11.99",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "11.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "11.99",
+        "label": "entailment",
+        "best": 0.9986012578010559
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0069",
+    "predicted": "19.99",
+    "gold": "19.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "19.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "19.99",
+        "label": "contradiction",
+        "best": 0.0006877667037770152
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0074",
+    "predicted": "29.99",
+    "gold": "29.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "29.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "29.99",
+        "label": "contradiction",
+        "best": 0.0005904612480662763
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0076",
+    "predicted": "39.99",
+    "gold": "39.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "39.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "39.99",
+        "label": "neutral",
+        "best": 0.0005396072519943118
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0077",
+    "predicted": "89.99",
+    "gold": "89.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "89.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "89.99",
+        "label": "contradiction",
+        "best": 0.0009722434333525598
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0081",
+    "predicted": "19.99",
+    "gold": "19.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "19.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "19.99",
+        "label": "contradiction",
+        "best": 0.0057782684452831745
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0090",
+    "predicted": "69.99",
+    "gold": "69.99",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "69.99"
+    ],
+    "per_claim": [
+      {
+        "claim": "69.99",
+        "label": "contradiction",
+        "best": 0.0007595004863105714
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0093",
+    "predicted": "Home & Kitchen",
+    "gold": "Home & Kitchen",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Home & Kitchen"
+    ],
+    "per_claim": [
+      {
+        "claim": "Home & Kitchen",
+        "label": "entailment",
+        "best": 0.9998501539230347
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0095",
+    "predicted": "Personal Care",
+    "gold": "Personal Care",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Personal Care"
+    ],
+    "per_claim": [
+      {
+        "claim": "Personal Care",
+        "label": "entailment",
+        "best": 0.9996362924575806
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0101",
+    "predicted": "",
+    "gold": "Office",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0106",
+    "predicted": "Accessories",
+    "gold": "Accessories",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Accessories"
+    ],
+    "per_claim": [
+      {
+        "claim": "Accessories",
+        "label": "entailment",
+        "best": 0.9391838312149048
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0112",
+    "predicted": "Personal Care",
+    "gold": "Personal Care",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Personal Care"
+    ],
+    "per_claim": [
+      {
+        "claim": "Personal Care",
+        "label": "entailment",
+        "best": 0.9996362924575806
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0115",
+    "predicted": "Sports & Outdoors",
+    "gold": "Sports & Outdoors",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Sports & Outdoors"
+    ],
+    "per_claim": [
+      {
+        "claim": "Sports & Outdoors",
+        "label": "entailment",
+        "best": 0.9994353652000427
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0130",
+    "predicted": "",
+    "gold": "Sudurpashchim",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0141",
+    "predicted": "Koshi",
+    "gold": "Koshi",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Koshi"
+    ],
+    "per_claim": [
+      {
+        "claim": "Koshi",
+        "label": "entailment",
+        "best": 0.9993234872817993
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0143",
+    "predicted": "Karnali",
+    "gold": "Karnali",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Karnali"
+    ],
+    "per_claim": [
+      {
+        "claim": "Karnali",
+        "label": "entailment",
+        "best": 0.997489333152771
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0152",
+    "predicted": "2023-08-18",
+    "gold": "2023-08-18",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2023-08-18"
+    ],
+    "per_claim": [
+      {
+        "claim": "2023-08-18",
+        "label": "entailment",
+        "best": 0.9991825222969055
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0154",
+    "predicted": "2024-12-05",
+    "gold": "2024-12-05",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-12-05"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-12-05",
+        "label": "entailment",
+        "best": 0.9985398054122925
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0155",
+    "predicted": "2024-10-24",
+    "gold": "2024-10-24",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-10-24"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-10-24",
+        "label": "entailment",
+        "best": 0.9965400695800781
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0162",
+    "predicted": "2024-12-29\n\nex",
+    "gold": "2024-12-29",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-12-29\n\nex"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-12-29\n\nex",
+        "label": "entailment",
+        "best": 0.9996645450592041
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0165",
+    "predicted": "",
+    "gold": "2024-06-16",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0181",
+    "predicted": "completed",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9985525012016296
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0185",
+    "predicted": "overdue",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "overdue"
+    ],
+    "per_claim": [
+      {
+        "claim": "overdue",
+        "label": "entailment",
+        "best": 0.9934390187263489
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0186",
+    "predicted": "completed",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9984784722328186
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0191",
+    "predicted": "paid",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "paid"
+    ],
+    "per_claim": [
+      {
+        "claim": "paid",
+        "label": "entailment",
+        "best": 0.98929762840271
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0199",
+    "predicted": "failed",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "failed"
+    ],
+    "per_claim": [
+      {
+        "claim": "failed",
+        "label": "entailment",
+        "best": 0.9981720447540283
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0200",
+    "predicted": "paid",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "paid"
+    ],
+    "per_claim": [
+      {
+        "claim": "paid",
+        "label": "entailment",
+        "best": 0.9927615523338318
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0202",
+    "predicted": "paid",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "paid"
+    ],
+    "per_claim": [
+      {
+        "claim": "paid",
+        "label": "entailment",
+        "best": 0.9912478923797607
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0203",
+    "predicted": "",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0205",
+    "predicted": "completed",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9984956979751587
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0206",
+    "predicted": "completed",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9665471911430359
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0219",
+    "predicted": "2025-02-15",
+    "gold": "2025-02-15",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-02-15"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-02-15",
+        "label": "entailment",
+        "best": 0.9992436170578003
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0222",
+    "predicted": "2024-06-26",
+    "gold": "2024-06-26",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-06-26"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-06-26",
+        "label": "entailment",
+        "best": 0.9982699155807495
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0233",
+    "predicted": "due: 2024-06-13",
+    "gold": "2024-07-13",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "due: 2024-06-13"
+    ],
+    "per_claim": [
+      {
+        "claim": "due: 2024-06-13",
+        "label": "entailment",
+        "best": 0.9996324777603149
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0236",
+    "predicted": "due: 2024-09-10",
+    "gold": "2024-10-10",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "due: 2024-09-10"
+    ],
+    "per_claim": [
+      {
+        "claim": "due: 2024-09-10",
+        "label": "entailment",
+        "best": 0.9998065829277039
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0238",
+    "predicted": "2026-01-01",
+    "gold": "2026-01-01",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2026-01-01"
+    ],
+    "per_claim": [
+      {
+        "claim": "2026-01-01",
+        "label": "entailment",
+        "best": 0.9992669224739075
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0239",
+    "predicted": "2024-",
+    "gold": "2024-02-04",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-",
+        "label": "entailment",
+        "best": 0.9944090247154236
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0241",
+    "predicted": "refunds",
+    "gold": "refund",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "refunds"
+    ],
+    "per_claim": [
+      {
+        "claim": "refunds",
+        "label": "entailment",
+        "best": 0.9978234767913818
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0249",
+    "predicted": "service",
+    "gold": "service",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "service"
+    ],
+    "per_claim": [
+      {
+        "claim": "service",
+        "label": "entailment",
+        "best": 0.8679781556129456
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0254",
+    "predicted": "service",
+    "gold": "service",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "service"
+    ],
+    "per_claim": [
+      {
+        "claim": "service",
+        "label": "entailment",
+        "best": 0.8679781556129456
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0259",
+    "predicted": "service",
+    "gold": "service",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "service"
+    ],
+    "per_claim": [
+      {
+        "claim": "service",
+        "label": "contradiction",
+        "best": 0.07600729912519455
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0269",
+    "predicted": "billing",
+    "gold": "billing",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "billing"
+    ],
+    "per_claim": [
+      {
+        "claim": "billing",
+        "label": "entailment",
+        "best": 0.9977988600730896
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0270",
+    "predicted": "delivery",
+    "gold": "delivery",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "delivery"
+    ],
+    "per_claim": [
+      {
+        "claim": "delivery",
+        "label": "entailment",
+        "best": 0.9966860413551331
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0271",
+    "predicted": "2025-12-17",
+    "gold": "2025-12-17",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-12-17"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-12-17",
+        "label": "entailment",
+        "best": 0.9958602786064148
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0278",
+    "predicted": "2025-03-23",
+    "gold": "2025-03-23",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-23"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-23",
+        "label": "entailment",
+        "best": 0.9978010058403015
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0280",
+    "predicted": "2025-11-20",
+    "gold": "2025-11-20",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-11-20"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-11-20",
+        "label": "entailment",
+        "best": 0.9974246025085449
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0281",
+    "predicted": "2024-09-05",
+    "gold": "2024-09-05",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-09-05"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-09-05",
+        "label": "entailment",
+        "best": 0.9960492253303528
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0287",
+    "predicted": "2025-10-09\n\nex",
+    "gold": "2025-10-09",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-10-09\n\nex"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-10-09\n\nex",
+        "label": "entailment",
+        "best": 0.9969344139099121
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0289",
+    "predicted": "2025-11-17",
+    "gold": "2025-11-17",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-11-17"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-11-17",
+        "label": "entailment",
+        "best": 0.9966737031936646
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0294",
+    "predicted": "2025-05-21",
+    "gold": "2025-05-21",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-05-21"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-05-21",
+        "label": "entailment",
+        "best": 0.997519314289093
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0296",
+    "predicted": "2025-11-14",
+    "gold": "2025-11-14",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-11-14"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-11-14",
+        "label": "entailment",
+        "best": 0.9961594343185425
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0297",
+    "predicted": "2025-10-04\n\nex",
+    "gold": "2025-10-04",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-10-04\n\nex"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-10-04\n\nex",
+        "label": "entailment",
+        "best": 0.9974061846733093
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0299",
+    "predicted": "2025-01-10",
+    "gold": "2025-01-10",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-10"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-10",
+        "label": "entailment",
+        "best": 0.9971033930778503
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0305",
+    "predicted": "o_00795",
+    "gold": "o_00795",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "o_00795"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_00795",
+        "label": "entailment",
+        "best": 0.9960030913352966
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0312",
+    "predicted": "2025-12-10",
+    "gold": "o_01251",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-12-10"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-12-10",
+        "label": "entailment",
+        "best": 0.998607337474823
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0316",
+    "predicted": "o_07334",
+    "gold": "o_07334",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "o_07334"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_07334",
+        "label": "entailment",
+        "best": 0.9873578548431396
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0317",
+    "predicted": "o_06179",
+    "gold": "o_06179",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "o_06179"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_06179",
+        "label": "entailment",
+        "best": 0.9953919649124146
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0324",
+    "predicted": "o_01322",
+    "gold": "o_01322",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "o_01322"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_01322",
+        "label": "contradiction",
+        "best": 0.03694114461541176
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0325",
+    "predicted": "o_00120",
+    "gold": "o_00120",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "o_00120"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_00120",
+        "label": "entailment",
+        "best": 0.9933112859725952
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0337",
+    "predicted": "",
+    "gold": "Cutlery Set (24 pc)",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0341",
+    "predicted": "p_0044 (Air Fryer)",
+    "gold": "Air Fryer",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0044 (Air Fryer)"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0044 (Air Fryer)",
+        "label": "entailment",
+        "best": 0.9999456405639648
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0349",
+    "predicted": "Camping Tent 2P",
+    "gold": "Camping Tent 2P",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Camping Tent 2P"
+    ],
+    "per_claim": [
+      {
+        "claim": "Camping Tent 2P",
+        "label": "entailment",
+        "best": 0.9978581070899963
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0359",
+    "predicted": "Wireless Charger Pad",
+    "gold": "Wireless Charger Pad",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "Wireless Charger Pad"
+    ],
+    "per_claim": [
+      {
+        "claim": "Wireless Charger Pad",
+        "label": "contradiction",
+        "best": 0.014779499731957912
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0360",
+    "predicted": "Smart Speaker",
+    "gold": "Smart Speaker",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "Smart Speaker"
+    ],
+    "per_claim": [
+      {
+        "claim": "Smart Speaker",
+        "label": "contradiction",
+        "best": 0.0012624075170606375
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0369",
+    "predicted": "",
+    "gold": "USB-C Hub",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0385",
+    "predicted": "",
+    "gold": "Bluetooth Headphones",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0387",
+    "predicted": "",
+    "gold": "Power Bank 20000mAh",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0390",
+    "predicted": "USB-C Hub",
+    "gold": "USB-C Hub",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "USB-C Hub"
+    ],
+    "per_claim": [
+      {
+        "claim": "USB-C Hub",
+        "label": "entailment",
+        "best": 0.9902997016906738
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0391",
+    "predicted": "",
+    "gold": "Webcam Ring Light",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0408",
+    "predicted": "",
+    "gold": "Bluetooth Speaker Mini",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0412",
+    "predicted": "Wireless Mouse",
+    "gold": "Wireless Mouse",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Wireless Mouse"
+    ],
+    "per_claim": [
+      {
+        "claim": "Wireless Mouse",
+        "label": "entailment",
+        "best": 0.9991044402122498
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0417",
+    "predicted": "p_0005",
+    "gold": "HD Webcam",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0005"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0005",
+        "label": "entailment",
+        "best": 0.9980438947677612
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0449",
+    "predicted": "I don't know",
+    "gold": "HDMI Cable 2m",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0454",
+    "predicted": "",
+    "gold": "Wireless Charger Pad",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0461",
+    "predicted": "I don't know",
+    "gold": "Webcam Ring Light",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0463",
+    "predicted": "",
+    "gold": "Smart Speaker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0466",
+    "predicted": "",
+    "gold": "Wireless Keyboard",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0472",
+    "predicted": "p_0007",
+    "gold": "Wireless Mouse",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0007"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0007",
+        "label": "entailment",
+        "best": 0.996967613697052
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0476",
+    "predicted": "Portable Monitor 15in",
+    "gold": "Portable Monitor 15in",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Portable Monitor 15in"
+    ],
+    "per_claim": [
+      {
+        "claim": "Portable Monitor 15in",
+        "label": "entailment",
+        "best": 0.9970019459724426
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0479",
+    "predicted": "",
+    "gold": "Bluetooth Headphones",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0481",
+    "predicted": "",
+    "gold": "Bluetooth Headphones",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0486",
+    "predicted": "",
+    "gold": "USB-C Cable 3m",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0490",
+    "predicted": "I don't know",
+    "gold": "Smart Speaker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0491",
+    "predicted": "I don't know",
+    "gold": "Bluetooth Speaker Mini",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0494",
+    "predicted": "",
+    "gold": "LED Desk Lamp",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0500",
+    "predicted": "",
+    "gold": "Power Bank 20000mAh",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0501",
+    "predicted": "p_0005",
+    "gold": "HD Webcam",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0005"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0005",
+        "label": "entailment",
+        "best": 0.9994016885757446
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0513",
+    "predicted": "I don't know",
+    "gold": "Audio Splitter",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0514",
+    "predicted": "Webcam Ring Light",
+    "gold": "Webcam Ring Light",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Webcam Ring Light"
+    ],
+    "per_claim": [
+      {
+        "claim": "Webcam Ring Light",
+        "label": "entailment",
+        "best": 0.9968093037605286
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0517",
+    "predicted": "Smart Watch",
+    "gold": "Smart Watch",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Smart Watch"
+    ],
+    "per_claim": [
+      {
+        "claim": "Smart Watch",
+        "label": "entailment",
+        "best": 0.9998444318771362
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0521",
+    "predicted": "2025-07-30",
+    "gold": "2025-07-30",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-30"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-30",
+        "label": "entailment",
+        "best": 0.992523729801178
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0523",
+    "predicted": "2025-07-04",
+    "gold": "2025-07-04",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-04"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-04",
+        "label": "entailment",
+        "best": 0.9986955523490906
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0527",
+    "predicted": "2025-07-12",
+    "gold": "2025-07-12",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-12"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-12",
+        "label": "entailment",
+        "best": 0.9987813830375671
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0537",
+    "predicted": "2025-08-14",
+    "gold": "2025-08-14",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-14"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-14",
+        "label": "entailment",
+        "best": 0.9990867376327515
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0542",
+    "predicted": "2025-08-02",
+    "gold": "2025-09-13",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-02"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-02",
+        "label": "entailment",
+        "best": 0.9992108345031738
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0543",
+    "predicted": "2025-07-10",
+    "gold": "2025-07-10",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-10"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-10",
+        "label": "entailment",
+        "best": 0.9993165731430054
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0547",
+    "predicted": "2025-09-24",
+    "gold": "2025-09-24",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-24"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-24",
+        "label": "entailment",
+        "best": 0.999560534954071
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0548",
+    "predicted": "2025-09-22",
+    "gold": "2025-09-22",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-22"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-22",
+        "label": "entailment",
+        "best": 0.9990614056587219
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0559",
+    "predicted": "2025-07-25",
+    "gold": "2025-07-25",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-25"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-25",
+        "label": "entailment",
+        "best": 0.9960666298866272
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0560",
+    "predicted": "2025-09-21",
+    "gold": "2025-09-21",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-21"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-21",
+        "label": "entailment",
+        "best": 0.9992965459823608
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0563",
+    "predicted": "2025-08-06",
+    "gold": "2025-08-06",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-06"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-06",
+        "label": "entailment",
+        "best": 0.9963098168373108
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0566",
+    "predicted": "2025-09-25",
+    "gold": "2025-09-25",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-25"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-25",
+        "label": "entailment",
+        "best": 0.9994613528251648
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0573",
+    "predicted": "",
+    "gold": "2025-07-07",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0580",
+    "predicted": "2025-09-13",
+    "gold": "2025-09-13",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-13"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-13",
+        "label": "entailment",
+        "best": 0.9994590878486633
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0587",
+    "predicted": "2025-08-26",
+    "gold": "2025-08-26",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-26"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-26",
+        "label": "entailment",
+        "best": 0.9996786117553711
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0589",
+    "predicted": "2025-08-12",
+    "gold": "2025-08-12",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-12"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-12",
+        "label": "entailment",
+        "best": 0.9996080994606018
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0590",
+    "predicted": "2025-08-11",
+    "gold": "2025-08-11",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-11"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-11",
+        "label": "entailment",
+        "best": 0.9992297887802124
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0598",
+    "predicted": "2025-07-07",
+    "gold": "2025-07-07",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-07"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-07",
+        "label": "entailment",
+        "best": 0.9984766840934753
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0601",
+    "predicted": "2025-07-04",
+    "gold": "2025-07-04",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-04"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-04",
+        "label": "entailment",
+        "best": 0.9978905320167542
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0605",
+    "predicted": "",
+    "gold": "2025-09-09",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0606",
+    "predicted": "2025-07-28",
+    "gold": "2025-07-28",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-07-28"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-07-28",
+        "label": "entailment",
+        "best": 0.9996190071105957
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0612",
+    "predicted": "2024-08-22",
+    "gold": "2025-09-30",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-08-22"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-08-22",
+        "label": "entailment",
+        "best": 0.9975264668464661
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0613",
+    "predicted": "2025-09-05",
+    "gold": "2025-09-05",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-05"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-05",
+        "label": "entailment",
+        "best": 0.9983141422271729
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0614",
+    "predicted": "2025-09-28",
+    "gold": "2025-09-28",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-28"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-28",
+        "label": "entailment",
+        "best": 0.9995228052139282
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0619",
+    "predicted": "2025-01-05",
+    "gold": "2025-01-05",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-05"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-05",
+        "label": "entailment",
+        "best": 0.995610773563385
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0624",
+    "predicted": "2025-01-23",
+    "gold": "2025-01-23",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-23"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-23",
+        "label": "entailment",
+        "best": 0.999396800994873
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0633",
+    "predicted": "2025-01-03",
+    "gold": "2025-02-03",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-03"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-03",
+        "label": "entailment",
+        "best": 0.9984509944915771
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0637",
+    "predicted": "2025-01-02",
+    "gold": "2025-01-02",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-02"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-02",
+        "label": "entailment",
+        "best": 0.9996706247329712
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0645",
+    "predicted": "2025-03-24",
+    "gold": "2025-03-24",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-24"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-24",
+        "label": "entailment",
+        "best": 0.9988545179367065
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0649",
+    "predicted": "2025-02-07",
+    "gold": "2025-02-07",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-02-07"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-02-07",
+        "label": "entailment",
+        "best": 0.9993034601211548
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0652",
+    "predicted": "2025-01-14",
+    "gold": "2025-01-14",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-14"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-14",
+        "label": "entailment",
+        "best": 0.9993768334388733
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0660",
+    "predicted": "2025-01-01",
+    "gold": "2025-02-01",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-01"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-01",
+        "label": "entailment",
+        "best": 0.9994543194770813
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0663",
+    "predicted": "2025-03-27",
+    "gold": "2025-03-27",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-27"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-27",
+        "label": "entailment",
+        "best": 0.9989583492279053
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0665",
+    "predicted": "due: 2025-03-17",
+    "gold": "2025-03-17",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "due: 2025-03-17"
+    ],
+    "per_claim": [
+      {
+        "claim": "due: 2025-03-17",
+        "label": "entailment",
+        "best": 0.9996657371520996
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0670",
+    "predicted": "2025-03-19",
+    "gold": "2025-03-19",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-19"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-19",
+        "label": "entailment",
+        "best": 0.9996274709701538
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0672",
+    "predicted": "2025-01-14",
+    "gold": "2025-01-14",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-14"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-14",
+        "label": "entailment",
+        "best": 0.9996589422225952
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0673",
+    "predicted": "2025-03-27",
+    "gold": "2025-03-27",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-27"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-27",
+        "label": "entailment",
+        "best": 0.9993957281112671
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0680",
+    "predicted": "due: 2025-03-02",
+    "gold": "2025-03-02",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "due: 2025-03-02"
+    ],
+    "per_claim": [
+      {
+        "claim": "due: 2025-03-02",
+        "label": "entailment",
+        "best": 0.999670147895813
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0681",
+    "predicted": "2025-03-27",
+    "gold": "2025-03-27",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-27"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-27",
+        "label": "entailment",
+        "best": 0.9993293285369873
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0694",
+    "predicted": "2025-03-02",
+    "gold": "2025-03-02",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-02"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-02",
+        "label": "entailment",
+        "best": 0.9996293783187866
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0697",
+    "predicted": "due: 2025-03-01",
+    "gold": "2025-03-01",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "due: 2025-03-01"
+    ],
+    "per_claim": [
+      {
+        "claim": "due: 2025-03-01",
+        "label": "entailment",
+        "best": 0.9997794032096863
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0707",
+    "predicted": "2025-01-06",
+    "gold": "2025-01-06",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-01-06"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-01-06",
+        "label": "entailment",
+        "best": 0.9987788796424866
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0708",
+    "predicted": "2025-03-09",
+    "gold": "2025-03-09",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-03-09"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-03-09",
+        "label": "entailment",
+        "best": 0.9994089603424072
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0722",
+    "predicted": "2025-02-14",
+    "gold": "2025-02-14",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-02-14"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-02-14",
+        "label": "entailment",
+        "best": 0.9989622831344604
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0735",
+    "predicted": "blender",
+    "gold": "Blender",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "blender"
+    ],
+    "per_claim": [
+      {
+        "claim": "blender",
+        "label": "entailment",
+        "best": 0.9974278807640076
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0736",
+    "predicted": "Bamboo Cutting Board",
+    "gold": "Bamboo Cutting Board",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Bamboo Cutting Board"
+    ],
+    "per_claim": [
+      {
+        "claim": "Bamboo Cutting Board",
+        "label": "entailment",
+        "best": 0.9647672772407532
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0741",
+    "predicted": "air fryer",
+    "gold": "Air Fryer",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "air fryer"
+    ],
+    "per_claim": [
+      {
+        "claim": "air fryer",
+        "label": "entailment",
+        "best": 0.9949948787689209
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0748",
+    "predicted": "induction cooktop",
+    "gold": "Cutlery Set (24 pc)",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "induction cooktop"
+    ],
+    "per_claim": [
+      {
+        "claim": "induction cooktop",
+        "label": "entailment",
+        "best": 0.9661954045295715
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0750",
+    "predicted": "",
+    "gold": "Bamboo Cutting Board",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0755",
+    "predicted": "Dish Drying Rack",
+    "gold": "Air Fryer",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Dish Drying Rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "Dish Drying Rack",
+        "label": "entailment",
+        "best": 0.9998304843902588
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0760",
+    "predicted": "dish drying rack",
+    "gold": "Rice Cooker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "dish drying rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "dish drying rack",
+        "label": "entailment",
+        "best": 0.9976746439933777
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0761",
+    "predicted": "Dish Drying Rack",
+    "gold": "Bread Maker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Dish Drying Rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "Dish Drying Rack",
+        "label": "entailment",
+        "best": 0.9996721744537354
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0768",
+    "predicted": "I don't know",
+    "gold": "Spice Rack",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0773",
+    "predicted": "Bread Maker",
+    "gold": "Bread Maker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Bread Maker"
+    ],
+    "per_claim": [
+      {
+        "claim": "Bread Maker",
+        "label": "entailment",
+        "best": 0.9988454580307007
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0779",
+    "predicted": "",
+    "gold": "Electric Skillet",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0781",
+    "predicted": "",
+    "gold": "Coffee Maker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0782",
+    "predicted": "",
+    "gold": "Induction Cooktop",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0784",
+    "predicted": "",
+    "gold": "Air Purifier Mini",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0785",
+    "predicted": "I",
+    "gold": "Induction Cooktop",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I"
+    ],
+    "per_claim": [
+      {
+        "claim": "I",
+        "label": "entailment",
+        "best": 0.997156023979187
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0786",
+    "predicted": "spice rack",
+    "gold": "Induction Cooktop",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "spice rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "spice rack",
+        "label": "entailment",
+        "best": 0.9968494772911072
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0788",
+    "predicted": "Storage Containers (8 pc)",
+    "gold": "Storage Containers (8 pc)",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Storage Containers (8 pc)"
+    ],
+    "per_claim": [
+      {
+        "claim": "Storage Containers (8 pc)",
+        "label": "entailment",
+        "best": 0.9990656971931458
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0791",
+    "predicted": "Dish Drying Rack",
+    "gold": "Dish Drying Rack",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Dish Drying Rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "Dish Drying Rack",
+        "label": "entailment",
+        "best": 0.9999673366546631
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0796",
+    "predicted": "Spice Rack",
+    "gold": "Spice Rack",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Spice Rack"
+    ],
+    "per_claim": [
+      {
+        "claim": "Spice Rack",
+        "label": "entailment",
+        "best": 0.9972756505012512
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0809",
+    "predicted": "blender",
+    "gold": "Blender",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "blender"
+    ],
+    "per_claim": [
+      {
+        "claim": "blender",
+        "label": "entailment",
+        "best": 0.9974278807640076
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0811",
+    "predicted": "garlic press",
+    "gold": "Garlic Press",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "garlic press"
+    ],
+    "per_claim": [
+      {
+        "claim": "garlic press",
+        "label": "entailment",
+        "best": 0.8668509721755981
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0814",
+    "predicted": "",
+    "gold": "Air Fryer",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0815",
+    "predicted": "bread maker",
+    "gold": "Bread Maker",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "bread maker"
+    ],
+    "per_claim": [
+      {
+        "claim": "bread maker",
+        "label": "entailment",
+        "best": 0.994479775428772
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0828",
+    "predicted": "Portable Monitor 15in",
+    "gold": "Portable Monitor 15in",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "Portable Monitor 15in"
+    ],
+    "per_claim": [
+      {
+        "claim": "Portable Monitor 15in",
+        "label": "contradiction",
+        "best": 0.0859854593873024
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0836",
+    "predicted": "p_0057",
+    "gold": "Wine Opener Set",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0057"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0057",
+        "label": "entailment",
+        "best": 0.9985743761062622
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0837",
+    "predicted": "p_0105",
+    "gold": "Water Bottle 1L",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0105"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0105",
+        "label": "entailment",
+        "best": 0.9915137887001038
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0840",
+    "predicted": "Electric Skillet",
+    "gold": "Electric Skillet",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Electric Skillet"
+    ],
+    "per_claim": [
+      {
+        "claim": "Electric Skillet",
+        "label": "entailment",
+        "best": 0.9997534155845642
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0842",
+    "predicted": "Non-stick Frying Pan",
+    "gold": "Non-stick Frying Pan",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Non-stick Frying Pan"
+    ],
+    "per_claim": [
+      {
+        "claim": "Non-stick Frying Pan",
+        "label": "entailment",
+        "best": 0.9999576807022095
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0844",
+    "predicted": "Massage Gun",
+    "gold": "Massage Gun",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Massage Gun"
+    ],
+    "per_claim": [
+      {
+        "claim": "Massage Gun",
+        "label": "entailment",
+        "best": 0.9980249404907227
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0847",
+    "predicted": "Cycle Helmet",
+    "gold": "Cycle Helmet",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Cycle Helmet"
+    ],
+    "per_claim": [
+      {
+        "claim": "Cycle Helmet",
+        "label": "entailment",
+        "best": 0.9997348189353943
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0850",
+    "predicted": "p_0022 (Laptop Sleeve)",
+    "gold": "Laptop Sleeve",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "p_0022 (Laptop Sleeve)"
+    ],
+    "per_claim": [
+      {
+        "claim": "p_0022 (Laptop Sleeve)",
+        "label": "entailment",
+        "best": 0.9999573230743408
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0851",
+    "predicted": "Electric Foot Massager",
+    "gold": "Electric Foot Massager",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Electric Foot Massager"
+    ],
+    "per_claim": [
+      {
+        "claim": "Electric Foot Massager",
+        "label": "entailment",
+        "best": 0.9960125684738159
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0859",
+    "predicted": "c_0255\npending",
+    "gold": "c_0255; paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "c_0255\npending"
+    ],
+    "per_claim": [
+      {
+        "claim": "c_0255\npending",
+        "label": "entailment",
+        "best": 0.9821968078613281
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0869",
+    "predicted": "c_0621\npending",
+    "gold": "c_0621; paid",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "c_0621\npending"
+    ],
+    "per_claim": [
+      {
+        "claim": "c_0621\npending",
+        "label": "contradiction",
+        "best": 0.01750211790204048
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0883",
+    "predicted": "c_108",
+    "gold": "c_1084; paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "c_108"
+    ],
+    "per_claim": [
+      {
+        "claim": "c_108",
+        "label": "entailment",
+        "best": 0.9905107617378235
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0889",
+    "predicted": "completed",
+    "gold": "refunded",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9923491477966309
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0898",
+    "predicted": "",
+    "gold": "cancelled",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0902",
+    "predicted": "",
+    "gold": "refunded",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0903",
+    "predicted": "",
+    "gold": "pending",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0905",
+    "predicted": "",
+    "gold": "pending",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0906",
+    "predicted": "completed",
+    "gold": "refunded",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9857065081596375
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0909",
+    "predicted": "completed",
+    "gold": "cancelled",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.998400866985321
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0915",
+    "predicted": "completed",
+    "gold": "pending",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9981040954589844
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0930",
+    "predicted": "",
+    "gold": "cancelled",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0932",
+    "predicted": "completed",
+    "gold": "pending",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "completed"
+    ],
+    "per_claim": [
+      {
+        "claim": "completed",
+        "label": "entailment",
+        "best": 0.9984045624732971
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0933",
+    "predicted": "",
+    "gold": "cancelled",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0936",
+    "predicted": "",
+    "gold": "pending",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0942",
+    "predicted": "pending",
+    "gold": "refunded",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "pending"
+    ],
+    "per_claim": [
+      {
+        "claim": "pending",
+        "label": "contradiction",
+        "best": 0.27636614441871643
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0945",
+    "predicted": "",
+    "gold": "refunded",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0946",
+    "predicted": "",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0947",
+    "predicted": "",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0951",
+    "predicted": "",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0953",
+    "predicted": "",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0960",
+    "predicted": "I don't know",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0962",
+    "predicted": "I don't know",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0966",
+    "predicted": "I don't know",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0968",
+    "predicted": "",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0969",
+    "predicted": "overdue",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "overdue"
+    ],
+    "per_claim": [
+      {
+        "claim": "overdue",
+        "label": "entailment",
+        "best": 0.9519911408424377
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0987",
+    "predicted": "overdue",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "overdue"
+    ],
+    "per_claim": [
+      {
+        "claim": "overdue",
+        "label": "entailment",
+        "best": 0.9764333367347717
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0989",
+    "predicted": "",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0990",
+    "predicted": "overdue",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "overdue"
+    ],
+    "per_claim": [
+      {
+        "claim": "overdue",
+        "label": "entailment",
+        "best": 0.9809716939926147
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0992",
+    "predicted": "",
+    "gold": "overdue",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q0993",
+    "predicted": "overdue",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 0.0,
+    "hallucination": 1.0,
+    "claims": [
+      "overdue"
+    ],
+    "per_claim": [
+      {
+        "claim": "overdue",
+        "label": "contradiction",
+        "best": 0.036125656217336655
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1000",
+    "predicted": "",
+    "gold": "paid",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1003",
+    "predicted": "",
+    "gold": "failed",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1009",
+    "predicted": "I don't know",
+    "gold": "2025-07-08",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1015",
+    "predicted": "",
+    "gold": "2024-04-05",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1018",
+    "predicted": "I don't know",
+    "gold": "2025-12-31",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1020",
+    "predicted": "I don't know",
+    "gold": "2025-05-28",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1021",
+    "predicted": "",
+    "gold": "2024-05-27",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1028",
+    "predicted": "I don't know",
+    "gold": "2025-12-31",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1029",
+    "predicted": "2025-10-02",
+    "gold": "2025-10-10",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-10-02"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-10-02",
+        "label": "entailment",
+        "best": 0.9994175434112549
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1040",
+    "predicted": "I don't know\nex",
+    "gold": "2024-08-17",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know\nex"
+    ],
+    "per_claim": [
+      {
+        "claim": "I don't know\nex",
+        "label": "entailment",
+        "best": 0.996871292591095
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1041",
+    "predicted": "I don't know",
+    "gold": "2024-11-29",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1043",
+    "predicted": "I don't know\nex",
+    "gold": "2025-10-18",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know\nex"
+    ],
+    "per_claim": [
+      {
+        "claim": "I don't know\nex",
+        "label": "entailment",
+        "best": 0.9603649377822876
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1054",
+    "predicted": "2025-08-17",
+    "gold": "2025-08-31",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-08-17"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-08-17",
+        "label": "entailment",
+        "best": 0.9995328187942505
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1062",
+    "predicted": "I don't know",
+    "gold": "2025-09-09",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1078",
+    "predicted": "2024-09-29",
+    "gold": "2024-09-30",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-09-29"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-09-29",
+        "label": "entailment",
+        "best": 0.9994957447052002
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1088",
+    "predicted": "2024-09-11",
+    "gold": "comp_0833",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2024-09-11"
+    ],
+    "per_claim": [
+      {
+        "claim": "2024-09-11",
+        "label": "entailment",
+        "best": 0.9973656535148621
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1093",
+    "predicted": "comp_0056",
+    "gold": "comp_0056",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0056"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0056",
+        "label": "entailment",
+        "best": 0.9974411725997925
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1099",
+    "predicted": "comp_0278",
+    "gold": "comp_0490",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0278"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0278",
+        "label": "entailment",
+        "best": 0.9930659532546997
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1101",
+    "predicted": "2025-06-22",
+    "gold": "comp_0375",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-06-22"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-06-22",
+        "label": "entailment",
+        "best": 0.9973556995391846
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1104",
+    "predicted": "comp_0481",
+    "gold": "comp_0481",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0481"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0481",
+        "label": "entailment",
+        "best": 0.997043788433075
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1105",
+    "predicted": "comp_0557",
+    "gold": "comp_0557",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0557"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0557",
+        "label": "entailment",
+        "best": 0.9951072931289673
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1107",
+    "predicted": "comp_0655",
+    "gold": "comp_0655",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0655"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0655",
+        "label": "entailment",
+        "best": 0.91370689868927
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1109",
+    "predicted": "comp",
+    "gold": "comp_0695",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp",
+        "label": "entailment",
+        "best": 0.8511809706687927
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1112",
+    "predicted": "comp_0474",
+    "gold": "comp_0871",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0474"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0474",
+        "label": "entailment",
+        "best": 0.998342752456665
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1113",
+    "predicted": "2025-09-10",
+    "gold": "comp_0518",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "2025-09-10"
+    ],
+    "per_claim": [
+      {
+        "claim": "2025-09-10",
+        "label": "entailment",
+        "best": 0.9986060261726379
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1120",
+    "predicted": "comp_0462",
+    "gold": "comp_0462",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0462"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0462",
+        "label": "entailment",
+        "best": 0.9901551008224487
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1125",
+    "predicted": "comp_0412",
+    "gold": "comp_0412",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0412"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0412",
+        "label": "entailment",
+        "best": 0.9956939220428467
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1129",
+    "predicted": "comp_0262",
+    "gold": "comp_0262",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0262"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0262",
+        "label": "entailment",
+        "best": 0.9783570170402527
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1131",
+    "predicted": "comp_0977",
+    "gold": "comp_0977",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0977"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0977",
+        "label": "entailment",
+        "best": 0.9938095211982727
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1132",
+    "predicted": "comp_0013",
+    "gold": "comp_0013",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0013"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0013",
+        "label": "entailment",
+        "best": 0.9429731369018555
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1142",
+    "predicted": "comp_0559",
+    "gold": "comp_1198",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "comp_0559"
+    ],
+    "per_claim": [
+      {
+        "claim": "comp_0559",
+        "label": "entailment",
+        "best": 0.9981993436813354
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1160",
+    "predicted": "I don",
+    "gold": "o_00970",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don"
+    ],
+    "per_claim": [
+      {
+        "claim": "I don",
+        "label": "entailment",
+        "best": 0.9932382106781006
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1167",
+    "predicted": "I don't know",
+    "gold": "o_06132",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1172",
+    "predicted": "o_05970",
+    "gold": "o_05971",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "o_05970"
+    ],
+    "per_claim": [
+      {
+        "claim": "o_05970",
+        "label": "entailment",
+        "best": 0.9987886548042297
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1174",
+    "predicted": "",
+    "gold": "o_02654",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1175",
+    "predicted": "I don't know",
+    "gold": "o_04039",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1178",
+    "predicted": "I don't know",
+    "gold": "o_02845",
+    "is_answerable": true,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1188",
+    "predicted": "I don't know\n\n### explanation: The context does not provide any information about an order with the ID o_66822.",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know\n\n### explanation: The context does not provide any information about an order with the ID o_66822."
+    ],
+    "per_claim": [
+      {
+        "claim": "I don't know\n\n### explanation: The context does not provide any information about an order with the ID o_66822.",
+        "label": "entailment",
+        "best": 0.999963641166687
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1195",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1197",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1203",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1204",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1208",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1209",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1228",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1236",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1238",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1247",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1258",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1269",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1273",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1276",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1277",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1281",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1290",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1291",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1295",
+    "predicted": "Monitor Stand",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Monitor Stand"
+    ],
+    "per_claim": [
+      {
+        "claim": "Monitor Stand",
+        "label": "entailment",
+        "best": 0.9995380640029907
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1297",
+    "predicted": "Garlic Press",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Garlic Press"
+    ],
+    "per_claim": [
+      {
+        "claim": "Garlic Press",
+        "label": "entailment",
+        "best": 0.9985673427581787
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1311",
+    "predicted": "Hair Dryer",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Hair Dryer"
+    ],
+    "per_claim": [
+      {
+        "claim": "Hair Dryer",
+        "label": "entailment",
+        "best": 0.999948263168335
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1320",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1327",
+    "predicted": "Smart Speaker",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "Smart Speaker"
+    ],
+    "per_claim": [
+      {
+        "claim": "Smart Speaker",
+        "label": "entailment",
+        "best": 0.9968012571334839
+      }
+    ],
+    "abstention": false,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1330",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1334",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1346",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1347",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1348",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1349",
+    "predicted": "",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1355",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1359",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1366",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1367",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1380",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  },
+  {
+    "qid": "Q1385",
+    "predicted": "I don't know",
+    "gold": "I don't know",
+    "is_answerable": false,
+    "groundedness": 1.0,
+    "hallucination": 0.0,
+    "claims": [
+      "I don't know"
+    ],
+    "per_claim": null,
+    "abstention": true,
+    "evidence_n": 5
+  }
+]
