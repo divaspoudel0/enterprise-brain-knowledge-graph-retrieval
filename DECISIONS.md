@@ -281,3 +281,19 @@ Rationale: user approved public pre-defense release; benchmark release strengthe
 is a publication prerequisite.
 Stage: v2-G
 Reversible: yes until Zenodo DOI minting.
+
+## 2026-08-14 — S8 groundedness scorer: NLI label order + decision rule
+Decision: (1) `cross-encoder/nli-deberta-v3-base` outputs logits in [contradiction,
+entailment, neutral] — first implementation mapped [entailment, neutral, contradiction] and was
+inverted; fixed and verified. (2) Decision rule is RAGAS-faithfulness max-entailment: a claim is
+grounded iff the maximum entailment probability over ALL evidence chunks is > 0.5. A
+high-confidence contradiction from an unrelated record (e.g. a payment record for a different
+order, or a same-order payment whose status differs from the order's) must NOT override the
+entailment of the relevant order record. Truly unsupported claims get low entailment everywhere.
+(3) Bare-value claims ("19.99") are sentenceized ("The answer is 19.99.") so NLI hypotheses are
+grammatical; fragment claims otherwise score neutral regardless of evidence.
+Rationale: verified empirically that both the inverted map and the max-confidence-pair rule
+inflated hallucination (0.942->0.049->0.112 artifacts of the bugs; final all 0.777, answerable
+claims 0.657). RAGAS's entailment-only rule is the standard RAG faithfulness protocol.
+Stage: v2 D2-S8
+Reversible: yes (recomputed offline from committed evidence + answers).

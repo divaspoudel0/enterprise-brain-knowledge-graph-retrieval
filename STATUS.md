@@ -5,19 +5,19 @@
 > session after sandbox loss) should be able to read only this file and know exactly
 > what to do next, without digging through commit history or logs.
 
-Last updated: 2026-08-11 (Phase D D1 DONE + D2 S8/S10 built; groundedness eval pending on molab)
-Current stage: v2 Phase D (D1 learnable pipeline) DONE; Phase E (D2 S8 groundedness + S10 interface + human study) in progress
-Last commit: a51aa3b
-Last verified: D1 results committed (bdcb5c8) — learned EM 0.496/F1 0.512 vs rule 0.399/0.422 on benchmark_v2 test (278 q); S8/S10 code committed (a51aa3b)
-Next planned action: run S8 groundedness eval (`run_d2_groundedness.py`) + verify S10 interface on molab once the sandbox is reachable; then fill the human rating sheet (human-in-the-loop)
-Blockers / open questions: molab sandbox `sb-a54b5f4e98907401.sb.molab.run` unreachable since 2026-08-11 (all GPU work blocked: D2 groundedness NLI, S10 verification). Human rating sheet prepared (20 items) and AWAITS the two human annotators (user + peer) — human-in-the-loop blocker per EVALUATION.md §3.
+Last updated: 2026-08-14 (Phase D D1 DONE + Phase E D2 DONE — S8 groundedness, S10 interface, rating sheet prepared)
+Current stage: v2 Phase E (D2 S8/S10/human study) DONE; next Phase F — evaluation v2 (molab), then G public release
+Last commit: 77837f5
+Last verified: S8 groundedness final on benchmark_v2 test (LLM-planner evidence, RAGAS max-entailment): all 0.777, answerable claims 0.657, T3 correct "I don't know" 0.556; S10 interface verified on molab (provenance paths render)
+Next planned action: Phase F — evaluation v2 matrix (baseline vs hybrid-rule vs hybrid-learned), ablations, temporal + answerability testbed metrics; then public release
+Blockers / open questions: human rating sheet AWAITS the two human annotators (user + peer) — human-in-the-loop blocker per EVALUATION.md §3. S8 NLI residual misses exact-value entailment in structured records (honest caveat).
 
 V2 directions (all approved): D5 schema & data v2 (2,500+ customers), D3 temporal testbed,
 D4 answerability testbed, D1 learnable pipeline (linking, hop controller, path planning),
 D2 S8 groundedness + S10 query interface + human study; public pre-defense release; publication after defense.
 Full detail: V2_PLAN.md.
 
-Environment (molab.marimo.io sandbox, confirmed 2026-08-10): NVIDIA RTX PRO 6000 Blackwell Server Edition, 102 GB VRAM, CUDA 13.0 (torch 2.11.0+cu130); 171.8 GB RAM, 20 CPUs, Python 3.13.11, git+uv present (gh absent); ephemeral by design. NOTE: unreachable as of 2026-08-11.
+Environment (molab.marimo.io sandbox, confirmed 2026-08-10; REACHED again 2026-08-14 at new URL sb-2fc6f753bf56c67e): NVIDIA RTX PRO 6000 Blackwell Server Edition, 102 GB VRAM, CUDA 13.0 (torch 2.11.0+cu130); 171.8 GB RAM, 20 CPUs, Python 3.13.11, git+uv present; ephemeral by design.
 
 Phase B pipeline state (2026-08-10):
   - raw_v2: 120 products / 2,500 customers / 7,589 orders / 7,589 payments / 1,200 complaints (verify_data_v2 40/40 PASS)
@@ -43,11 +43,18 @@ Phase D (D1) state (2026-08-11) — learnable pipeline DONE:
   - Caveat: T2 "as of"/"changed on" sub-templates embed the answer in the question (gold = prior
     status) while context shows current — biases both systems (learned 0.154 vs rule 0.200).
 
-Phase E (D2) state (2026-08-11):
-  - S8 groundedness.py built (NLI claim-decomposition, cross-encoder/nli-deberta-v3-base, logged
-    in DECISIONS.md) + run_d2_groundedness.py (replays retrieval, scores frozen D1 answers)
-    — RUN PENDING on molab.
-  - S10 query_interface.py built (CLI + optional Gradio; answer + evidence chunks + provenance
-    path + plan-as-explanation) — VERIFICATION PENDING on molab.
+Phase E (D2) state (2026-08-14):
+  - S8 groundedness.py DONE: NLI claim-decomposition (cross-encoder/nli-deberta-v3-base,
+    DECISIONS.md); RAGAS max-entailment rule (entailment probability > 0.5 over any evidence
+    chunk). Eval on benchmark_v2 test (278 q, LLM-planner evidence replay):
+    groundedness all 0.777 / hallucination 0.223; answerable claims-only (n=178) 0.657;
+    answerable abstentions 64/242 (0.264, incl. format failures); T3 groundedness 0.972,
+    correct "I don't know" 0.556. Files: learned_eval_groundedness.json,
+    groundedness_details.json, learned_contexts_v2.json. Caveat: NLI misses exact-value
+    entailment inside structured records (residual neutral/contradiction on some correct
+    answers) — reported honestly.
+  - S10 query_interface.py DONE + verified on molab: answer + evidence chunks + provenance
+    path rendered (e.g. c_0102 --filedComplaint--> comp_0102 --aboutOrder--> o_00102
+    --forProduct--> p_0102) + plan-as-explanation. CLI + optional Gradio.
   - S7.3 human rating sheet PREPARED: 20 multi-hop items (10 learned + 10 rule, blind/shuffled)
     at artifacts human_evidence_path_rating_sheet.md/.csv/.json — AWAITS human annotators.

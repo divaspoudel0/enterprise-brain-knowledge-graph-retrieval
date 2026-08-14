@@ -194,9 +194,7 @@ on T2) — a benchmark/prompt nuance, not a regression of the learned components
 
 ## 7. Explainability deliverable (D2)
 
-> Status 2026-08-11: S8 + S10 built and committed (`systems/hybrid/groundedness.py`,
-> `run_d2_groundedness.py`, `query_interface.py`, `prepare_human_rating_sheet.py`).
-> Eval + interface verification pending a reachable molab sandbox; human sheet prepared.
+> Status 2026-08-14: S8 + S10 DONE, evaluated and verified on molab; sheet prepared.
 
 ### 7.1 S8 — `groundedness.py` (was decided, never built)
 
@@ -207,6 +205,14 @@ on T2) — a benchmark/prompt nuance, not a regression of the learned components
   `EVALUATION.md` §1's metric list.
 - `run_d2_groundedness.py` replays the D1 retrieval deterministically (greedy, seeded planner)
   to recover the exact evidence each frozen answer saw, then scores it.
+- RESULTS (benchmark_v2 test, 278 q, LLM-planner evidence replay):
+  groundedness all **0.777** (hallucination 0.223); answerable claims-only (n=178) **0.657**;
+  answerable abstentions 64/242 (0.264, incl. format failures); T3 groundedness 0.972 with
+  correct "I don't know" 0.556. Decision rule: RAGAS max-entailment (entailment prob > 0.5
+  over any evidence chunk); verified that nli-deberta-v3-base outputs
+  [contradiction, entailment, neutral] logits (first fix was inverted).
+  Caveat: NLI misses exact-value entailment inside structured records (some correct answers
+  score neutral/contradiction) — residual unsupported-claim rate is an upper bound.
 
 ### 7.2 S10 — `query_interface.py`
 
@@ -214,10 +220,16 @@ on T2) — a benchmark/prompt nuance, not a regression of the learned components
   graph provenance path** (rendered as Customer→Complaint→Order→Payment with relation labels).
 - For hybrid-learned: the generated relation plan is shown as the explanation
   (`planner.walk_full` returns the full node chain per hit for rendering).
+- VERIFIED on molab: e.g. Q "Which product did customer c_0102 order in the order they filed
+  a complaint about?" → plan `[filedComplaint, aboutOrder, forProduct]`, provenance
+  `c_0102 --filedComplaint--> comp_0102 --aboutOrder--> o_00102 --forProduct--> p_0102`,
+  answer + 7 evidence chunks returned.
 
 ### 7.3 Human evidence-path study (`EVALUATION.md` §3)
 
-- 2 annotators (user + one peer) rate 50–100 sampled answers per system on:
+- Sheet PREPARED (20 items, blind/shuffled) at
+  artifacts `human_evidence_path_rating_sheet.md`/`.csv`/`.json`; awaits the annotators.
+- 2 annotators (user + one peer) rate sampled answers per system on:
   (a) answer correctness given context; (b) path/evidence interpretability.
 - Report Cohen's κ; results feed both the thesis appendix and the paper's human-eval section.
 - Sheet PREPARED (20 items, blind/shuffled) at
