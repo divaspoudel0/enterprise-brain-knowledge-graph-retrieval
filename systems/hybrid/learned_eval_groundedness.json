@@ -2,14 +2,20 @@
   "model": "cross-encoder/nli-deberta-v3-base",
   "planner": "llm",
   "n": 278,
-  "groundedness_all": 0.9424460431654677,
-  "hallucination_all": 0.05755395683453235,
-  "groundedness_answerable": 0.912568306010929,
-  "hallucination_answerable": 0.08743169398907102,
+  "groundedness_all": 0.7769784172661871,
+  "hallucination_all": 0.2230215827338129,
+  "groundedness_answerable": 0.6573033707865169,
+  "hallucination_answerable": 0.3426966292134831,
+  "answerable": {
+    "n": 242,
+    "n_with_claims": 178,
+    "abstention_rate": 0.2644628099173554
+  },
   "t3": {
     "n": 36,
-    "groundedness": 1.0,
+    "groundedness": 0.9722222222222222,
     "abstention_rate": 0.8611111111111112,
-    "correct_abstention_rate": 0.5555555555555556
+    "correct_abstention_rate": 0.5555555555555556,
+    "wrong_abstention_rate": 0.3055555555555556
   }
 }
