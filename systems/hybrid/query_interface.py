@@ -190,6 +190,7 @@ def answer(question: str, top_k: int = TOP_K) -> dict:
     return {
         "question": question,
         "predicted_answer": pred,
+        "explanation": explanation,
         "explanation_plan": plan if plan_valid else None,
         "plan_valid": plan_valid,
         "hops": hops,
@@ -203,6 +204,10 @@ def _render(res: dict) -> str:
     lines = [
         f"Question: {res['question']}",
         f"Answer:   {res['predicted_answer']}",
+    ]
+    if res.get("explanation"):
+        lines.append(f"Explain:  {res['explanation']}")
+    lines += [
         f"Plan:     {res['explanation_plan'] if res['explanation_plan'] is not None else '(answer on anchor)'}"
         f"{'' if res['plan_valid'] else '  [invalid, heuristic fallback]'}",
         f"Hops:     {res['hops']}   Linked: {', '.join(res['linked_entities'])}",
