@@ -12,6 +12,7 @@ experimental conditions of AGENT.md §2 live here so they cannot drift:
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -23,6 +24,30 @@ GRAPH = DATA / "graph"
 BENCHMARK = DATA / "benchmark" / "benchmark_v1.jsonl"
 ANSWER_TEMPLATE = (HERE / "prompts" / "answer_template.txt").read_text(encoding="utf-8")
 STRUCTURED_ANSWER_TEMPLATE = (HERE / "prompts" / "answer_template_structured.txt").read_text(encoding="utf-8")
+
+EXPLANATION_RE = re.compile(r"\n\s*(?:#+\s*)?explanation\s*:", re.IGNORECASE)
+
+
+def parse_structured_output(out: str) -> tuple[str, str]:
+    """Split a structured answer-generation response into (predicted, explanation).
+
+    The prompt asks the LLM for a `predicted_answer` line and a separate
+    `explanation` line. The answer LLM sometimes writes the explanation as
+    `\nexplanation:`, `\n### explanation:`, or `\nExplanation:`. Parse both
+    fields; everything after the explanation marker is the explanation (minus
+    a leading colon). The predicted answer is the text before the marker (or
+    everything after `predicted_answer` when no marker is present).
+    Returns the canonical predicted answer and the explanation (possibly '').
+    """
+    body = out.rsplit("predicted_answer", 1)[-1].strip() if "predicted_answer" in out else out.strip()
+    m = EXPLANATION_RE.search(body)
+    if m:
+        predicted = body[: m.start()].strip().strip(":").strip()
+        explanation = body[m.end():].strip().strip(":").strip()
+    else:
+        predicted = body.strip().strip(":").strip()
+        explanation = ""
+    return predicted, explanation
 
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "

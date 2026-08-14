@@ -30,7 +30,8 @@ from pathlib import Path
 from rdflib import Graph
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import TOP_K, STRUCTURED_ANSWER_TEMPLATE, embed_query, load_llm
+from common import (TOP_K, STRUCTURED_ANSWER_TEMPLATE, embed_query, load_llm,
+                    parse_structured_output)
 from hybrid.entity_linker import EntityLinker
 from hybrid.hop_controller import entity_features
 from hybrid.relation_planner import PathPlanner, node
@@ -158,8 +159,7 @@ def answer(question: str, top_k: int = TOP_K) -> dict:
 
     prompt = STRUCTURED_ANSWER_TEMPLATE.format(context=context, question=question)
     out = _llm(prompt, max_new_tokens=64)[0]["generated_text"]
-    pred = out.rsplit("predicted_answer", 1)[-1].strip() if "predicted_answer" in out else out
-    pred = pred.split("\nexplanation:")[0].strip().strip(":").strip()
+    pred, explanation = parse_structured_output(out)
 
     provenance = []
     for c in candidates:

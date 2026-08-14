@@ -24,7 +24,8 @@ from rdflib import Graph, Namespace, URIRef
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import (TOP_K, ANSWER_TEMPLATE, STRUCTURED_ANSWER_TEMPLATE,
-                    load_corpus, load_llm, load_embeddings, embed_query)
+                    load_corpus, load_llm, load_embeddings, embed_query,
+                    parse_structured_output)
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -192,8 +193,7 @@ def main() -> int:
         context = "\n".join(ctx_parts)
         prompt = STRUCTURED_ANSWER_TEMPLATE.format(context=context, question=qtext)
         out = llm(prompt, max_new_tokens=64)[0]["generated_text"]
-        answer = out.rsplit("predicted_answer", 1)[-1].strip() if "predicted_answer" in out else out
-        answer = answer.split("\nexplanation:")[0].strip().strip(":").strip()
+        answer, explanation = parse_structured_output(out)
 
         em = exact_match(answer, gold)
         f1 = token_f1(answer, gold)
@@ -209,6 +209,7 @@ def main() -> int:
         results.append({
             "qid": q["qid"], "template_id": q["template_id"], "group": group,
             "question": qtext, "gold": gold, "predicted": answer,
+            "explanation": explanation,
             "em": em, "f1": f1, "p5": p5,
             "linked_entities": entities, "hops_oracle": q["hops"], "hops_pred": hops,
             "paths_enumerated": queries,

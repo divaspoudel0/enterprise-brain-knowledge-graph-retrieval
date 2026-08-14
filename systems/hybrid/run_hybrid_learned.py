@@ -35,7 +35,7 @@ from rdflib import Graph, URIRef
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import (QUERY_PREFIX, TOP_K, STRUCTURED_ANSWER_TEMPLATE,
-                    load_llm, embed_query)
+                    load_llm, embed_query, parse_structured_output)
 from hybrid.entity_linker import EntityLinker
 from hybrid.hop_controller import entity_features, rule_hop
 from hybrid.relation_planner import PathPlanner, EB_NS, RELATIONS, node
@@ -236,8 +236,7 @@ def main() -> int:
         context = "\n".join(ctx_parts[:TOP_K])
         prompt = STRUCTURED_ANSWER_TEMPLATE.format(context=context, question=qtext)
         out = llm(prompt, max_new_tokens=64)[0]["generated_text"]
-        answer = out.rsplit("predicted_answer", 1)[-1].strip() if "predicted_answer" in out else out
-        answer = answer.split("\nexplanation:")[0].strip().strip(":").strip()
+        answer, explanation = parse_structured_output(out)
 
         # 5) score
         sc = score_answer(answer, gold, gold_ids)
@@ -253,6 +252,7 @@ def main() -> int:
         results.append({
             "qid": q["qid"], "template_id": q["template_id"], "group": group,
             "question": qtext, "gold": gold, "predicted": answer,
+            "explanation": explanation,
             "em": sc["em"], "f1": sc["f1"], "p5": sc["p5"],
             "linked_entities": linked, "hops_oracle": q["hops"], "hops_pred": hops,
             "paths_enumerated": paths,
