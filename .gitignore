@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .venv/
+
+# run logs belong under v2/logs/ — never at the repo root
+/*.log
