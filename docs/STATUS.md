@@ -11,7 +11,7 @@
 
 Last updated: 2026-08-15 (repo restructured into v1/ + v2/ trees; all paths/docs updated)
 Current stage: v2 Phase E (D2 S8/S10/human study) DONE; next Phase F — evaluation v2 (molab), then G public release
-Last commit: 298d548 (restructure commit follows)
+Last commit: 41cc689 (restructure: v1/v2 trees + docs/; branch chore/repo-restructure — merge into main)
 Last verified: S8 groundedness final on the v2 benchmark test (LLM-planner evidence, RAGAS max-entailment): all 0.777, answerable claims 0.657, T3 correct "I don't know" 0.556; S10 interface verified on molab (provenance paths render). D1 results regenerated with separate explanation field (learned EM 0.504 / rule 0.403)
 Next planned action: Phase F — evaluation v2 matrix (baseline vs hybrid-rule vs hybrid-learned), ablations, temporal + answerability testbed metrics; then public release
 Blockers / open questions: human rating sheet AWAITS the two human annotators (user + peer) — human-in-the-loop blocker per docs/EVALUATION.md §3. S8 NLI residual misses exact-value entailment in structured records (honest caveat).
